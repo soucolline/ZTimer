@@ -1,0 +1,261 @@
+//
+//  CHTHelpViewController.m
+//  ChaoTimer
+//
+//  Created by Jichao Li on 9/30/13.
+//  Copyright (c) 2013 Jichao Li. All rights reserved.
+//
+
+#import "CHTHelpViewController.h"
+#import "CHTSocial.h"
+#import "CHTSocialObject.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDK/ISSShareViewDelegate.h>
+
+@interface CHTHelpViewController ()
+@property (nonatomic, strong) CHTTheme *timerTheme;
+
+@end
+
+@implementation CHTHelpViewController
+@synthesize helps = _helps;
+@synthesize helpsToDo = _helpsToDo;
+@synthesize helpsImage = _helpsImage;
+@synthesize timerTheme;
+
+- (NSArray *)helps {
+    if (!_helps) {
+        _helps = [[NSArray alloc] initWithObjects:
+                  [CHTUtil getLocalizedString:@"1fhold"],
+                  [CHTUtil getLocalizedString:@"sr"],
+                  [CHTUtil getLocalizedString:@"sl"],
+                  [CHTUtil getLocalizedString:@"1f2t"],
+                  [CHTUtil getLocalizedString:@"2f2t"],
+                  [CHTUtil getLocalizedString:@"2fup"],
+                  [CHTUtil getLocalizedString:@"1fd"],
+                  nil];
+    }
+    return _helps;
+}
+
+- (NSArray *)helpsToDo {
+    if (!_helpsToDo) {
+        _helpsToDo = [[NSArray alloc] initWithObjects:
+                      [CHTUtil getLocalizedString:@"1fholdto"],
+                      [CHTUtil getLocalizedString:@"srto"],
+                      [CHTUtil getLocalizedString:@"slto"],
+                      [CHTUtil getLocalizedString:@"1f2tto"],
+                      [CHTUtil getLocalizedString:@"2f2tto"],
+                      [CHTUtil getLocalizedString:@"2fupto"],
+                      [CHTUtil getLocalizedString:@"1fdto"],
+                      nil];
+    }
+    return _helpsToDo;
+}
+
+- (NSArray *)helpsImage {
+    if (!_helpsImage) {
+        _helpsImage = [[NSArray alloc] initWithObjects:
+                       [UIImage imageNamed:@"1hold.png"],
+                       [UIImage imageNamed:@"1fr.png"],
+                       [UIImage imageNamed:@"1fl.png"],
+                       [UIImage imageNamed:@"1f2t.png"],
+                       [UIImage imageNamed:@"2f2t.png"],
+                       [UIImage imageNamed:@"2fup.png"],
+                       [UIImage imageNamed:@"1fd.png"],
+                       nil];
+    }
+    return _helpsImage;
+}
+
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.navigationItem.title = [CHTUtil getLocalizedString:@"Gestures Help"];
+    [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:nil];
+    self.timerTheme = [CHTTheme getTimerTheme];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self becomeFirstResponder];
+    UIApplication *myApp = [UIApplication sharedApplication];
+    if (self.timerTheme.myTheme == THEME_WHITE) {
+        [myApp setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    } else {
+        [myApp setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        NSLog(@"shake");
+        [CHTSocial superShare:self.navigationController.navigationBar.viewForBaselineLayout delegate:self];
+    }
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.helps count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.textLabel.text = [self.helpsToDo objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [self.helps objectAtIndex:indexPath.row];
+    cell.imageView.image = [self.helpsImage objectAtIndex:indexPath.row];
+    [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:19.0f ipadSize:22.0f]];
+    [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:14.0f ipadSize:15.0f]];
+    
+    [cell.detailTextLabel setTextColor:[UIColor darkGrayColor]];
+    return cell;
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([CHTUtil getDevice] == DEVICE_PHONE) {
+        return 60;
+    } else {
+        return 80;
+    }
+}
+
+-(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [indexPath row];
+}
+
+
+- (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType
+{
+    NSLog(@"view on will display delegate");
+    UIApplication *myApp = [UIApplication sharedApplication];
+    if (self.timerTheme.myTheme == THEME_WHITE) {
+        [myApp setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    } else {
+        [myApp setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }
+    for (UIView *view in viewController.view.subviews) {
+        if ([view isKindOfClass:[UILabel class]]) {
+            UILabel *label = (UILabel *)view;
+            if ([label.text isEqualToString:@"share title"]) {
+                label.text = [[CHTSocialObject initWithType:shareType] toString];
+                label.font = [CHTTheme font:FONT_REGULAR iphoneSize:22.0f ipadSize:22.0f];
+            }
+        }
+    }
+    UIButton *leftBtn = (UIButton *)viewController.navigationItem.leftBarButtonItem.customView;
+    UIButton *rightBtn = (UIButton *)viewController.navigationItem.rightBarButtonItem.customView;
+    
+    leftBtn.backgroundColor = [UIColor clearColor];
+    rightBtn.backgroundColor = [UIColor clearColor];
+    [leftBtn setTitleColor:self.timerTheme.barItemColor forState:UIControlStateNormal];
+    [leftBtn setTitleColor:[UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:0.5f] forState:UIControlStateHighlighted];
+    [rightBtn setTitleColor:self.timerTheme.barItemColor forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:0.5f] forState:UIControlStateHighlighted];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = self.timerTheme.textColor;
+    label.text = [[CHTSocialObject initWithType:shareType] toString];
+    label.font = [CHTTheme font:FONT_REGULAR iphoneSize:22.0f ipadSize:22.0f];
+    [label sizeToFit];
+    
+    viewController.navigationItem.titleView = label;
+    [viewController.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [viewController.navigationController.navigationBar setBarTintColor:self.timerTheme.navigationColor];
+}
+
+/*
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
+
+/*
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
+
+/*
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a story board-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ 
+ */
+
+@end
