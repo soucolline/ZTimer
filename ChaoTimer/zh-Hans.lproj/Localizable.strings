@@ -1,0 +1,147 @@
+/*
+ Localizable.strings
+ ChaoTimer
+ 
+ Created by Jichao Li on 6/21/12.
+ Copyright (c) 2012 Sufflok University. All rights reserved.
+ */
+"language" = "Chinese";
+
+"Stats" = "数据";
+"Detail" = "详细";
+"Gestures Help" = "手势指南";
+"Timing" = "计时";
+"Help" = "帮助";
+"More" = "更多";
+"solve list" = "成绩列表";
+"setting" = "计时器设置";
+"scramble" = "打乱详情";
+"session" = "分组管理";
+"new session" = "新建分组";
+"license" = "版权";
+"new" = "新";
+"OK" = "好的";
+"stickySessions" = "置顶分组";
+"mySessions" = "我的分组";
+"main session" = "默认分组";
+"sessionName" = "分组名称";
+"sessionNameDup" = "新的分组名称不能与已有分组名称重复。";
+"rename session" = "重命名分组";
+"inputSessionName" = "请在此输入新的分组名称";
+
+"scramble type" = "打乱类型";
+"cancel" = "取消";
+"done" = "确定";
+"penalty" = "惩罚" ;
+"this time was" = "本次还原";
+"no penalty" = "无惩罚";
+"delete last" = "删除上一次成绩";
+"sure?" = "你确定吗？";
+"no" = "取消";
+"yes" = "确定";
+"reset session" = "清空当前分组所有成绩";
+
+"Number of solves: " = "还原次数：";
+"Best time: " = "最快成绩：";
+"Worst time: " = "最慢成绩：";
+"Session Average: " = "去头尾平均：";
+"Session Mean: " = "所有平均：";
+"Current average of 5: " = "当前5次：";
+"Best average of 5: " = "最好5次：";
+"Current average of 12: " = "当前12次：";
+"Best average of 12: " = "最好12次：";
+"Current average of 100: " = "当前100次：";
+"Best average of 100: " = "最好100次：";
+
+"Best Time: " = "最快成绩：";
+"Worst Time: " = "最慢成绩：";
+"Session Avg: " = "去头尾平均：";
+"Current Avg5: " = "当前5次：";
+"Best Avg5: " = "最好5次：";
+"Current Avg12: " = "当前12次：";
+"Best Avg12: " = "最好12次：";
+"Current Avg100: " = "当前100次：";
+"Best Avg100: " = "最好100次： ";
+"Individual Times: " = "详细时间：";
+"Generate by" = "本次统计信息由ChaoTimer自动生成于";
+"1fhold" = "单指长按计时界面";
+"sr" = "单指向右轻扫";
+"sl" = "单指向左轻扫";
+"1f2t" = "单指双击成绩";
+"2f2t" = "双指双击计时界面";
+"2fup" = "双指向上轻划";
+"1fholdto" = "启动计时器";
+"srto" = "生成下一条打乱";
+"slto" = "删除上一条成绩";
+"1f2tto" = "选择惩罚：+2/DNF";
+"2f2tto" = "数据全部清零";
+"2fupto" = "选择打乱类型";
+"1fd" = "单指向下轻扫";
+"1fdto" = "手动添加成绩";
+
+"rate" = "如果你喜欢，请为我评分";
+"about" = "关于";
+"version" = "软件版本";
+"send feedback" = "意见反馈";
+"tell friends" = "向朋友推荐ChaoTimer";
+"mailSubject" = "来试试ChaoTimer吧";
+"mailBody" = "我最近在用ChaoTimer作为我的魔方计时器，它支持各种打乱和数据统计，是一个非常好的魔方计时器，你可以在App Store上下载，快来试试吧:<br><br> <a href=\"http://itunes.apple.com/us/app/chaotimer/id537516001?ls=1&mt=8\" title=\"http://itunes.apple.com/us/app/chaotimer/id537516001?ls=1&mt=8\">http://itunes.apple.com/us/app/chaotimer/id537516001?ls=1&mt=8</a>";
+
+
+"copy scramble" = "复制本次打乱";
+"copy scramble success" = "成功复制打乱至剪贴板";
+
+"wca inspection" = "WCA 观察";
+"theme" = "主题";
+"two hands start" = "双手启动计时器";
+"rateTitle" = "为ChaoTimer评分";
+"rateBody" = "喜欢ChaoTimer么？如果你喜欢，请为我在App Store评分吧！";
+"remind later" = "以后再提醒我评分";
+"remind now" = "现在就去评分";
+"never remind" = "不想评分，以后不要提醒";
+"dup warning" = "分组命名重复";
+"choose another name" = "请给分组换一个名字";
+"start freeze" = "计时器启动延时";
+"15 sec" = "15秒观察时间";
+"no other gesture" = " (将无法识别其他手势)";
+"theme" = "主题";
+"select theme" = "选择主题";
+"theme blue" = "冷艳蓝";
+"theme green" = "帽子绿";
+"theme yellow" = "蛋碎黄";
+"theme red" = "姨妈红";
+"theme black" = "高端黑";
+"theme pink" = "脑残粉";
+"theme white" = "亮瞎白";
+"original time" = "原始成绩";
+"newest time on" = "成绩列表排序";
+"top" = "逆序";
+"bottom" = "顺序";
+"solve subtitle" = "副标题";
+"time" = "时间";
+"scrStr" = "打乱";
+"type" = "类型";
+"TimingFooter" = "计时器启动前延迟时间";
+"StatsFooter" = "数据详情页面成绩列表中每次还原时间之下的副标题";
+"social" = "分享设置";
+"weibo" = "新浪微博";
+"wxFriend" = "微信好友";
+"wxTimeline" = "微信朋友圈";
+"renren" = "人人网";
+"facebook" = "Facebook";
+"twitter" = "Twitter";
+"mail" = "邮件";
+"SMS" = "短信";
+"copy" = "复制";
+"auth" = "授权";
+"include" = "显示在分享菜单中";
+"notInclude" = "不显示在分享菜单中";
+"socialFooter" = "切换开关来授权/取消授权，某些社交网络不支持授权";
+"share" = "分享";
+"manuallyAdd" = "新还原";
+"originalTime" = "请输入时间(秒)";
+"knockToStop" = "拍桌子停表";
+"knockToStopDetail" = "";
+"sensitivity" = "灵敏度";
+"appUpdated" = "ChaoTimer 更新了";
+"appUpdatedDetail" = "1. 新的图标，用户界面以及全新的设计，为 iOS 7 打造\n2. 新加7种主题，史上最漂亮的魔方计时器\n3. 38种类型打乱，包括SQ1随机状态打乱，二阶 CLL/EG练习打乱，三阶PLL练习等\n4. 为每次还原新加入新的具体信息\n5. 完美的社交网络分享体验\n6. 手动添加成绩\n7. 拍桌子停表";
