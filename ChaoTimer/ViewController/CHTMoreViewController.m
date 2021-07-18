@@ -12,7 +12,6 @@
 #import "CHTTheme.h"
 #import "CHTThemeViewController.h"
 #import "CHTSettingViewController.h"
-#import "CHTSocialViewController.h"
 #import "CHTLicenseViewController.h"
 
 @interface CHTMoreViewController ()
@@ -236,9 +235,9 @@
 }
 
 - (IBAction) pushToSocialSettingView {
-    CHTSocialViewController *socialViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"socialSetting"];
-    socialViewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:socialViewController animated:YES];
+//    CHTSocialViewController *socialViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"socialSetting"];
+//    socialViewController.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:socialViewController animated:YES];
 }
 
 - (IBAction) pushToLicenseView {
