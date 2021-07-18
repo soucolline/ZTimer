@@ -48,7 +48,6 @@
 		0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71117B68C4900A006B5 /* CHTSession.m */; };
 		0C2FA71517B68D1C00A006B5 /* CHTSolve.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71417B68D1C00A006B5 /* CHTSolve.m */; };
 		0C2FA71817B9DB5600A006B5 /* CHTScramble.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71717B9DB5600A006B5 /* CHTScramble.m */; };
-		0C2FA71B17B9DC2C00A006B5 /* CHTUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71A17B9DC2C00A006B5 /* CHTUtil.m */; };
 		0C470A271818E1C500F52BFE /* weibo_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C470A251818E1C500F52BFE /* weibo_sm.png */; };
 		0C470A281818E1C500F52BFE /* weibo_sm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C470A261818E1C500F52BFE /* weibo_sm@2x.png */; };
 		0C902E70181A07090003A904 /* 1f2t.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C902E6A181A07090003A904 /* 1f2t.png */; };
@@ -63,7 +62,6 @@
 		0CB52989181DDCE500EB4EA5 /* license.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CB52988181DDCE500EB4EA5 /* license.png */; };
 		0CB5298C181DEED000EB4EA5 /* CHTLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5298B181DEED000EB4EA5 /* CHTLicenseViewController.m */; };
 		0CB5298E181DF13F00EB4EA5 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5298D181DF13F00EB4EA5 /* license.html */; };
-		0CE42B9917EAB21E006C8FAD /* CHTSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE42B9817EAB21E006C8FAD /* CHTSettings.m */; };
 		0CE7D6B21803B054008989B3 /* RubiksTimerDataProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6AF1803B054008989B3 /* RubiksTimerDataProcessing.m */; };
 		0CE7D6B31803B054008989B3 /* RubiksTimerTimeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6B11803B054008989B3 /* RubiksTimerTimeObj.m */; };
 		0CE7D6B61803B1CD008989B3 /* CHTUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6B51803B1CD008989B3 /* CHTUpdater.m */; };
@@ -142,6 +140,8 @@
 		0CF468941814B8AE00643E69 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468931814B8AE00643E69 /* libicucore.dylib */; };
 		0CF468961814B8B800643E69 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468951814B8B800643E69 /* libz.1.2.5.dylib */; };
 		0CF7B4B3187E44D800B7500B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7B4B2187E44D800B7500B /* CFNetwork.framework */; };
+		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
+		E99F0CD526A487AF002A8081 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD426A487AF002A8081 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,8 +201,6 @@
 		0C2FA71417B68D1C00A006B5 /* CHTSolve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSolve.m; sourceTree = "<group>"; };
 		0C2FA71617B9DB5600A006B5 /* CHTScramble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTScramble.h; sourceTree = "<group>"; };
 		0C2FA71717B9DB5600A006B5 /* CHTScramble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTScramble.m; sourceTree = "<group>"; };
-		0C2FA71917B9DC2C00A006B5 /* CHTUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTUtil.h; sourceTree = "<group>"; };
-		0C2FA71A17B9DC2C00A006B5 /* CHTUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTUtil.m; sourceTree = "<group>"; };
 		0C470A251818E1C500F52BFE /* weibo_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo_sm.png; sourceTree = "<group>"; };
 		0C470A261818E1C500F52BFE /* weibo_sm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibo_sm@2x.png"; sourceTree = "<group>"; };
 		0C902E6A181A07090003A904 /* 1f2t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1f2t.png; sourceTree = "<group>"; };
@@ -218,8 +216,6 @@
 		0CB5298A181DEED000EB4EA5 /* CHTLicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLicenseViewController.h; sourceTree = "<group>"; };
 		0CB5298B181DEED000EB4EA5 /* CHTLicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLicenseViewController.m; sourceTree = "<group>"; };
 		0CB5298D181DF13F00EB4EA5 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
-		0CE42B9717EAB21E006C8FAD /* CHTSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSettings.h; sourceTree = "<group>"; };
-		0CE42B9817EAB21E006C8FAD /* CHTSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSettings.m; sourceTree = "<group>"; };
 		0CE7D6AE1803B054008989B3 /* RubiksTimerDataProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubiksTimerDataProcessing.h; sourceTree = "<group>"; };
 		0CE7D6AF1803B054008989B3 /* RubiksTimerDataProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RubiksTimerDataProcessing.m; sourceTree = "<group>"; };
 		0CE7D6B01803B054008989B3 /* RubiksTimerTimeObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubiksTimerTimeObj.h; sourceTree = "<group>"; };
@@ -325,6 +321,9 @@
 		0CF7B4B2187E44D800B7500B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		E99F0CD026A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		E99F0CD126A48311002A8081 /* ChaoTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChaoTimer-Bridging-Header.h"; sourceTree = "<group>"; };
+		E99F0CD226A48311002A8081 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		E99F0CD426A487AF002A8081 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,6 +441,7 @@
 				0C2FA6EA17B1E37F00A006B5 /* CHTAppDelegate.h */,
 				0C2FA6EB17B1E37F00A006B5 /* CHTAppDelegate.m */,
 				0CEB9B3C180FAD120064182B /* Images.xcassets */,
+				E99F0CD126A48311002A8081 /* ChaoTimer-Bridging-Header.h */,
 				0C2FA6E217B1E37F00A006B5 /* Supporting Files */,
 			);
 			path = ChaoTimer;
@@ -588,14 +588,12 @@
 			isa = PBXGroup;
 			children = (
 				0CE7D6AD1803B022008989B3 /* ForUpdate */,
-				0C2FA71917B9DC2C00A006B5 /* CHTUtil.h */,
-				0C2FA71A17B9DC2C00A006B5 /* CHTUtil.m */,
-				0CE42B9717EAB21E006C8FAD /* CHTSettings.h */,
-				0CE42B9817EAB21E006C8FAD /* CHTSettings.m */,
 				0CE9481F17FA691D00FB770C /* CHTTheme.h */,
 				0CE9482017FA691D00FB770C /* CHTTheme.m */,
 				0C24865E17FFB2FE00209767 /* CHTOneStat.h */,
 				0C24865F17FFB2FE00209767 /* CHTOneStat.m */,
+				E99F0CD226A48311002A8081 /* Utils.swift */,
+				E99F0CD426A487AF002A8081 /* Settings.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -663,6 +661,7 @@
 				TargetAttributes = {
 					0C2FA6D717B1E37F00A006B5 = {
 						DevelopmentTeam = A8WX3L9ALZ;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -786,7 +785,6 @@
 				0CE9482717FA7E8100FB770C /* CHTMoreViewController.m in Sources */,
 				0CF23CD31810D45600BAEB40 /* CHTSettingViewController.m in Sources */,
 				0CE7D6C418063737008989B3 /* CubieCube.m in Sources */,
-				0CE42B9917EAB21E006C8FAD /* CHTSettings.m in Sources */,
 				0CE7D6DC18063950008989B3 /* Megaminx.m in Sources */,
 				0CE7D6C318063737008989B3 /* CoordCube.m in Sources */,
 				0C2FA6E817B1E37F00A006B5 /* main.m in Sources */,
@@ -810,6 +808,7 @@
 				0CB5298C181DEED000EB4EA5 /* CHTLicenseViewController.m in Sources */,
 				0C2FA6FB17B1E37F00A006B5 /* CHTTimingViewController.m in Sources */,
 				0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */,
+				E99F0CD326A48311002A8081 /* Utils.swift in Sources */,
 				0CE7D6CB18063910008989B3 /* Pyraminx.m in Sources */,
 				0C24866F1801224100209767 /* CHTThemeViewController.m in Sources */,
 				0CE7D6B21803B054008989B3 /* RubiksTimerDataProcessing.m in Sources */,
@@ -823,7 +822,7 @@
 				0CE9480717FA5F6500FB770C /* CHTHelpViewController.m in Sources */,
 				0CE9484517FD184D00FB770C /* CHTSessionManager.m in Sources */,
 				0C24866017FFB2FE00209767 /* CHTOneStat.m in Sources */,
-				0C2FA71B17B9DC2C00A006B5 /* CHTUtil.m in Sources */,
+				E99F0CD526A487AF002A8081 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -969,19 +968,25 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChaoTimer/ChaoTimer-Prefix.pch";
 				INFOPLIST_FILE = "ChaoTimer/ChaoTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jichao.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChaoTimer/ChaoTimer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -993,19 +998,24 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChaoTimer/ChaoTimer-Prefix.pch";
 				INFOPLIST_FILE = "ChaoTimer/ChaoTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jichao.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChaoTimer/ChaoTimer-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

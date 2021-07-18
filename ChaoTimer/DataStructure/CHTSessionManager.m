@@ -7,6 +7,7 @@
 //
 
 #import "CHTSessionManager.h"
+#import "ChaoTimer-Swift.h"
 
 #define KEY_SESSION_MANAGER @"sessionManager"
 #define KEY_SESSION_ARRAY @"sessionArray"
@@ -48,7 +49,7 @@
 
 + (CHTSession *) loadSessionWithName: (NSString *)name {
     NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *fileName = [[path objectAtIndex:0] stringByAppendingPathComponent:[FILE_SESSION_PREFIX stringByAppendingString:[CHTUtil escapeString:name]]];
+    NSString *fileName = [[path objectAtIndex:0] stringByAppendingPathComponent:[FILE_SESSION_PREFIX stringByAppendingString:[[[Utils alloc] init] escapeStringWithString:name]]];
     CHTSession *session;
     NSData *data = [[NSData alloc] initWithContentsOfFile:fileName];
     if (data) {
@@ -257,7 +258,7 @@
 
 + (void)saveSession: (CHTSession *)session {
     NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *fileName = [[path objectAtIndex:0] stringByAppendingPathComponent:[FILE_SESSION_PREFIX stringByAppendingString:[CHTUtil escapeString:session.sessionName]]];
+    NSString *fileName = [[path objectAtIndex:0] stringByAppendingPathComponent:[FILE_SESSION_PREFIX stringByAppendingString:[[[Utils alloc] init] escapeStringWithString:session.sessionName]]];
     NSMutableData *data = [[NSMutableData alloc] init];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
     [archiver encodeObject:session forKey:KEY_SESSION];

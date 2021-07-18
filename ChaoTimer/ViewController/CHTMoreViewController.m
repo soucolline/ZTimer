@@ -8,11 +8,11 @@
 
 #import "CHTMoreViewController.h"
 
-#import "CHTUtil.h"
 #import "CHTTheme.h"
 #import "CHTThemeViewController.h"
 #import "CHTSettingViewController.h"
 #import "CHTLicenseViewController.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTMoreViewController ()
 @property (nonatomic, strong) CHTTheme *timerTheme;
@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [CHTUtil getLocalizedString:@"More"];
+    self.navigationItem.title = [Utils getLocalizedStringFrom:@"More"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -98,7 +98,7 @@
                 {
                     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
                     NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"version"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"version"];
                     cell.detailTextLabel.text = version;
                     cell.imageView.image = [UIImage imageNamed:@"version.png"];
                     [cell setAccessoryType:UITableViewCellAccessoryNone];
@@ -112,17 +112,17 @@
         case 1:
             switch (indexPath.row) {
                 case 0:
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"theme"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"theme"];
                     cell.detailTextLabel.text = [self.timerTheme getMyThemeName];
                     cell.imageView.image = [UIImage imageNamed:@"theme.png"];
                     break;
                 case 1:
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"setting"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"setting"];
                     cell.detailTextLabel.text = @"";
                     cell.imageView.image = [UIImage imageNamed:@"setting.png"];
                     break;
                 case 2:
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"social"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"social"];
                     cell.detailTextLabel.text = @"";
                     cell.imageView.image = [UIImage imageNamed:@"share.png"];
                     break;
@@ -133,17 +133,17 @@
         case 2:
             switch (indexPath.row) {
                 case 0:
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"rate"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"rate"];
                     cell.detailTextLabel.text = @"";
                     cell.imageView.image = [UIImage imageNamed:@"rate.png"];
                     break;
                 case 1:
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"send feedback"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"send feedback"];
                     cell.detailTextLabel.text = @"";
                     cell.imageView.image = [UIImage imageNamed:@"feedback.png"];
                     break;
                 case 2:
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"tell friends"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"tell friends"];
                     cell.detailTextLabel.text = @"";
                     cell.imageView.image = [UIImage imageNamed:@"tell_friends.png"];
                     break;
@@ -154,7 +154,7 @@
         case 3:
             switch (indexPath.row) {
                 case 0:
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"license"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"license"];
                     cell.detailTextLabel.text = @"";
                     cell.imageView.image = [UIImage imageNamed:@"license.png"];
                     break;
@@ -250,8 +250,8 @@
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
     [self.timerTheme setNavigationControllerTheme:mc.navigationController];
-    [mc setSubject:[CHTUtil getLocalizedString:@"mailSubject"]];
-    [mc setMessageBody:[CHTUtil getLocalizedString:@"mailBody"] isHTML:YES];
+    [mc setSubject:[Utils getLocalizedStringFrom:@"mailSubject"]];
+    [mc setMessageBody:[Utils getLocalizedStringFrom:@"mailBody"] isHTML:YES];
     [mc setModalPresentationStyle:UIModalPresentationFormSheet];
     [self presentViewController:mc animated:YES completion:nil];
 }

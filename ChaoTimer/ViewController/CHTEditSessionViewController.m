@@ -7,6 +7,7 @@
 //
 
 #import "CHTEditSessionViewController.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTEditSessionViewController ()
 
@@ -68,7 +69,7 @@
     myTextField = [[UITextField alloc]initWithFrame:CGRectMake(20,5,280,36)];
     myTextField.borderStyle = UITextBorderStyleNone;
     myTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    myTextField.placeholder = [CHTUtil getLocalizedString:@"inputSessionName"];
+    myTextField.placeholder = [Utils getLocalizedStringFrom:@"inputSessionName"];
     myTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     myTextField.returnKeyType = UIReturnKeyDone;
     if (!isNew) {
@@ -84,11 +85,11 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [CHTUtil getLocalizedString:@"sessionName"];
+    return [Utils getLocalizedStringFrom:@"sessionName"];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return [CHTUtil getLocalizedString:@"sessionNameDup"];
+    return [Utils getLocalizedStringFrom:@"sessionNameDup"];
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
@@ -99,7 +100,7 @@
         if([sessionManager hasSession:newSession]) {
             textField.text = @"";
             [textField resignFirstResponder];
-            UIAlertView *duplicateName = [[UIAlertView alloc] initWithTitle:[CHTUtil getLocalizedString:@"dup warning"] message:[CHTUtil getLocalizedString:@"choose another name"] delegate:self cancelButtonTitle:[CHTUtil getLocalizedString:@"ok"] otherButtonTitles:nil];
+            UIAlertView *duplicateName = [[UIAlertView alloc] initWithTitle:[Utils getLocalizedStringFrom:@"dup warning"] message:[Utils getLocalizedStringFrom:@"choose another name"] delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom:@"ok"] otherButtonTitles:nil];
             [duplicateName show];
             return NO;
         } else {
@@ -114,7 +115,7 @@
         if((![newSession isEqualToString:oldSessionName]) &&[sessionManager hasSession:newSession]) {
             textField.text = oldSessionName;
             [textField resignFirstResponder];
-            UIAlertView *duplicateName = [[UIAlertView alloc] initWithTitle:[CHTUtil getLocalizedString:@"dup warning"] message:[CHTUtil getLocalizedString:@"choose another name"] delegate:self cancelButtonTitle:[CHTUtil getLocalizedString:@"OK"] otherButtonTitles:nil];
+            UIAlertView *duplicateName = [[UIAlertView alloc] initWithTitle:[Utils getLocalizedStringFrom:@"dup warning"] message:[Utils getLocalizedStringFrom:@"choose another name"] delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom:@"OK"] otherButtonTitles:nil];
             [duplicateName show];
             //[self.myTextField becomeFirstResponder];
             return NO;

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomIOS7AlertView.h"
-#import "CHTUtil.h"
 
 @interface CHTScramblePickerView : CustomIOS7AlertView <UIPickerViewDataSource, UIPickerViewDelegate>
 

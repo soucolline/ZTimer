@@ -7,7 +7,7 @@
 //
 
 #import "CHTLicenseViewController.h"
-#import "CHTUtil.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTLicenseViewController ()
 @end
@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [CHTUtil getLocalizedString:@"license"];
+    self.navigationItem.title = [Utils getLocalizedStringFrom:@"license"];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"license" ofType:@"html"] isDirectory:NO]]];
     self.webView.delegate = self;
 	// Do any additional setup after loading the view.

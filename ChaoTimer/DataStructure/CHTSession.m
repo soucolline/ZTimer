@@ -7,6 +7,7 @@
 //
 
 #import "CHTSession.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTSession()
 @property (nonatomic, strong) NSMutableArray *timeArray;
@@ -297,30 +298,30 @@
 }
 
 - (NSString *)toString: (BOOL)containIndividualTime {
-    NSString *str = [[CHTUtil getLocalizedString:@"Number of solves: "] stringByAppendingFormat:@"%d\n", self.numberOfSolves];
+    NSString *str = [[Utils getLocalizedStringFrom:@"Number of solves: "] stringByAppendingFormat:@"%d\n", self.numberOfSolves];
     if (self.numberOfSolves > 0) {
-        NSString *bestTime = [[[CHTUtil getLocalizedString:@"Best Time: "] stringByAppendingString:[[self bestSolve] toString]] stringByAppendingFormat:@"\n"];
-        NSString *worstTime = [[[CHTUtil getLocalizedString:@"Worst Time: "] stringByAppendingString:[[self worstSolve] toString]] stringByAppendingFormat:@"\n"];
+        NSString *bestTime = [[[Utils getLocalizedStringFrom:@"Best Time: "] stringByAppendingString:[[self bestSolve] toString]] stringByAppendingFormat:@"\n"];
+        NSString *worstTime = [[[Utils getLocalizedStringFrom:@"Worst Time: "] stringByAppendingString:[[self worstSolve] toString]] stringByAppendingFormat:@"\n"];
         str = [[str stringByAppendingString:bestTime] stringByAppendingString:worstTime];
         if (!containIndividualTime) {
             if (self.numberOfSolves >= 5) {
-                NSString *ca5 = [[[CHTUtil getLocalizedString:@"Current Avg5: "] stringByAppendingString:[[self currentAvgOf:5] toString]]stringByAppendingFormat:@"\n"];
-                NSString *ba5 = [[[CHTUtil getLocalizedString:@"Best Avg5: "] stringByAppendingString:[[self bestAvgOf:5] toString]]stringByAppendingFormat:@"\n"];
+                NSString *ca5 = [[[Utils getLocalizedStringFrom:@"Current Avg5: "] stringByAppendingString:[[self currentAvgOf:5] toString]]stringByAppendingFormat:@"\n"];
+                NSString *ba5 = [[[Utils getLocalizedStringFrom:@"Best Avg5: "] stringByAppendingString:[[self bestAvgOf:5] toString]]stringByAppendingFormat:@"\n"];
                 str = [[str stringByAppendingString:ca5] stringByAppendingString:ba5];
             }
             if (self.numberOfSolves >= 12) {
-                NSString *ca12 = [[[CHTUtil getLocalizedString:@"Current Avg12: "] stringByAppendingString:[[self currentAvgOf:12] toString]]stringByAppendingFormat:@"\n"];
-                NSString *ba12 = [[[CHTUtil getLocalizedString:@"Best Avg12: "] stringByAppendingString:[[self bestAvgOf:12] toString]]stringByAppendingFormat:@"\n"];
+                NSString *ca12 = [[[Utils getLocalizedStringFrom:@"Current Avg12: "] stringByAppendingString:[[self currentAvgOf:12] toString]]stringByAppendingFormat:@"\n"];
+                NSString *ba12 = [[[Utils getLocalizedStringFrom:@"Best Avg12: "] stringByAppendingString:[[self bestAvgOf:12] toString]]stringByAppendingFormat:@"\n"];
                 str = [[str stringByAppendingString:ca12] stringByAppendingString:ba12];
             }
             if (self.numberOfSolves >= 100) {
-                NSString *ca100 = [[[CHTUtil getLocalizedString:@"Current Avg100: "] stringByAppendingString:[[self currentAvgOf:100] toString]]stringByAppendingFormat:@"\n"];
-                NSString *ba100 = [[[CHTUtil getLocalizedString:@"Best Avg100: "] stringByAppendingString:[[self bestAvgOf:100] toString]]stringByAppendingFormat:@"\n"];
+                NSString *ca100 = [[[Utils getLocalizedStringFrom:@"Current Avg100: "] stringByAppendingString:[[self currentAvgOf:100] toString]]stringByAppendingFormat:@"\n"];
+                NSString *ba100 = [[[Utils getLocalizedStringFrom:@"Best Avg100: "] stringByAppendingString:[[self bestAvgOf:100] toString]]stringByAppendingFormat:@"\n"];
                 str = [[str stringByAppendingString:ca100] stringByAppendingString:ba100];
             }
         }
-        NSString *sessionAvg = [[[CHTUtil getLocalizedString:@"Session Avg: "] stringByAppendingString:[[self sessionAvg] toString]]stringByAppendingFormat:@"\n"];
-        NSString *sessionMean = [[[CHTUtil getLocalizedString:@"Session Mean: "] stringByAppendingString:[[self sessionMean] toString]]stringByAppendingFormat:@"\n"];
+        NSString *sessionAvg = [[[Utils getLocalizedStringFrom:@"Session Avg: "] stringByAppendingString:[[self sessionAvg] toString]]stringByAppendingFormat:@"\n"];
+        NSString *sessionMean = [[[Utils getLocalizedStringFrom:@"Session Mean: "] stringByAppendingString:[[self sessionMean] toString]]stringByAppendingFormat:@"\n"];
         str = [[str stringByAppendingString:sessionAvg] stringByAppendingString:sessionMean];
         if (containIndividualTime) {
             BOOL notHasBest = YES;
@@ -348,12 +349,12 @@
                 timesList = [[timesList stringByAppendingString:appendTime] stringByAppendingString:@", "];
             }
             timesList = [timesList substringToIndex:(timesList.length - 2)];
-            NSString *individualTimes = [[[CHTUtil getLocalizedString:@"Individual Times: "] stringByAppendingFormat:@"\n"] stringByAppendingString:timesList];
+            NSString *individualTimes = [[[Utils getLocalizedStringFrom:@"Individual Times: "] stringByAppendingFormat:@"\n"] stringByAppendingString:timesList];
             str = [[str stringByAppendingString:individualTimes] stringByAppendingFormat:@"\n"];
         }
     }
     if ([self.sessionName isEqualToString:@"main session"]) {
-        str = [[[CHTUtil getLocalizedString:self.sessionName] stringByAppendingString:@"\n\n" ] stringByAppendingString:str];
+        str = [[[Utils getLocalizedStringFrom:self.sessionName] stringByAppendingString:@"\n\n" ] stringByAppendingString:str];
     } else {
         str = [[self.sessionName stringByAppendingString:@"\n\n" ] stringByAppendingString:str];
     }

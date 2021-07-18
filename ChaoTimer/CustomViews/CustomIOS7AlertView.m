@@ -10,7 +10,7 @@
 //
 
 #import "CustomIOS7AlertView.h"
-#import "CHTUtil.h"
+#import "ChaoTimer-Swift.h"
 
 const static CGFloat kCustomIOS7AlertViewDefaultButtonHeight       = 45;
 const static CGFloat kCustomIOS7AlertViewDefaultButtonSpacerHeight = 0.5f;
@@ -116,7 +116,7 @@ CGFloat buttonSpacerHeight = 0;
         }
         
         NSLog(@"width %f, height %f", self.frame.size.width, self.frame.size.height);
-        if ([CHTUtil getDevice] == DEVICE_PAD) {
+        if ([Utils getDevice] == ZDevicePad) {
             [self setFrame:CGRectMake(0, 0, 768.0f, 1024.0f)];
         } else {
             [self setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
@@ -201,7 +201,7 @@ CGFloat buttonSpacerHeight = 0;
     CGFloat screenWidth;
     CGFloat screenHeight;
     
-    if ([CHTUtil getDevice] == DEVICE_PHONE) {
+    if ([Utils getDevice] == ZDevicePhone) {
         screenWidth = [UIScreen mainScreen].bounds.size.width;
         screenHeight = [UIScreen mainScreen].bounds.size.height;
     } else {
@@ -213,21 +213,7 @@ CGFloat buttonSpacerHeight = 0;
         screenWidth = 1024.0f;
         screenHeight = 748.0f;
     }
-    
-    // orientation sucks, handle only ipad and iphone-portrait
-    /*
-    UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
-    if (UIDeviceOrientationIsLandscape(deviceOrientation)) {
-        CGFloat tmp = screenWidth;
-        screenWidth = screenHeight;
-        screenHeight = tmp;
-        if ([CHTUtil getDevice] == DEVICE_PAD) {
-            NSLog(@"here");
-            screenWidth = 1024.0f;
-            screenHeight = 768.0f;
-        }
-    }
-*/
+
     // For the black background
     [self setFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
 

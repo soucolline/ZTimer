@@ -7,6 +7,7 @@
 //
 
 #import "CHTThemeViewController.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTThemeViewController ()
 
@@ -27,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [CHTUtil getLocalizedString:@"theme"];
+    self.navigationItem.title = [Utils getLocalizedStringFrom:@"theme"];
     self.themes = [CHTTheme getAllTheme];
 }
 
@@ -79,7 +80,7 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [CHTUtil getLocalizedString:@"select theme"];
+    return [Utils getLocalizedStringFrom:@"select theme"];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

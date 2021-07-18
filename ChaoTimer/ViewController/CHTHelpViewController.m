@@ -7,6 +7,7 @@
 //
 
 #import "CHTHelpViewController.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTHelpViewController ()
 @property (nonatomic, strong) CHTTheme *timerTheme;
@@ -22,13 +23,13 @@
 - (NSArray *)helps {
     if (!_helps) {
         _helps = [[NSArray alloc] initWithObjects:
-                  [CHTUtil getLocalizedString:@"1fhold"],
-                  [CHTUtil getLocalizedString:@"sr"],
-                  [CHTUtil getLocalizedString:@"sl"],
-                  [CHTUtil getLocalizedString:@"1f2t"],
-                  [CHTUtil getLocalizedString:@"2f2t"],
-                  [CHTUtil getLocalizedString:@"2fup"],
-                  [CHTUtil getLocalizedString:@"1fd"],
+                  [Utils getLocalizedStringFrom:@"1fhold"],
+                  [Utils getLocalizedStringFrom:@"sr"],
+                  [Utils getLocalizedStringFrom:@"sl"],
+                  [Utils getLocalizedStringFrom:@"1f2t"],
+                  [Utils getLocalizedStringFrom:@"2f2t"],
+                  [Utils getLocalizedStringFrom:@"2fup"],
+                  [Utils getLocalizedStringFrom:@"1fd"],
                   nil];
     }
     return _helps;
@@ -37,13 +38,13 @@
 - (NSArray *)helpsToDo {
     if (!_helpsToDo) {
         _helpsToDo = [[NSArray alloc] initWithObjects:
-                      [CHTUtil getLocalizedString:@"1fholdto"],
-                      [CHTUtil getLocalizedString:@"srto"],
-                      [CHTUtil getLocalizedString:@"slto"],
-                      [CHTUtil getLocalizedString:@"1f2tto"],
-                      [CHTUtil getLocalizedString:@"2f2tto"],
-                      [CHTUtil getLocalizedString:@"2fupto"],
-                      [CHTUtil getLocalizedString:@"1fdto"],
+                      [Utils getLocalizedStringFrom:@"1fholdto"],
+                      [Utils getLocalizedStringFrom:@"srto"],
+                      [Utils getLocalizedStringFrom:@"slto"],
+                      [Utils getLocalizedStringFrom:@"1f2tto"],
+                      [Utils getLocalizedStringFrom:@"2f2tto"],
+                      [Utils getLocalizedStringFrom:@"2fupto"],
+                      [Utils getLocalizedStringFrom:@"1fdto"],
                       nil];
     }
     return _helpsToDo;
@@ -77,7 +78,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [CHTUtil getLocalizedString:@"Gestures Help"];
+    self.navigationItem.title = [Utils getLocalizedStringFrom:@"Gestures Help"];
     [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:nil];
     self.timerTheme = [CHTTheme getTimerTheme];
     // Uncomment the following line to preserve selection between presentations.
@@ -150,7 +151,7 @@
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([CHTUtil getDevice] == DEVICE_PHONE) {
+    if ([Utils getDevice] == ZDevicePhone) {
         return 60;
     } else {
         return 80;

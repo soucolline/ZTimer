@@ -8,14 +8,13 @@
 
 #import "CHTStatsViewController.h"
 #import "CHTTheme.h"
-#import "CHTSettings.h"
-#import "CHTUtil.h"
 #import "CHTSession.h"
 #import "CHTSessionManager.h"
 #import "CHTOneStat.h"
 #import "CHTStatDetailViewController.h"
 #import "CHTSessionViewController.h"
 #import "CHTSolveDetailViewController.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTStatsViewController ()
 @property (nonatomic, strong) CHTSession *session;
@@ -55,7 +54,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [CHTUtil getLocalizedString:@"Stats"];
+    self.navigationItem.title = [Utils getLocalizedStringFrom:@"Stats"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sessions.png"] style:UIBarButtonItemStylePlain target:self action:@selector(presentSessionView)];
 }
 
@@ -93,7 +92,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     CHTOneStat *oneStats = [self.stats objectAtIndex:indexPath.row];
     //NSLog(@"Stat: %@, detail %@",oneStats.statType, oneStats.statValue);
-    cell.textLabel.text = [CHTUtil getLocalizedString:oneStats.statType];
+    cell.textLabel.text = [Utils getLocalizedStringFrom:oneStats.statType];
     cell.detailTextLabel.text = oneStats.statValue;
     if (indexPath.row == 0) {
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -110,7 +109,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if ([self.session.sessionName isEqualToString:@"main session"]) {
-        return [CHTUtil getLocalizedString:@"main session"];
+        return [Utils getLocalizedStringFrom:@"main session"];
     } else
         return self.session.sessionName;
 }
@@ -125,7 +124,7 @@
         return;
     }
     CHTSessionViewController *sessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionManage"];
-    if ([CHTUtil getDevice] == DEVICE_PAD) {
+    if ([Utils getDevice] == ZDevicePad) {
         self.popoverController = [[UIPopoverController alloc] initWithContentViewController:sessionViewController];
         self.popoverController.delegate = self;
         [self.popoverController presentPopoverFromBarButtonItem:self.navigationItem.leftBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];

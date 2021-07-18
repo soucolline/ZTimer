@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CHTSessionManager.h"
 #import "CHTTheme.h"
-#import "CHTSettings.h"
-#import "CHTUtil.h"
 #import "CHTEditSessionViewController.h"
 
 @interface CHTSessionViewController : UITableViewController <UIActionSheetDelegate>
