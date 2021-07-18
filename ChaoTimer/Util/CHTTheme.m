@@ -7,6 +7,7 @@
 //
 
 #import "CHTTheme.h"
+#import "ChaoTimer-Swift.h"
 
 @implementation CHTTheme
 @synthesize myTheme;
@@ -105,19 +106,19 @@
 + (NSString *) getThemeName: (Theme)theme {
     switch (theme) {
         case THEME_BLUE:
-            return [CHTUtil getLocalizedString:@"theme blue"];
+            return [Utils getLocalizedStringFrom:@"theme blue"];
         case THEME_WHITE:
-            return [CHTUtil getLocalizedString:@"theme white"];
+            return [Utils getLocalizedStringFrom:@"theme white"];
         case THEME_RED:
-            return [CHTUtil getLocalizedString:@"theme red"];
+            return [Utils getLocalizedStringFrom:@"theme red"];
         case THEME_GREEN:
-            return [CHTUtil getLocalizedString:@"theme green"];
+            return [Utils getLocalizedStringFrom:@"theme green"];
         case THEME_YELLOW:
-            return [CHTUtil getLocalizedString:@"theme yellow"];
+            return [Utils getLocalizedStringFrom:@"theme yellow"];
         case THEME_BLACK:
-            return [CHTUtil getLocalizedString:@"theme black"];
+            return [Utils getLocalizedStringFrom:@"theme black"];
         case THEME_PINK:
-            return [CHTUtil getLocalizedString:@"theme pink"];
+            return [Utils getLocalizedStringFrom:@"theme pink"];
     }
 }
 
@@ -126,11 +127,11 @@
 }
 
 - (void) save {
-    [CHTSettings saveInt:myTheme forKey:@"timerTheme"];
+    [[[Settings alloc] init] saveWithInt:myTheme forKey:@"timerTheme"];
 }
 
 + (CHTTheme *) getTimerTheme {
-    return [self initWithTheme:[CHTSettings intForKey:@"timerTheme"]];
+    return [self initWithTheme:[[[Settings alloc] init] intForKey:@"timerTheme"]];
     //return [self initWithTheme:THEME_YELLOW];
 }
 
@@ -186,7 +187,7 @@
 
 + (UIFont *) font: (Font_Style)style iphoneSize:(CGFloat)iphoneSize ipadSize:(CGFloat)ipadSize
 {
-    if ([CHTUtil getDevice] == DEVICE_PHONE) {
+    if ([Utils getDevice] == ZDevicePhone) {
         switch (style) {
             case FONT_BOLD:
                 return [UIFont fontWithName:@"Avenir-Medium" size:iphoneSize];

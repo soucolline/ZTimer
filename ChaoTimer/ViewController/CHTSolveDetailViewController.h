@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CHTTheme.h"
-#import "CHTSettings.h"
-#import "CHTUtil.h"
 #import "CHTSolve.h"
 
 @interface CHTSolveDetailViewController : UITableViewController<UIActionSheetDelegate> {

@@ -8,12 +8,12 @@
 
 #import "CHTStatDetailViewController.h"
 #import "CHTTheme.h"
-#import "CHTSettings.h"
-#import "CHTUtil.h"
 #import "CHTSession.h"
 #import "CHTSessionManager.h"
 #import "CHTOneStat.h"
 #import "CHTSolveDetailViewController.h"
+#import "ChaoTimer-Swift.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTStatDetailViewController ()
 @property (nonatomic, strong) CHTSolve *best, *worst;
@@ -43,13 +43,13 @@ int solveDetailDisplay;
 }
 
 - (int)solveOrder {
-    return [CHTSettings intForKey:@"solveOrder"];
+    return [[[Settings alloc] init] intForKey:@"solveOrder"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [CHTUtil getLocalizedString:@"Detail"];
+    self.navigationItem.title = [Utils getLocalizedStringFrom:@"Detail"];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.timerTheme = [CHTTheme getTimerTheme];
 }
@@ -60,7 +60,7 @@ int solveDetailDisplay;
     [super viewWillAppear:animated];
     [self getBestAndWorst];
     [self.tableView reloadData];
-    solveDetailDisplay = [CHTSettings intForKey:@"solveDetailDisplay"];
+    solveDetailDisplay = [[[Settings alloc] init] intForKey:@"solveDetailDisplay"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,14 +98,14 @@ int solveDetailDisplay;
         case 0:
         {
             if (indexPath.row == 0) {
-                [cell.textLabel setText:[CHTUtil getLocalizedString:self.stat.statType]];
+                [cell.textLabel setText:[Utils getLocalizedStringFrom:self.stat.statType]];
                 [cell.detailTextLabel setText:self.stat.statValue];
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-                NSArray *solveOrders = [[NSArray alloc] initWithObjects:[CHTUtil getLocalizedString:@"↓"], [CHTUtil getLocalizedString:@"↑"], nil];
+                NSArray *solveOrders = [[NSArray alloc] initWithObjects:[Utils getLocalizedStringFrom:@"↓"], [Utils getLocalizedStringFrom:@"↑"], nil];
                 UISegmentedControl *solveOrderSegment = [[UISegmentedControl alloc] initWithItems:solveOrders];
                 
                 [solveOrderSegment setTintColor:[self.timerTheme getTintColor]];
-                int order = [CHTSettings intForKey:@"solveOrder"];
+                int order = [[[Settings alloc] init] intForKey:@"solveOrder"];
                 [solveOrderSegment setSelectedSegmentIndex:order];
                 [solveOrderSegment addTarget:self action:@selector(solveOrderSegmentChange:) forControlEvents:UIControlEventValueChanged];
                 cell.accessoryView = solveOrderSegment;
@@ -176,12 +176,12 @@ int solveDetailDisplay;
     switch (section) {
         case 0:
             if ([self.session.sessionName isEqualToString:@"main session"]) {
-                return [CHTUtil getLocalizedString:@"main session"];
+                return [Utils getLocalizedStringFrom:@"main session"];
             } else
                 return self.session.sessionName;
             break;
         case 1:
-            return [CHTUtil getLocalizedString:@"solve list"];
+            return [Utils getLocalizedStringFrom:@"solve list"];
         default:
             return @"";
             break;
@@ -380,7 +380,7 @@ int solveDetailDisplay;
 - (IBAction)solveOrderSegmentChange:(id)sender {
     NSLog(@"solveOrderSegmentChange");
     UISegmentedControl *segCtrl = (UISegmentedControl *)sender;
-    [CHTSettings saveInt:segCtrl.selectedSegmentIndex forKey:@"solveOrder"];
+    [[[Settings alloc] init] saveWithInt:segCtrl.selectedSegmentIndex forKey:@"solveOrder"];
     [self reload];
 }
 

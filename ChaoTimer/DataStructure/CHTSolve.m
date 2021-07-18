@@ -7,6 +7,7 @@
 //
 
 #import "CHTSolve.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTSolve()
 
@@ -32,7 +33,7 @@
 }
 
 - (NSString *) toString {
-    NSString *str = [CHTUtil convertTimeFromMsecondToString:self.timeAfterPenalty];
+    NSString *str = [Utils convertTimeFromMsecondToStringWithMsecond:self.timeAfterPenalty];
     if (penalty == PENALTY_PLUS_2) {
         str = [str stringByAppendingString:@"+"];
     } else if (penalty == PENALTY_DNF) {

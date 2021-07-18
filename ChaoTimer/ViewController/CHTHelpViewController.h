@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CHTUtil.h"
 #import "CHTTheme.h"
 
 @interface CHTHelpViewController : UITableViewController

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CHTTheme.h"
-#import "CHTUtil.h"
 
 @interface CHTThemeViewController : UITableViewController
 @property (nonatomic, strong) NSMutableArray *themes;

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "CHTScramble.h"
-#import "CHTUtil.h"
 
 typedef enum penaltyType {
     PENALTY_NO_PENALTY = 0,

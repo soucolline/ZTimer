@@ -8,6 +8,7 @@
 
 #import "CHTScramblePickerView.h"
 #import "CHTScrambler.h"
+#import "ChaoTimer-Swift.h"
 
 #define componentCount 2
 #define typeComponent 0
@@ -42,7 +43,7 @@
     //self = [self initWithParentView:[UIApplication sharedApplication].keyWindow.subviews.lastObject];
     if (self) {
         [self addPickerView];
-        self.buttonTitles = [NSMutableArray arrayWithObjects:[CHTUtil getLocalizedString:@"cancel"], [CHTUtil getLocalizedString:@"done"], nil];
+        self.buttonTitles = [NSMutableArray arrayWithObjects:[Utils getLocalizedStringFrom:@"cancel"], [Utils getLocalizedStringFrom:@"done"], nil];
     }
     return self;
 }
@@ -57,7 +58,7 @@
     //self.types = [self.scrType allKeys];
     NSString *select = [self.types objectAtIndex:0];
     self.subsets = [self.scrType objectForKey:select];
-    if ([CHTUtil getDevice] == DEVICE_PHONE) {
+    if ([Utils getDevice] == ZDevicePhone) {
         self.myPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 270, 300)];
     } else {
         self.myPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
@@ -101,13 +102,13 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     if (component == typeComponent) {
-        if ([CHTUtil getDevice] == DEVICE_PHONE) {
+        if ([Utils getDevice] == ZDevicePhone) {
             return typeComponentWidth;
         } else {
             return typeComponentWidthPad;
         }
     } else {
-        if ([CHTUtil getDevice] == DEVICE_PHONE) {
+        if ([Utils getDevice] == ZDevicePhone) {
             return subsetComponentWidth;
         } else {
             return subsetComponentWidthPad;
@@ -117,7 +118,7 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
-    if ([CHTUtil getDevice] == DEVICE_PHONE) {
+    if ([Utils getDevice] == ZDevicePhone) {
         return rowHeight;
     } else {
         return rowHeightPad;

@@ -7,6 +7,7 @@
 //
 
 #import "CHTSolveDetailViewController.h"
+#import "ChaoTimer-Swift.h"
 
 #define FONT_SIZE 13.0f
 
@@ -29,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [CHTUtil getLocalizedString:@"scramble"];
+    self.navigationItem.title = [Utils getLocalizedStringFrom:@"scramble"];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayActionSheet)];
 }
 
@@ -63,7 +64,7 @@
             [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:17.0f ipadSize:17.0f]];
             [cell.textLabel setText:[self.solve toString]];
             if (self.solve.penalty != PENALTY_NO_PENALTY) {
-                [cell.detailTextLabel setText:[NSString stringWithFormat:@"(%@)", [CHTUtil convertTimeFromMsecondToString:self.solve.timeBeforePenalty]]];
+                [cell.detailTextLabel setText:[NSString stringWithFormat:@"(%@)", [Utils convertTimeFromMsecondToStringWithMsecond:self.solve.timeBeforePenalty]]];
             } else {
                 [cell.detailTextLabel setText:@""];
             }
@@ -105,23 +106,23 @@
             return 44.0f;
         case 3:
             text = self.solve.scramble.scramble;
-            return [CHTUtil heightOfContent:text font:[CHTTheme font:FONT_REGULAR iphoneSize:FONT_SIZE ipadSize:FONT_SIZE + 4]];
+        return [[[Utils alloc] init] heightOfContentWithContent:text font:[CHTTheme font:FONT_REGULAR iphoneSize:FONT_SIZE ipadSize:FONT_SIZE + 4]];
         default:
             return 44.0f;
     }
 }
 
 - (void) displayActionSheet {
-    if ([CHTUtil getDevice] == DEVICE_PAD) {
+    if ([Utils getDevice] == ZDevicePad) {
         if (shareSheet.visible) {
             [shareSheet dismissWithClickedButtonIndex:-1 animated:YES];
         } else {
-            shareSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:[CHTUtil getLocalizedString: @"cancel"] destructiveButtonTitle:nil otherButtonTitles:[CHTUtil getLocalizedString: @"copy scramble"], nil];
+            shareSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom: @"cancel"] destructiveButtonTitle:nil otherButtonTitles:[Utils getLocalizedStringFrom: @"copy scramble"], nil];
             [shareSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
             [shareSheet showFromBarButtonItem:self.navigationItem.rightBarButtonItem animated:YES];
         }
     } else {
-        shareSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:[CHTUtil getLocalizedString: @"cancel"] destructiveButtonTitle:nil otherButtonTitles:[CHTUtil getLocalizedString: @"copy scramble"], nil];
+        shareSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom: @"cancel"] destructiveButtonTitle:nil otherButtonTitles:[Utils getLocalizedStringFrom: @"copy scramble"], nil];
         [shareSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
         [shareSheet showInView:[UIApplication sharedApplication].keyWindow];
     }
@@ -144,7 +145,7 @@
     pasteboard.string = textToPaste;
     NSLog(@"%@", textToPaste);
     
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:nil message:[CHTUtil getLocalizedString: @"copy scramble success"] delegate:self cancelButtonTitle:[CHTUtil getLocalizedString: @"OK"] otherButtonTitles:nil];
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:nil message:[Utils getLocalizedStringFrom: @"copy scramble success"] delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom: @"OK"] otherButtonTitles:nil];
     [alertView show];
 }
 

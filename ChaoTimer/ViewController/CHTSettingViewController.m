@@ -7,9 +7,8 @@
 //
 
 #import "CHTSettingViewController.h"
-#import "CHTUtil.h"
-#import "CHTSettings.h"
 #import "CHTTheme.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTSettingViewController ()
 @property(nonatomic, strong) UILabel *fTime;
@@ -33,9 +32,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [CHTUtil getLocalizedString:@"setting"];
+    self.navigationItem.title = [Utils getLocalizedStringFrom:@"setting"];
     self.timerTheme = [CHTTheme getTimerTheme];
-    if ([CHTUtil getDevice] == DEVICE_PAD) {
+    if ([Utils getDevice] == ZDevicePad) {
         fTime = [[UILabel alloc]initWithFrame:CGRectMake(16, 25, 200, 15)];
     } else {
         fTime = [[UILabel alloc]initWithFrame:CGRectMake(16, 25, 200, 15)];
@@ -44,10 +43,10 @@
     fTime.font = [CHTTheme font:FONT_LIGHT iphoneSize:13.0f ipadSize:13.0f];
     fTime.backgroundColor = [UIColor clearColor];
     fTime.textColor = [UIColor darkGrayColor];
-    int time = [CHTSettings intForKey:@"freezeTime"];
+    int time = [[[Settings alloc] init] intForKey:@"freezeTime"];
     fTime.text = [NSString stringWithFormat:@"%0.1f s", (double)time*0.01];
     if ([fTime.text isEqualToString:@"0.0 s"]) {
-        fTime.text = [fTime.text stringByAppendingString:[CHTUtil getLocalizedString:@"no other gesture"]];
+        fTime.text = [fTime.text stringByAppendingString:[Utils getLocalizedStringFrom:@"no other gesture"]];
     }
 }
 
@@ -90,11 +89,11 @@
             switch (indexPath.row) {
                 case 0:
                 {
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"wca inspection"];
-                    cell.detailTextLabel.text = [CHTUtil getLocalizedString:@"15 sec"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"wca inspection"];
+                    cell.detailTextLabel.text = [Utils getLocalizedStringFrom:@"15 sec"];
                     UISwitch *wcaInsSwitch = [[UISwitch alloc] init];
                     [wcaInsSwitch addTarget:self action:@selector(wcaSwitchAction:) forControlEvents:UIControlEventValueChanged];
-                    if ([CHTSettings boolForKey: @"wcaInspection"] == YES) {
+                    if ([[[Settings alloc] init] boolForKey: @"wcaInspection"] == YES) {
                         [wcaInsSwitch setOn:YES];
                     }
                     else {
@@ -106,11 +105,11 @@
                 }
                 case 1:
                 {
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"knockToStop"];
-                    cell.detailTextLabel.text = [CHTUtil getLocalizedString:@"knockToStopDetail"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"knockToStop"];
+                    cell.detailTextLabel.text = [Utils getLocalizedStringFrom:@"knockToStopDetail"];
                     UISwitch *knockSwitch = [[UISwitch alloc] init];
                     [knockSwitch addTarget:self action:@selector(knockSwitchAction:) forControlEvents:UIControlEventValueChanged];
-                    if ([CHTSettings boolForKey: @"knockToStop"] == YES) {
+                    if ([[[Settings alloc] init] boolForKey: @"knockToStop"] == YES) {
                         [knockSwitch setOn:YES];
                     }
                     else {
@@ -122,7 +121,7 @@
                 }
                 case 2:
                 {
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"sensitivity"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"sensitivity"];
                     [cell.detailTextLabel setText:@""];
                     UISlider *sensSlider = [[UISlider alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
                     [sensSlider setTintColor:[self.timerTheme getTintColor]];
@@ -130,16 +129,16 @@
                     sensSlider.minimumValue = 0;
                     sensSlider.maximumValue = 110;
                     [sensSlider addTarget:self action:@selector(sensSliderChanged:) forControlEvents:UIControlEventValueChanged];
-                    int sens = [CHTSettings intForKey:@"knockSensitivity"];
-                    if (![CHTSettings hasObjectForKey:@"knockSensitivity"]) {
+                    int sens = [[[Settings alloc] init] intForKey:@"knockSensitivity"];
+                    if (![[[Settings alloc] init] hasObjectForKey:@"knockSensitivity"]) {
                         sens = 60;
-                        [CHTSettings saveInt:sens forKey:@"knockSensitivity"];
+                        [[[Settings alloc] init] saveWithInt:sens forKey:@"knockSensitivity"];
                     }
                     sensSlider.value = sens;
                     [cell addSubview:fTime];
                     cell.accessoryView = sensSlider;
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                    if ([CHTSettings boolForKey: @"knockToStop"] == NO) {
+                    if ([[[Settings alloc] init] boolForKey: @"knockToStop"] == NO) {
                         cell.userInteractionEnabled = NO;
                         cell.textLabel.enabled = NO;
                         ((UISwitch *)(cell.accessoryView)).enabled = NO;
@@ -155,7 +154,7 @@
                 }
                 case 3:
                 {
-                    cell.textLabel.text = [CHTUtil getLocalizedString:@"start freeze"];
+                    cell.textLabel.text = [Utils getLocalizedStringFrom:@"start freeze"];
                     [cell.detailTextLabel setText:@" "];
                     UISlider *freezeTime = [[UISlider alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
                     [freezeTime setTintColor:[self.timerTheme getTintColor]];
@@ -163,7 +162,7 @@
                     freezeTime.minimumValue = 10;
                     freezeTime.maximumValue = 100;
                     [freezeTime addTarget:self action:@selector(freezeTimeSliderChanged:) forControlEvents:UIControlEventValueChanged];
-                    int time = [CHTSettings intForKey:@"freezeTime"];
+                    int time = [[[Settings alloc] init] intForKey:@"freezeTime"];
                     freezeTime.value = time;
                     [cell addSubview:fTime];
                     cell.accessoryView = freezeTime;
@@ -178,12 +177,12 @@
             switch (indexPath.row) {
                 case 0:
                 {
-                    [cell.textLabel setText:[CHTUtil getLocalizedString:@"newest time on"]];
-                    NSArray *solveOrders = [[NSArray alloc] initWithObjects:[CHTUtil getLocalizedString:@"bottom"], [CHTUtil getLocalizedString:@"top"], nil];
+                    [cell.textLabel setText:[Utils getLocalizedStringFrom:@"newest time on"]];
+                    NSArray *solveOrders = [[NSArray alloc] initWithObjects:[Utils getLocalizedStringFrom:@"bottom"], [Utils getLocalizedStringFrom:@"top"], nil];
                     UISegmentedControl *solveOrderSegment = [[UISegmentedControl alloc] initWithItems:solveOrders];
                     
                     [solveOrderSegment setTintColor:[self.timerTheme getTintColor]];
-                    int order = [CHTSettings intForKey:@"solveOrder"];
+                    int order = [[[Settings alloc] init] intForKey:@"solveOrder"];
                     [solveOrderSegment setSelectedSegmentIndex:order];
                     //[solveOrderSegment setFrame:CGRectMake(0, 0, 180, 30)];
                     [solveOrderSegment addTarget:self action:@selector(solveOrderSegmentChange:) forControlEvents:UIControlEventValueChanged];
@@ -194,13 +193,13 @@
                     break;
                 case 1:
                 {
-                    [cell.textLabel setText:[CHTUtil getLocalizedString:@"solve subtitle"]];
-                    NSArray *solveDetails = [[NSArray alloc] initWithObjects:[CHTUtil getLocalizedString:@"time"], [CHTUtil getLocalizedString:@"scrStr"], [CHTUtil getLocalizedString:@"type"], nil];
+                    [cell.textLabel setText:[Utils getLocalizedStringFrom:@"solve subtitle"]];
+                    NSArray *solveDetails = [[NSArray alloc] initWithObjects:[Utils getLocalizedStringFrom:@"time"], [Utils getLocalizedStringFrom:@"scrStr"], [Utils getLocalizedStringFrom:@"type"], nil];
                     UISegmentedControl *solveDetailSegment = [[UISegmentedControl alloc] initWithItems:solveDetails];
                     //[solveDetailSegment setFrame:CGRectMake(0, 0, 180, 30)];
                     [solveDetailSegment addTarget:self action:@selector(solveDetailSegmentChange:) forControlEvents:UIControlEventValueChanged];
                     [solveDetailSegment setTintColor:[self.timerTheme getTintColor]];
-                    int detail = [CHTSettings intForKey:@"solveDetailDisplay"];
+                    int detail = [[[Settings alloc] init] intForKey:@"solveDetailDisplay"];
                     [solveDetailSegment setSelectedSegmentIndex:detail];
                     cell.accessoryView = solveDetailSegment;
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -222,9 +221,9 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return [CHTUtil getLocalizedString:@"Timing"];
+            return [Utils getLocalizedStringFrom:@"Timing"];
         case 1:
-            return [CHTUtil getLocalizedString:@"Stats"];
+            return [Utils getLocalizedStringFrom:@"Stats"];
         default:
             return @"";
             break;
@@ -234,9 +233,9 @@
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return [CHTUtil getLocalizedString:@"TimingFooter"];
+            return [Utils getLocalizedStringFrom:@"TimingFooter"];
         case 1:
-            return [CHTUtil getLocalizedString:@"StatsFooter"];
+            return [Utils getLocalizedStringFrom:@"StatsFooter"];
         default:
             return @"";
             break;
@@ -248,41 +247,41 @@
     int progressAsInt = (int)roundf(slider.value);
     fTime.text = [NSString stringWithFormat:@"%0.1f s", (double)progressAsInt*0.01];
     if ([fTime.text isEqualToString:@"0.0 s"]) {
-        fTime.text = [fTime.text stringByAppendingString:[CHTUtil getLocalizedString:@"no other gesture"]];
+        fTime.text = [fTime.text stringByAppendingString:[Utils getLocalizedStringFrom:@"no other gesture"]];
     }
-    [CHTSettings saveInt:progressAsInt forKey:@"freezeTime"];
+    [[[Settings alloc] init] saveWithInt:progressAsInt forKey:@"freezeTime"];
 }
 
 - (IBAction)wcaSwitchAction:(id)sender {
     UISwitch *switchButton = (UISwitch*)sender;
     BOOL isButtonOn = [switchButton isOn];
     if (isButtonOn) {
-        [CHTSettings saveBool:YES forKey:@"wcaInspection"];
+        [[[Settings alloc] init] saveWithBool:YES forKey:@"wcaInspection"];
     }else {
-        [CHTSettings saveBool:NO forKey:@"wcaInspection"];
+        [[[Settings alloc] init] saveWithBool:NO forKey:@"wcaInspection"];
     }
 }
 
 - (IBAction)solveOrderSegmentChange:(id)sender {
     UISegmentedControl *segCtrl = (UISegmentedControl *)sender;
-    [CHTSettings saveInt:segCtrl.selectedSegmentIndex forKey:@"solveOrder"];
+    [[[Settings alloc] init] saveWithInt:segCtrl.selectedSegmentIndex forKey:@"solveOrder"];
 }
 
 - (IBAction)solveDetailSegmentChange:(id)sender {
     UISegmentedControl *segCtrl = (UISegmentedControl *)sender;
-    [CHTSettings saveInt:segCtrl.selectedSegmentIndex forKey:@"solveDetailDisplay"];
+    [[[Settings alloc] init] saveWithInt:segCtrl.selectedSegmentIndex forKey:@"solveDetailDisplay"];
 }
 
 - (IBAction)knockSwitchAction:(id)sender {
     UISwitch *switchButton = (UISwitch*)sender;
     BOOL isButtonOn = [switchButton isOn];
     if (isButtonOn) {
-        [CHTSettings saveBool:YES forKey:@"knockToStop"];
+        [[[Settings alloc] init] saveWithBool:YES forKey:@"knockToStop"];
         sensCell.userInteractionEnabled = YES;
         sensCell.textLabel.enabled = YES;
         ((UISwitch *)(sensCell.accessoryView)).enabled = YES;
     }else {
-        [CHTSettings saveBool:NO forKey:@"knockToStop"];
+        [[[Settings alloc] init] saveWithBool:NO forKey:@"knockToStop"];
         sensCell.userInteractionEnabled = NO;
         sensCell.textLabel.enabled = NO;
         ((UISwitch *)(sensCell.accessoryView)).enabled = NO;
@@ -292,6 +291,6 @@
 - (IBAction)sensSliderChanged:(id)sender {
     UISlider *slider = (UISlider *)sender;
     int progressAsInt = (int)roundf(slider.value);
-    [CHTSettings saveInt:progressAsInt forKey:@"knockSensitivity"];
+    [[[Settings alloc] init] saveWithInt:progressAsInt forKey:@"knockSensitivity"];
 }
 @end

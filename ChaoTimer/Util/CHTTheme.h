@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CHTUtil.h"
-#import "CHTSettings.h"
 
 typedef enum theme {
     THEME_BLUE = 0,

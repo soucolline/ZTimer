@@ -7,16 +7,15 @@
 //
 
 #import "CHTTimingViewController.h"
-#import "CHTSettings.h"
 #import "CHTSession.h"
 #import "CHTScramble.h"
 #import "CHTSolve.h"
 #import "CHTSessionManager.h"
-#import "CHTUtil.h"
 #import "CHTTheme.h"
 #import "CHTScrambler.h"
 #import <mach/mach_time.h>
 #import <CoreMotion/CoreMotion.h>
+#import "ChaoTimer-Swift.h"
 
 #define TAG_ALERT_DELETE_LAST_SOLVE 1
 #define TAG_ALERT_CLEAR_SESSION 2
@@ -82,21 +81,20 @@ BOOL knockToStop;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [CHTSettings initUserDefaults];
     UIApplication *myApp = [UIApplication sharedApplication];
     [myApp setIdleTimerDisabled:YES];
     [myApp setStatusBarHidden:NO withAnimation:NO];
     
     self.longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(startTimer:)];
     [self.longPressGesture setAllowableMovement:50];
-    [self.longPressGesture setMinimumPressDuration:[CHTSettings getFreezeTime] * 0.01];
+    [self.longPressGesture setMinimumPressDuration:[[[Settings alloc] init] getFreezeTime] * 0.01];
     [self.view addGestureRecognizer:self.longPressGesture];
     [self setupGestures];
     self.timerStatus = TIMER_IDLE;
-    [[[[[self tabBarController] tabBar] items] objectAtIndex:0] setTitle:[CHTUtil getLocalizedString:@"Timing"]];
-    [[[[[self tabBarController] tabBar] items] objectAtIndex:1] setTitle:[CHTUtil getLocalizedString:@"Stats"]];
-    [[[[[self tabBarController] tabBar] items] objectAtIndex:2] setTitle:[CHTUtil getLocalizedString:@"Help"]];
-    [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setTitle:[CHTUtil getLocalizedString:@"More"]];
+    [[[[[self tabBarController] tabBar] items] objectAtIndex:0] setTitle:[Utils getLocalizedStringFrom:@"Timing"]];
+    [[[[[self tabBarController] tabBar] items] objectAtIndex:1] setTitle:[Utils getLocalizedStringFrom:@"Stats"]];
+    [[[[[self tabBarController] tabBar] items] objectAtIndex:2] setTitle:[Utils getLocalizedStringFrom:@"Help"]];
+    [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setTitle:[Utils getLocalizedStringFrom:@"More"]];
     
     self.session = [[CHTSessionManager load] loadCurrentSession];
     scrType = self.session.currentType;
@@ -113,11 +111,11 @@ BOOL knockToStop;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.longPressGesture setMinimumPressDuration:[CHTSettings getFreezeTime] * 0.01];
-    if ([CHTUtil versionUpdateds]) {
-        UIAlertView *updateAlert = [[UIAlertView alloc] initWithTitle:[CHTUtil getLocalizedString:@"appUpdated"] message:[CHTUtil getLocalizedString:@"appUpdatedDetail"] delegate:self cancelButtonTitle:[CHTUtil getLocalizedString:@"OK" ] otherButtonTitles:nil];
+    [self.longPressGesture setMinimumPressDuration:[[[Settings alloc] init] getFreezeTime] * 0.01];
+    if ([[[Utils alloc] init] versionUpdateds]) {
+        UIAlertView *updateAlert = [[UIAlertView alloc] initWithTitle:[Utils getLocalizedStringFrom:@"appUpdated"] message:[Utils getLocalizedStringFrom:@"appUpdatedDetail"] delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom:@"OK" ] otherButtonTitles:nil];
         [updateAlert show];
-        [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[CHTUtil getLocalizedString:@"new"]];
+        [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[Utils getLocalizedStringFrom:@"new"]];
     }
 }
 
@@ -133,10 +131,10 @@ BOOL knockToStop;
         oldScrType = self.session.currentType;
         oldScrSubType = self.session.currentSubType;
     }
-    wcaInspection = [CHTSettings boolForKey:@"wcaInspection"];
-    solvedTimes = [CHTSettings intForKey:@"solvedTimes"];
-    knockToStop = [CHTSettings boolForKey:@"knockToStop"];
-    threshold = [CHTSettings intForKey:@"knockSensitivity"];
+    wcaInspection = [[[Settings alloc] init] boolForKey:@"wcaInspection"];
+    solvedTimes = [[[Settings alloc] init] intForKey:@"solvedTimes"];
+    knockToStop = [[[Settings alloc] init] boolForKey:@"knockToStop"];
+    threshold = [[[Settings alloc] init] intForKey:@"knockSensitivity"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -264,7 +262,7 @@ BOOL knockToStop;
     mach_timebase_info_data_t info;
     mach_timebase_info(&info);
     self.time = (timeNow - self.timeWhenTimerStart) * info.numer / info.denom / 1000000;
-    NSString *timeToDisplay = [CHTUtil convertTimeFromMsecondToString:self.time];
+    NSString *timeToDisplay = [Utils convertTimeFromMsecondToStringWithMsecond:self.time];
     [self.timeLabel setText:timeToDisplay];
 }
 
@@ -411,7 +409,7 @@ BOOL knockToStop;
     NSLog(@"swipe left.");
     if (self.timerStatus != TIMER_TIMING && self.timerStatus != TIMER_INSPECT && self.session.numberOfSolves > 0) {
         if (swipeGesture.direction == UISwipeGestureRecognizerDirectionLeft) {
-            UIAlertView *deleteLastTimeAlert = [[UIAlertView alloc] initWithTitle:[CHTUtil getLocalizedString:@"delete last"] message:[CHTUtil getLocalizedString:@"sure?"] delegate:self cancelButtonTitle:[CHTUtil getLocalizedString:@"no"]otherButtonTitles:[CHTUtil getLocalizedString:@"yes"], nil];
+            UIAlertView *deleteLastTimeAlert = [[UIAlertView alloc] initWithTitle:[Utils getLocalizedStringFrom:@"delete last"] message:[Utils getLocalizedStringFrom:@"sure?"] delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom:@"no"]otherButtonTitles:[Utils getLocalizedStringFrom:@"yes"], nil];
             [deleteLastTimeAlert setTag:TAG_ALERT_DELETE_LAST_SOLVE];
             [deleteLastTimeAlert show];
         }
@@ -421,7 +419,7 @@ BOOL knockToStop;
 - (IBAction)resetSession:(UITapGestureRecognizer *)tapGesture{
     NSLog(@"Clear Timer.");
     if (self.timerStatus != TIMER_TIMING && self.timerStatus != TIMER_INSPECT && self.session.numberOfSolves > 0) {
-        UIAlertView *clearTimeAlert = [[UIAlertView alloc] initWithTitle:[CHTUtil getLocalizedString:@"reset session"] message:[CHTUtil getLocalizedString:@"sure?"] delegate:self cancelButtonTitle:[CHTUtil getLocalizedString:@"no"]otherButtonTitles:[CHTUtil getLocalizedString:@"yes"], nil];
+        UIAlertView *clearTimeAlert = [[UIAlertView alloc] initWithTitle:[Utils getLocalizedStringFrom:@"reset session"] message:[Utils getLocalizedStringFrom:@"sure?"] delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom:@"no"]otherButtonTitles:[Utils getLocalizedStringFrom:@"yes"], nil];
         [clearTimeAlert setTag:TAG_ALERT_CLEAR_SESSION];
         [clearTimeAlert show];
     }
@@ -430,7 +428,7 @@ BOOL knockToStop;
 - (IBAction)addPenalty:(UITapGestureRecognizer *)tapGesture {
     NSLog(@"add penalty.");
     if (self.session.numberOfSolves > 0 && ![self.timeLabel.text isEqualToString:@"Ready"] && self.timerStatus != TIMER_TIMING && self.timerStatus != TIMER_INSPECT && self.session.lastSolve.timeBeforePenalty != 2147483647) {
-        UIAlertView *addPenaltyAlert = [[UIAlertView alloc] initWithTitle:[CHTUtil getLocalizedString:@"penalty"] message:[CHTUtil getLocalizedString:@"this time was"] delegate:self cancelButtonTitle:[CHTUtil getLocalizedString:@"cancel"] otherButtonTitles:@"+2", @"DNF", [CHTUtil getLocalizedString:@"no penalty"] , nil];
+        UIAlertView *addPenaltyAlert = [[UIAlertView alloc] initWithTitle:[Utils getLocalizedStringFrom:@"penalty"] message:[Utils getLocalizedStringFrom:@"this time was"] delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom:@"cancel"] otherButtonTitles:@"+2", @"DNF", [Utils getLocalizedStringFrom:@"no penalty"] , nil];
         [addPenaltyAlert setTag:TAG_ALERT_ADD_PANELTY];
         [addPenaltyAlert show];
     }
@@ -449,7 +447,7 @@ BOOL knockToStop;
 - (IBAction)manuallyAddNewSolve:(id)sender {
     NSLog(@"Manually Add New Solve");
     if (self.timerStatus != TIMER_TIMING && self.timerStatus != TIMER_INSPECT) {
-        UIAlertView *manuallyAddAlert = [[UIAlertView alloc] initWithTitle:[CHTUtil getLocalizedString:@"manuallyAdd"] message:[CHTUtil getLocalizedString:@"originalTime"] delegate:self cancelButtonTitle:[CHTUtil getLocalizedString:@"cancel"] otherButtonTitles:[CHTUtil getLocalizedString:@"done"], nil];
+        UIAlertView *manuallyAddAlert = [[UIAlertView alloc] initWithTitle:[Utils getLocalizedStringFrom:@"manuallyAdd"] message:[Utils getLocalizedStringFrom:@"originalTime"] delegate:self cancelButtonTitle:[Utils getLocalizedStringFrom:@"cancel"] otherButtonTitles:[Utils getLocalizedStringFrom:@"done"], nil];
         [manuallyAddAlert setAlertViewStyle:UIAlertViewStylePlainTextInput];
         UITextField *timeInput = [manuallyAddAlert textFieldAtIndex:0];
         [timeInput setKeyboardType:UIKeyboardTypeDecimalPad];
@@ -600,22 +598,22 @@ BOOL knockToStop;
 
 - (void) checkRated {
     solvedTimes++;
-    BOOL ifRated = [CHTSettings boolForKey:@"ifRated"];
+    BOOL ifRated = [[[Settings alloc] init] boolForKey:@"ifRated"];
     if (solvedTimes >= 100) {
         solvedTimes = 0;
         if (!ifRated) {
             UIAlertView *rateAlert = [[UIAlertView alloc]
-                                      initWithTitle:[CHTUtil getLocalizedString:@"rateTitle" ]
-                                      message:[CHTUtil getLocalizedString:@"rateBody"]
+                                      initWithTitle:[Utils getLocalizedStringFrom:@"rateTitle" ]
+                                      message:[Utils getLocalizedStringFrom:@"rateBody"]
                                       delegate:self
-                                      cancelButtonTitle:[CHTUtil getLocalizedString:@"remind later"]
-                                      otherButtonTitles:[CHTUtil getLocalizedString:@"remind now"], [CHTUtil getLocalizedString:@"never remind"], nil];
+                                      cancelButtonTitle:[Utils getLocalizedStringFrom:@"remind later"]
+                                      otherButtonTitles:[Utils getLocalizedStringFrom:@"remind now"], [Utils getLocalizedStringFrom:@"never remind"], nil];
             [rateAlert setTag:TAG_ALERT_RATE_ME];
             [rateAlert show];
         }
     }
     NSLog(@"times: %d", solvedTimes);
-    [CHTSettings saveInt:solvedTimes forKey:@"solvedTimes"];
+    [[[Settings alloc] init] saveWithInt:solvedTimes forKey:@"solvedTimes"];
 }
 
 @end

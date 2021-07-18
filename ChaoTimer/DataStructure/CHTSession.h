@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "CHTSolve.h"
-#import "CHTUtil.h"
 
 @interface CHTSession : NSObject <NSCoding>
 @property (readonly) int numberOfSolves;

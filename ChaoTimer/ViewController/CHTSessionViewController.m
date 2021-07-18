@@ -7,6 +7,7 @@
 //
 
 #import "CHTSessionViewController.h"
+#import "ChaoTimer-Swift.h"
 
 @interface CHTSessionViewController ()
 @property NSMutableArray *buttons;
@@ -28,8 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [CHTUtil getLocalizedString:@"session"];
-    if ([CHTUtil getDevice] == DEVICE_PHONE) {
+    self.navigationItem.title = [Utils getLocalizedStringFrom:@"session"];
+    if ([Utils getDevice] == ZDevicePhone) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backToStatsView:)];
     }
     [self.navigationController setToolbarHidden:NO];
@@ -38,7 +39,7 @@
     [self.editButtonItem setAction:@selector(editBtnPressed)];
     [self.buttons addObject:self.editButtonItem];
     [self.buttons addObject:flexibleSpace];
-    UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithTitle:[CHTUtil getLocalizedString:@"new session"] style:UIBarButtonItemStylePlain target:self action:@selector(addNewSession:)];
+    UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithTitle:[Utils getLocalizedStringFrom:@"new session"] style:UIBarButtonItemStylePlain target:self action:@selector(addNewSession:)];
     [self.buttons addObject:newButton];
     [self setToolbarItems:self.buttons animated:NO];
     [self.tableView setAllowsSelectionDuringEditing:YES];
@@ -47,7 +48,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.sessionManager = [CHTSessionManager load];
-    if ([CHTUtil getDevice] == DEVICE_PAD) {
+    if ([Utils getDevice] == ZDevicePad) {
         [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
         [self.navigationController.navigationBar setTitleTextAttributes:@{
           NSFontAttributeName:[CHTTheme font:FONT_REGULAR iphoneSize:22.0f ipadSize:22.0f],
@@ -103,9 +104,9 @@
         case 0: {
             NSString *title = [self.sessionManager getStickySessionAt:indexPath.row];
             CHTSession *session = [CHTSessionManager loadSessionWithName:title];
-            NSString *subTitle = [NSString stringWithFormat:@"%@%d", [CHTUtil getLocalizedString:@"Number of solves: "], [session numberOfSolves]];
+            NSString *subTitle = [NSString stringWithFormat:@"%@%d", [Utils getLocalizedStringFrom:@"Number of solves: "], [session numberOfSolves]];
             if (indexPath.row == 0) {
-                cell.textLabel.text = [CHTUtil getLocalizedString:title];
+                cell.textLabel.text = [Utils getLocalizedStringFrom:title];
 
             } else
                 cell.textLabel.text = title;
@@ -123,7 +124,7 @@
         case 1: {
             NSString *title = [self.sessionManager getNormalSessionAt:indexPath.row];
             CHTSession *session = [CHTSessionManager loadSessionWithName:title];
-            NSString *subTitle = [NSString stringWithFormat:@"%@%d", [CHTUtil getLocalizedString:@"Number of solves: "], [session numberOfSolves]];
+            NSString *subTitle = [NSString stringWithFormat:@"%@%d", [Utils getLocalizedStringFrom:@"Number of solves: "], [session numberOfSolves]];
             cell.textLabel.text = title;
             cell.detailTextLabel.text = subTitle;
             cell.imageView.image = [UIImage imageNamed:@"session.png"];
@@ -289,10 +290,10 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return [CHTUtil getLocalizedString:@"stickySessions"];
+            return [Utils getLocalizedStringFrom:@"stickySessions"];
             break;
         case 1:
-            return [CHTUtil getLocalizedString:@"mySessions"];
+            return [Utils getLocalizedStringFrom:@"mySessions"];
             break;
         default:
             return @"";
@@ -302,7 +303,7 @@
 
 - (IBAction)addNewSession:(id)sender {
     CHTEditSessionViewController *newSessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"editSession"];
-    newSessionViewController.navigationItem.title = [CHTUtil getLocalizedString:@"new session"];
+    newSessionViewController.navigationItem.title = [Utils getLocalizedStringFrom:@"new session"];
     newSessionViewController.isNew = YES;
     [self.navigationController pushViewController:newSessionViewController animated:YES];
     
@@ -310,7 +311,7 @@
 
 - (void)editSession:(NSIndexPath *)indexPath {
     CHTEditSessionViewController *newSessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"editSession"];
-    newSessionViewController.navigationItem.title = [CHTUtil getLocalizedString:@"rename session"];
+    newSessionViewController.navigationItem.title = [Utils getLocalizedStringFrom:@"rename session"];
     newSessionViewController.isNew = NO;
     if (indexPath.section == 0) {
         newSessionViewController.oldSessionName = [self.sessionManager getStickySessionAt:indexPath.row];
