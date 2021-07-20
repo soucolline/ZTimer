@@ -8,14 +8,13 @@
 
 #import "CHTMoreViewController.h"
 
-#import "CHTTheme.h"
 #import "CHTThemeViewController.h"
 #import "CHTSettingViewController.h"
 #import "CHTLicenseViewController.h"
 #import "ChaoTimer-Swift.h"
 
 @interface CHTMoreViewController ()
-@property (nonatomic, strong) CHTTheme *timerTheme;
+@property (nonatomic, strong) Theme *timerTheme;
 @end
 
 @implementation CHTMoreViewController
@@ -54,7 +53,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.tableView reloadData];
-    self.timerTheme = [CHTTheme getTimerTheme];
+    self.timerTheme = [Theme getTimerTheme];
     [super viewWillAppear:animated];
 }
 
@@ -166,8 +165,8 @@
             break;
     }
     [cell.detailTextLabel setTextColor:[timerTheme getTintColor]];
-    [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:18.0f ipadSize:18.0f]];
-    [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:18.0f ipadSize:18.0f]];
+    [cell.textLabel setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:18.0f ipadSize:18.0f]];
+    [cell.detailTextLabel setFont:[Theme fontWithStyle:FontStyleLight iphoneSize:18.0f ipadSize:18.0f]];
     return cell;
 }
 
@@ -249,7 +248,7 @@
 - (IBAction) tellFriends {
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
-    [self.timerTheme setNavigationControllerTheme:mc.navigationController];
+    [self.timerTheme setNavigationControllerThemeWithController:mc.navigationController];
     [mc setSubject:[Utils getLocalizedStringFrom:@"mailSubject"]];
     [mc setMessageBody:[Utils getLocalizedStringFrom:@"mailBody"] isHTML:YES];
     [mc setModalPresentationStyle:UIModalPresentationFormSheet];
@@ -259,7 +258,7 @@
 - (IBAction) sendFeedback {
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
-    [self.timerTheme setNavigationControllerTheme:mc.navigationController];
+    [self.timerTheme setNavigationControllerThemeWithController:mc.navigationController];
     [mc setSubject:@"Feedback of ChaoTimer"];
     [mc setToRecipients:[NSArray arrayWithObjects:@"chaotimer.feedback@gmail.com", nil]];
     [mc setModalPresentationStyle:UIModalPresentationFormSheet];

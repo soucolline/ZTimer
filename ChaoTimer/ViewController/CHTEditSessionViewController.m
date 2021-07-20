@@ -77,7 +77,7 @@
     }
     myTextField.enablesReturnKeyAutomatically = YES;
     myTextField.delegate = self;
-    [myTextField setFont:[CHTTheme font:FONT_REGULAR iphoneSize:17.0f ipadSize:17.0f]];
+    [myTextField setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:17.0f ipadSize:17.0f]];
     [myTextField becomeFirstResponder];
     
     [cell addSubview:myTextField];

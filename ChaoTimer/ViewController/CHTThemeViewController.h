@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CHTTheme.h"
 
 @interface CHTThemeViewController : UITableViewController
 @property (nonatomic, strong) NSMutableArray *themes;

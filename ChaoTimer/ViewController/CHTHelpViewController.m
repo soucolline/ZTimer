@@ -10,7 +10,7 @@
 #import "ChaoTimer-Swift.h"
 
 @interface CHTHelpViewController ()
-@property (nonatomic, strong) CHTTheme *timerTheme;
+@property (nonatomic, strong) Theme *timerTheme;
 
 @end
 
@@ -80,7 +80,7 @@
     [super viewDidLoad];
     self.navigationItem.title = [Utils getLocalizedStringFrom:@"Gestures Help"];
     [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:nil];
-    self.timerTheme = [CHTTheme getTimerTheme];
+    self.timerTheme = [Theme getTimerTheme];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -93,7 +93,7 @@
     [super viewWillAppear:animated];
     [self becomeFirstResponder];
     UIApplication *myApp = [UIApplication sharedApplication];
-    if (self.timerTheme.myTheme == THEME_WHITE) {
+    if (self.timerTheme.getMyTheme == ThemeValueWhite) {
         [myApp setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     } else {
         [myApp setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
@@ -142,8 +142,8 @@
     cell.textLabel.text = [self.helpsToDo objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [self.helps objectAtIndex:indexPath.row];
     cell.imageView.image = [self.helpsImage objectAtIndex:indexPath.row];
-    [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:19.0f ipadSize:22.0f]];
-    [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:14.0f ipadSize:15.0f]];
+    [cell.textLabel setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:19.0f ipadSize:22.0f]];
+    [cell.detailTextLabel setFont:[Theme fontWithStyle:FontStyleLight iphoneSize:14.0f ipadSize:15.0f]];
     
     [cell.detailTextLabel setTextColor:[UIColor darkGrayColor]];
     return cell;

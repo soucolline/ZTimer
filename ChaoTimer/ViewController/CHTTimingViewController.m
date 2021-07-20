@@ -11,7 +11,6 @@
 #import "CHTScramble.h"
 #import "CHTSolve.h"
 #import "CHTSessionManager.h"
-#import "CHTTheme.h"
 #import "CHTScrambler.h"
 #import <mach/mach_time.h>
 #import <CoreMotion/CoreMotion.h>
@@ -30,7 +29,7 @@
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressGesture;
 @property (nonatomic) long long timeWhenTimerStart;
 @property (nonatomic, strong) CHTSession *session;
-@property (nonatomic, strong) CHTTheme *timerTheme;
+@property (nonatomic, strong) Theme *timerTheme;
 @property (nonatomic, strong) CHTScrambler *scrambler;
 @property (nonatomic, strong) CHTScramble *thisScramble;
 @property (nonatomic, strong) CHTScramble *nextScramble;
@@ -104,7 +103,7 @@ BOOL knockToStop;
     NSLog(@"Current scramble type: %d, %d", scrType, scrSubType);
     [self.scrambler initSq1];
     [self changeScramble];
-    [self.scrambleLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:20.0f ipadSize:40.0f]];
+    [self.scrambleLabel setFont:[Theme fontWithStyle:FontStyleLight iphoneSize:20.0f ipadSize:40.0f]];
 
 }
 
@@ -150,7 +149,7 @@ BOOL knockToStop;
 }
 
 - (void) setTheme {
-    self.timerTheme = [CHTTheme getTimerTheme];
+    self.timerTheme = [Theme getTimerTheme];
     [self.timerTheme setNavigationControllerTheme];
     [self.view setBackgroundColor:self.timerTheme.backgroundColor];
     [self.tabBarController.tabBar setBarTintColor: self.timerTheme.tabBarColor];

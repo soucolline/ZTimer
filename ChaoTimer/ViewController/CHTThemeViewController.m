@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = [Utils getLocalizedStringFrom:@"theme"];
-    self.themes = [CHTTheme getAllTheme];
+    self.themes = [Theme getAllTheme];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -61,21 +61,21 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    CHTTheme *theme = [CHTTheme initWithTheme:(Theme)[[themes objectAtIndex:indexPath.row] intValue]];
+    Theme *theme = [Theme initWithThemeWithTheme:(ThemeValue)[[themes objectAtIndex:indexPath.row] intValue]];
     cell.textLabel.text = theme.getMyThemeName;
     [cell.textLabel setTextColor:theme.textColor];
-    if (theme.myTheme == [CHTTheme getTimerTheme].myTheme) {
+    if (theme.getMyTheme == [Theme getTimerTheme].getMyTheme) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     } else {
         [cell setAccessoryType:UITableViewCellAccessoryNone];
     }
-    [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:18.0f ipadSize:18.0f]];
+    [cell.textLabel setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:18.0f ipadSize:18.0f]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     //NSLog(@"will display cell");
-    [cell setBackgroundColor:[CHTTheme getColorFromTheme:(Theme)[[themes objectAtIndex:indexPath.row] intValue]]];
+    [cell setBackgroundColor:[Theme getColorFromThemeWithTheme:(ThemeValue)[[themes objectAtIndex:indexPath.row] intValue]]];
 }
 
 
@@ -87,10 +87,10 @@
 {
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO animated:YES];
-    CHTTheme *theme = [CHTTheme initWithTheme:(Theme)[[themes objectAtIndex:indexPath.row] intValue]];
+    Theme *theme = [Theme initWithThemeWithTheme:(ThemeValue)[[themes objectAtIndex:indexPath.row] intValue]];
     [theme save];
     [theme setNavigationControllerTheme];
-    [theme setNavigationControllerTheme:self.navigationController];
+    [theme setNavigationControllerThemeWithController:self.navigationController];
     [self.tabBarController.tabBar setBarTintColor: theme.tabBarColor];
     [self.tableView reloadData];
 }

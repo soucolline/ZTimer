@@ -7,12 +7,11 @@
 //
 
 #import "CHTSettingViewController.h"
-#import "CHTTheme.h"
 #import "ChaoTimer-Swift.h"
 
 @interface CHTSettingViewController ()
 @property(nonatomic, strong) UILabel *fTime;
-@property(nonatomic, strong) CHTTheme *timerTheme;
+@property(nonatomic, strong) Theme *timerTheme;
 @property(nonatomic, strong) UITableViewCell *sensCell;
 @end
 
@@ -33,14 +32,14 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = [Utils getLocalizedStringFrom:@"setting"];
-    self.timerTheme = [CHTTheme getTimerTheme];
+    self.timerTheme = [Theme getTimerTheme];
     if ([Utils getDevice] == ZDevicePad) {
         fTime = [[UILabel alloc]initWithFrame:CGRectMake(16, 25, 200, 15)];
     } else {
         fTime = [[UILabel alloc]initWithFrame:CGRectMake(16, 25, 200, 15)];
     }
     
-    fTime.font = [CHTTheme font:FONT_LIGHT iphoneSize:13.0f ipadSize:13.0f];
+    fTime.font = [Theme fontWithStyle:FontStyleLight iphoneSize:13.0f ipadSize:13.0f];
     fTime.backgroundColor = [UIColor clearColor];
     fTime.textColor = [UIColor darkGrayColor];
     int time = [[[Settings alloc] init] intForKey:@"freezeTime"];
@@ -213,8 +212,8 @@
         default:
             break;
     }
-    cell.textLabel.font = [CHTTheme font:FONT_REGULAR iphoneSize:18.0f ipadSize:18.0f];
-    cell.detailTextLabel.font = [CHTTheme font:FONT_LIGHT iphoneSize:13.0f ipadSize:13.0f];
+    cell.textLabel.font = [Theme fontWithStyle:FontStyleRegular iphoneSize:18.0f ipadSize:18.0f];
+    cell.detailTextLabel.font = [Theme fontWithStyle:FontStyleLight iphoneSize:13.0f ipadSize:13.0f];
     return cell;
 }
 

@@ -60,8 +60,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     switch (indexPath.row) {
         case 0:
-            [cell.textLabel setFont:[CHTTheme font:FONT_BOLD iphoneSize:35.0f ipadSize:35.0f]];
-            [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:17.0f ipadSize:17.0f]];
+            [cell.textLabel setFont:[Theme fontWithStyle:FontStyleBold iphoneSize:35.0f ipadSize:35.0f]];
+            [cell.detailTextLabel setFont:[Theme fontWithStyle:FontStyleLight iphoneSize:17.0f ipadSize:17.0f]];
             [cell.textLabel setText:[self.solve toString]];
             if (self.solve.penalty != PENALTY_NO_PENALTY) {
                 [cell.detailTextLabel setText:[NSString stringWithFormat:@"(%@)", [Utils convertTimeFromMsecondToStringWithMsecond:self.solve.timeBeforePenalty]]];
@@ -70,19 +70,19 @@
             }
             break;
         case 1:
-            [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:20.0f ipadSize:20.0f]];
-            [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:17.0f ipadSize:17.0f]];
+            [cell.textLabel setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:20.0f ipadSize:20.0f]];
+            [cell.detailTextLabel setFont:[Theme fontWithStyle:FontStyleLight iphoneSize:17.0f ipadSize:17.0f]];
             [cell.textLabel setText:self.solve.scramble.scrType];
             [cell.detailTextLabel setText:self.solve.scramble.scrSubType];
             break;
         case 2:
-            [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:17.0f ipadSize:17.0f]];
-            [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:17.0f ipadSize:17.0f]];
+            [cell.textLabel setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:17.0f ipadSize:17.0f]];
+            [cell.detailTextLabel setFont:[Theme fontWithStyle:FontStyleLight iphoneSize:17.0f ipadSize:17.0f]];
             [cell.textLabel setText:[self.solve getTimeStampString]];
             [cell.detailTextLabel setText:@""];
             break;
         case 3:
-            [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:FONT_SIZE ipadSize:FONT_SIZE + 4]];
+            [cell.textLabel setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:FONT_SIZE ipadSize:FONT_SIZE + 4]];
             [cell.textLabel setNumberOfLines:0];
             [cell.detailTextLabel setText:@""];
             [cell.textLabel setText:self.solve.scramble.scramble];
@@ -106,7 +106,7 @@
             return 44.0f;
         case 3:
             text = self.solve.scramble.scramble;
-        return [[[Utils alloc] init] heightOfContentWithContent:text font:[CHTTheme font:FONT_REGULAR iphoneSize:FONT_SIZE ipadSize:FONT_SIZE + 4]];
+        return [[[Utils alloc] init] heightOfContentWithContent:text font:[Theme fontWithStyle:FontStyleRegular iphoneSize:FONT_SIZE ipadSize:FONT_SIZE + 4]];
         default:
             return 44.0f;
     }
