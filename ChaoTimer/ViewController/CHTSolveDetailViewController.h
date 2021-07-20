@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CHTTheme.h"
 #import "CHTSolve.h"
 
 @interface CHTSolveDetailViewController : UITableViewController<UIActionSheetDelegate> {

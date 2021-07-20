@@ -25,7 +25,6 @@
 		0C0D6E6A1818BD1100BE22CB /* wxTimeline_sm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0D6E461818BD1100BE22CB /* wxTimeline_sm@2x.png */; };
 		0C11FCDB1818A3420054BC9C /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C11FCDA1818A3420054BC9C /* share@2x.png */; };
 		0C11FCDD1818A3580054BC9C /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C11FCDC1818A3580054BC9C /* share.png */; };
-		0C24866017FFB2FE00209767 /* CHTOneStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C24865F17FFB2FE00209767 /* CHTOneStat.m */; };
 		0C2486631800661800209767 /* CHTStatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486621800661800209767 /* CHTStatDetailViewController.m */; };
 		0C2486661800663000209767 /* CHTSolveDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486651800663000209767 /* CHTSolveDetailViewController.m */; };
 		0C24866F1801224100209767 /* CHTThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C24866E1801224100209767 /* CHTThemeViewController.m */; };
@@ -83,7 +82,6 @@
 		0CE7D6E618064557008989B3 /* Gear.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6E518064557008989B3 /* Gear.m */; };
 		0CE9480717FA5F6500FB770C /* CHTHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9480617FA5F6500FB770C /* CHTHelpViewController.m */; };
 		0CE9480F17FA627900FB770C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CE9481117FA627900FB770C /* Localizable.strings */; };
-		0CE9482117FA691D00FB770C /* CHTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9482017FA691D00FB770C /* CHTTheme.m */; };
 		0CE9482717FA7E8100FB770C /* CHTMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9482617FA7E8100FB770C /* CHTMoreViewController.m */; };
 		0CE9484217FCF17E00FB770C /* CHTStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9484117FCF17E00FB770C /* CHTStatsViewController.m */; };
 		0CE9484517FD184D00FB770C /* CHTSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9484417FD184D00FB770C /* CHTSessionManager.m */; };
@@ -140,6 +138,8 @@
 		0CF468941814B8AE00643E69 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468931814B8AE00643E69 /* libicucore.dylib */; };
 		0CF468961814B8B800643E69 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468951814B8B800643E69 /* libz.1.2.5.dylib */; };
 		0CF7B4B3187E44D800B7500B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7B4B2187E44D800B7500B /* CFNetwork.framework */; };
+		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
+		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
 		E99F0CD526A487AF002A8081 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD426A487AF002A8081 /* Settings.swift */; };
 /* End PBXBuildFile section */
@@ -163,8 +163,6 @@
 		0C0D6E461818BD1100BE22CB /* wxTimeline_sm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wxTimeline_sm@2x.png"; sourceTree = "<group>"; };
 		0C11FCDA1818A3420054BC9C /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
 		0C11FCDC1818A3580054BC9C /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
-		0C24865E17FFB2FE00209767 /* CHTOneStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTOneStat.h; sourceTree = "<group>"; };
-		0C24865F17FFB2FE00209767 /* CHTOneStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTOneStat.m; sourceTree = "<group>"; };
 		0C2486611800661800209767 /* CHTStatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTStatDetailViewController.h; sourceTree = "<group>"; };
 		0C2486621800661800209767 /* CHTStatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTStatDetailViewController.m; sourceTree = "<group>"; };
 		0C2486641800663000209767 /* CHTSolveDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSolveDetailViewController.h; sourceTree = "<group>"; };
@@ -257,8 +255,6 @@
 		0CE9480617FA5F6500FB770C /* CHTHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTHelpViewController.m; sourceTree = "<group>"; };
 		0CE9481017FA627900FB770C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0CE9481217FA627E00FB770C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		0CE9481F17FA691D00FB770C /* CHTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTheme.h; sourceTree = "<group>"; };
-		0CE9482017FA691D00FB770C /* CHTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTheme.m; sourceTree = "<group>"; };
 		0CE9482517FA7E8100FB770C /* CHTMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTMoreViewController.h; sourceTree = "<group>"; };
 		0CE9482617FA7E8100FB770C /* CHTMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTMoreViewController.m; sourceTree = "<group>"; };
 		0CE9484017FCF17E00FB770C /* CHTStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTStatsViewController.h; sourceTree = "<group>"; };
@@ -319,6 +315,8 @@
 		0CF468931814B8AE00643E69 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		0CF468951814B8B800643E69 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		0CF7B4B2187E44D800B7500B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
+		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		E99F0CD026A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		E99F0CD126A48311002A8081 /* ChaoTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChaoTimer-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -588,10 +586,8 @@
 			isa = PBXGroup;
 			children = (
 				0CE7D6AD1803B022008989B3 /* ForUpdate */,
-				0CE9481F17FA691D00FB770C /* CHTTheme.h */,
-				0CE9482017FA691D00FB770C /* CHTTheme.m */,
-				0C24865E17FFB2FE00209767 /* CHTOneStat.h */,
-				0C24865F17FFB2FE00209767 /* CHTOneStat.m */,
+				E97FF97326A6249400546236 /* Theme.swift */,
+				E97FF97126A6212C00546236 /* OneStat.swift */,
 				E99F0CD226A48311002A8081 /* Utils.swift */,
 				E99F0CD426A487AF002A8081 /* Settings.swift */,
 			);
@@ -794,8 +790,8 @@
 				0C2486661800663000209767 /* CHTSolveDetailViewController.m in Sources */,
 				0C2FA6EC17B1E37F00A006B5 /* CHTAppDelegate.m in Sources */,
 				0C24869A1802370200209767 /* CHTScramblePickerView.m in Sources */,
+				E97FF97226A6212C00546236 /* OneStat.swift in Sources */,
 				0CE9484217FCF17E00FB770C /* CHTStatsViewController.m in Sources */,
-				0CE9482117FA691D00FB770C /* CHTTheme.m in Sources */,
 				0CE7D6C718063737008989B3 /* TwoPhaseScrambler.m in Sources */,
 				0C2486971802351E00209767 /* CHTScrambler.m in Sources */,
 				0CE7D6DB18063950008989B3 /* Clock.m in Sources */,
@@ -810,6 +806,7 @@
 				0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */,
 				E99F0CD326A48311002A8081 /* Utils.swift in Sources */,
 				0CE7D6CB18063910008989B3 /* Pyraminx.m in Sources */,
+				E97FF97426A6249400546236 /* Theme.swift in Sources */,
 				0C24866F1801224100209767 /* CHTThemeViewController.m in Sources */,
 				0CE7D6B21803B054008989B3 /* RubiksTimerDataProcessing.m in Sources */,
 				0CE7D6B61803B1CD008989B3 /* CHTUpdater.m in Sources */,
@@ -821,7 +818,6 @@
 				0C2FA71817B9DB5600A006B5 /* CHTScramble.m in Sources */,
 				0CE9480717FA5F6500FB770C /* CHTHelpViewController.m in Sources */,
 				0CE9484517FD184D00FB770C /* CHTSessionManager.m in Sources */,
-				0C24866017FFB2FE00209767 /* CHTOneStat.m in Sources */,
 				E99F0CD526A487AF002A8081 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

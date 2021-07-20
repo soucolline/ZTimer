@@ -7,10 +7,8 @@
 //
 
 #import "CHTStatsViewController.h"
-#import "CHTTheme.h"
 #import "CHTSession.h"
 #import "CHTSessionManager.h"
-#import "CHTOneStat.h"
 #import "CHTStatDetailViewController.h"
 #import "CHTSessionViewController.h"
 #import "CHTSolveDetailViewController.h"
@@ -19,7 +17,7 @@
 @interface CHTStatsViewController ()
 @property (nonatomic, strong) CHTSession *session;
 @property (nonatomic, strong) UIPopoverController *popoverController;
-@property (nonatomic, strong) CHTTheme *timerTheme;
+@property (nonatomic, strong) Theme *timerTheme;
 @end
 
 @implementation CHTStatsViewController
@@ -62,7 +60,7 @@
 {
     NSLog(@"view will appear");
     [self reload];
-    self.timerTheme = [CHTTheme getTimerTheme];
+    self.timerTheme = [Theme getTimerTheme];
     [super viewWillAppear:animated];
 }
 
@@ -90,7 +88,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    CHTOneStat *oneStats = [self.stats objectAtIndex:indexPath.row];
+    OneStat *oneStats = [self.stats objectAtIndex:indexPath.row];
     //NSLog(@"Stat: %@, detail %@",oneStats.statType, oneStats.statValue);
     cell.textLabel.text = [Utils getLocalizedStringFrom:oneStats.statType];
     cell.detailTextLabel.text = oneStats.statValue;
@@ -102,8 +100,8 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     [cell.detailTextLabel setTextColor:[self.timerTheme getTintColor]];
-    [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:18.0f ipadSize:18.0f]];
-    [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:18.0f ipadSize:18.0f]];
+    [cell.textLabel setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:18.0f ipadSize:18.0f]];
+    [cell.detailTextLabel setFont:[Theme fontWithStyle:FontStyleLight iphoneSize:18.0f ipadSize:18.0f]];
     return cell;
 }
 
@@ -144,34 +142,34 @@
     int numberOfSolves = self.session.numberOfSolves;
     [[self.tabBarController.tabBar.items objectAtIndex:0] setBadgeValue:[NSString stringWithFormat:@"%d", self.session.numberOfSolves]];
     [self.stats removeAllObjects];
-    CHTOneStat *numOfSolves = [CHTOneStat initWithType:@"Number of solves: " Value:[NSString stringWithFormat:@"%d", self.session.numberOfSolves]];
+    OneStat *numOfSolves = [OneStat initWithTypeWithStatType:@"Number of solves: " statValue:[NSString stringWithFormat:@"%d", self.session.numberOfSolves]];
     [self.stats addObject:numOfSolves];
     
     if (numberOfSolves > 0) {
-        CHTOneStat *bestTime = [CHTOneStat initWithType:@"Best time: " Value:[[self.session bestSolve] toString]];
-        CHTOneStat *worstTime = [CHTOneStat initWithType:@"Worst time: " Value:[[self.session worstSolve] toString]];
-        CHTOneStat *sessionAvg = [CHTOneStat initWithType:@"Session Average: " Value:[[self.session sessionAvg] toString]];
-        CHTOneStat *sessionMean = [CHTOneStat initWithType:@"Session Mean: " Value:[[self.session sessionMean] toString]];
+        OneStat *bestTime = [OneStat initWithTypeWithStatType:@"Best time: " statValue:[[self.session bestSolve] toString]];
+        OneStat *worstTime = [OneStat initWithTypeWithStatType:@"Worst time: " statValue:[[self.session worstSolve] toString]];
+        OneStat *sessionAvg = [OneStat initWithTypeWithStatType:@"Session Average: " statValue:[[self.session sessionAvg] toString]];
+        OneStat *sessionMean = [OneStat initWithTypeWithStatType:@"Session Mean: " statValue:[[self.session sessionMean] toString]];
         [self.stats addObject:bestTime];
         [self.stats addObject:worstTime];
         [self.stats addObject:sessionAvg];
         [self.stats addObject:sessionMean];
         
         if (numberOfSolves >= 5) {
-            CHTOneStat *current5 = [CHTOneStat initWithType:@"Current average of 5: " Value:[[self.session currentAvgOf:5] toString]];
-            CHTOneStat *best5 = [CHTOneStat initWithType:@"Best average of 5: " Value:[[self.session bestAvgOf:5] toString]];
+            OneStat *current5 = [OneStat initWithTypeWithStatType:@"Current average of 5: " statValue:[[self.session currentAvgOf:5] toString]];
+            OneStat *best5 = [OneStat initWithTypeWithStatType:@"Best average of 5: " statValue:[[self.session bestAvgOf:5] toString]];
             [self.stats addObject:current5];
             [self.stats addObject:best5];
             
             if (numberOfSolves >= 12) {
-                CHTOneStat *current12 = [CHTOneStat initWithType:@"Current average of 12: " Value:[[self.session currentAvgOf:12] toString]];
-                CHTOneStat *best12 = [CHTOneStat initWithType:@"Best average of 12: " Value:[[self.session bestAvgOf:12] toString]];
+                OneStat *current12 = [OneStat initWithTypeWithStatType:@"Current average of 12: " statValue:[[self.session currentAvgOf:12] toString]];
+                OneStat *best12 = [OneStat initWithTypeWithStatType:@"Best average of 12: " statValue:[[self.session bestAvgOf:12] toString]];
                 [self.stats addObject:current12];
                 [self.stats addObject:best12];
                 
                 if (numberOfSolves >= 100) {
-                    CHTOneStat *current100 = [CHTOneStat initWithType:@"Current average of 100: " Value:[[self.session currentAvgOf:100] toString]];
-                    CHTOneStat *best100 = [CHTOneStat initWithType:@"Best average of 100: " Value:[[self.session bestAvgOf:100] toString]];
+                    OneStat *current100 = [OneStat initWithTypeWithStatType:@"Current average of 100: " statValue:[[self.session currentAvgOf:100] toString]];
+                    OneStat *best100 = [OneStat initWithTypeWithStatType:@"Best average of 100: " statValue:[[self.session bestAvgOf:100] toString]];
                     [self.stats addObject:current100];
                     [self.stats addObject:best100];
                 }

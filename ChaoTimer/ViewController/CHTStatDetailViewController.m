@@ -7,17 +7,15 @@
 //
 
 #import "CHTStatDetailViewController.h"
-#import "CHTTheme.h"
 #import "CHTSession.h"
 #import "CHTSessionManager.h"
-#import "CHTOneStat.h"
 #import "CHTSolveDetailViewController.h"
 #import "ChaoTimer-Swift.h"
 #import "ChaoTimer-Swift.h"
 
 @interface CHTStatDetailViewController ()
 @property (nonatomic, strong) CHTSolve *best, *worst;
-@property (nonatomic, strong) CHTTheme *timerTheme;
+@property (nonatomic, strong) Theme *timerTheme;
 @property (nonatomic) int solveOrder;
 @end
 
@@ -51,7 +49,7 @@ int solveDetailDisplay;
     [super viewDidLoad];
     self.navigationItem.title = [Utils getLocalizedStringFrom:@"Detail"];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.timerTheme = [CHTTheme getTimerTheme];
+    self.timerTheme = [Theme getTimerTheme];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -153,8 +151,8 @@ int solveDetailDisplay;
         default:
             break;
     }
-    [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:18.0f ipadSize:18.0f]];
-    [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:12.0f ipadSize:12.0f]];
+    [cell.textLabel setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:18.0f ipadSize:18.0f]];
+    [cell.detailTextLabel setFont:[Theme fontWithStyle:FontStyleLight iphoneSize:12.0f ipadSize:12.0f]];
     [cell.detailTextLabel setTextColor:[UIColor darkGrayColor]];
     return cell;
 }

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CHTSessionManager.h"
-#import "CHTTheme.h"
 
 @interface CHTEditSessionViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate>
 @property (strong, nonatomic) UITextField *myTextField;

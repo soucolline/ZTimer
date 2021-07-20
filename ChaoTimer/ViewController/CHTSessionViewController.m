@@ -51,7 +51,7 @@
     if ([Utils getDevice] == ZDevicePad) {
         [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
         [self.navigationController.navigationBar setTitleTextAttributes:@{
-          NSFontAttributeName:[CHTTheme font:FONT_REGULAR iphoneSize:22.0f ipadSize:22.0f],
+          NSFontAttributeName:[Theme fontWithStyle:FontStyleRegular iphoneSize:22.0f ipadSize:22.0f],
         NSForegroundColorAttributeName: [UIColor blackColor]}];
     }
     [self.tableView reloadData];
@@ -136,8 +136,8 @@
         default:
             break;
     }
-    [cell.textLabel setFont:[CHTTheme font:FONT_REGULAR iphoneSize:18.0f ipadSize:18.0f]];
-    [cell.detailTextLabel setFont:[CHTTheme font:FONT_LIGHT iphoneSize:12.0f ipadSize:12.0f]];
+    [cell.textLabel setFont:[Theme fontWithStyle:FontStyleRegular iphoneSize:18.0f ipadSize:18.0f]];
+    [cell.detailTextLabel setFont:[Theme fontWithStyle:FontStyleLight iphoneSize:12.0f ipadSize:12.0f]];
     
     [cell.detailTextLabel setTextColor:[UIColor darkGrayColor]];
     return cell;

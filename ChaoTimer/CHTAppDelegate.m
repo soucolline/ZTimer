@@ -7,14 +7,14 @@
 //
 
 #import "CHTAppDelegate.h"
-#import "CHTTheme.h"
+#import "ChaoTimer-Swift.h"
 
 @implementation CHTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[CHTTheme getTimerTheme] setNavigationControllerTheme];
+    [[Theme getTimerTheme] setNavigationControllerTheme];
     application.applicationSupportsShakeToEdit = YES;
     return YES;
 }
