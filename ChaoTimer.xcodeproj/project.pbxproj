@@ -61,9 +61,6 @@
 		0CB52989181DDCE500EB4EA5 /* license.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CB52988181DDCE500EB4EA5 /* license.png */; };
 		0CB5298C181DEED000EB4EA5 /* CHTLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5298B181DEED000EB4EA5 /* CHTLicenseViewController.m */; };
 		0CB5298E181DF13F00EB4EA5 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5298D181DF13F00EB4EA5 /* license.html */; };
-		0CE7D6B21803B054008989B3 /* RubiksTimerDataProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6AF1803B054008989B3 /* RubiksTimerDataProcessing.m */; };
-		0CE7D6B31803B054008989B3 /* RubiksTimerTimeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6B11803B054008989B3 /* RubiksTimerTimeObj.m */; };
-		0CE7D6B61803B1CD008989B3 /* CHTUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6B51803B1CD008989B3 /* CHTUpdater.m */; };
 		0CE7D6C318063737008989B3 /* CoordCube.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6B918063737008989B3 /* CoordCube.m */; };
 		0CE7D6C418063737008989B3 /* CubieCube.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6BB18063737008989B3 /* CubieCube.m */; };
 		0CE7D6C518063737008989B3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0CE7D6BC18063737008989B3 /* README.md */; };
@@ -214,12 +211,6 @@
 		0CB5298A181DEED000EB4EA5 /* CHTLicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLicenseViewController.h; sourceTree = "<group>"; };
 		0CB5298B181DEED000EB4EA5 /* CHTLicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLicenseViewController.m; sourceTree = "<group>"; };
 		0CB5298D181DF13F00EB4EA5 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
-		0CE7D6AE1803B054008989B3 /* RubiksTimerDataProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubiksTimerDataProcessing.h; sourceTree = "<group>"; };
-		0CE7D6AF1803B054008989B3 /* RubiksTimerDataProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RubiksTimerDataProcessing.m; sourceTree = "<group>"; };
-		0CE7D6B01803B054008989B3 /* RubiksTimerTimeObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubiksTimerTimeObj.h; sourceTree = "<group>"; };
-		0CE7D6B11803B054008989B3 /* RubiksTimerTimeObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RubiksTimerTimeObj.m; sourceTree = "<group>"; };
-		0CE7D6B41803B1CD008989B3 /* CHTUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTUpdater.h; sourceTree = "<group>"; };
-		0CE7D6B51803B1CD008989B3 /* CHTUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTUpdater.m; sourceTree = "<group>"; };
 		0CE7D6B818063737008989B3 /* CoordCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordCube.h; sourceTree = "<group>"; };
 		0CE7D6B918063737008989B3 /* CoordCube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordCube.m; sourceTree = "<group>"; };
 		0CE7D6BA18063737008989B3 /* CubieCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubieCube.h; sourceTree = "<group>"; };
@@ -585,26 +576,12 @@
 		0C2FA70F17B68BB900A006B5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				0CE7D6AD1803B022008989B3 /* ForUpdate */,
 				E97FF97326A6249400546236 /* Theme.swift */,
 				E97FF97126A6212C00546236 /* OneStat.swift */,
 				E99F0CD226A48311002A8081 /* Utils.swift */,
 				E99F0CD426A487AF002A8081 /* Settings.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		0CE7D6AD1803B022008989B3 /* ForUpdate */ = {
-			isa = PBXGroup;
-			children = (
-				0CE7D6AE1803B054008989B3 /* RubiksTimerDataProcessing.h */,
-				0CE7D6AF1803B054008989B3 /* RubiksTimerDataProcessing.m */,
-				0CE7D6B01803B054008989B3 /* RubiksTimerTimeObj.h */,
-				0CE7D6B11803B054008989B3 /* RubiksTimerTimeObj.m */,
-				0CE7D6B41803B1CD008989B3 /* CHTUpdater.h */,
-				0CE7D6B51803B1CD008989B3 /* CHTUpdater.m */,
-			);
-			path = ForUpdate;
 			sourceTree = "<group>";
 		};
 		0CE7D6B718063737008989B3 /* min2phase */ = {
@@ -797,7 +774,6 @@
 				0CE7D6DB18063950008989B3 /* Clock.m in Sources */,
 				0C2486741801F49000209767 /* CHTSessionViewController.m in Sources */,
 				0CE7D6E31806436F008989B3 /* Cross.m in Sources */,
-				0CE7D6B31803B054008989B3 /* RubiksTimerTimeObj.m in Sources */,
 				0CE7D6C618063737008989B3 /* Search.m in Sources */,
 				0C2486911802331000209767 /* CustomIOS7AlertView.m in Sources */,
 				0C2486631800661800209767 /* CHTStatDetailViewController.m in Sources */,
@@ -808,8 +784,6 @@
 				0CE7D6CB18063910008989B3 /* Pyraminx.m in Sources */,
 				E97FF97426A6249400546236 /* Theme.swift in Sources */,
 				0C24866F1801224100209767 /* CHTThemeViewController.m in Sources */,
-				0CE7D6B21803B054008989B3 /* RubiksTimerDataProcessing.m in Sources */,
-				0CE7D6B61803B1CD008989B3 /* CHTUpdater.m in Sources */,
 				0CE7D6D318063928008989B3 /* Skewb.m in Sources */,
 				0CE7D6E0180639FA008989B3 /* Im.m in Sources */,
 				0C2FA71517B68D1C00A006B5 /* CHTSolve.m in Sources */,

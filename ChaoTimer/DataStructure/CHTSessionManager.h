@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "CHTSession.h"
-#import "CHTUpdater.h"
 
 @interface CHTSessionManager : NSObject <NSCoding>
 @property (nonatomic, strong) NSMutableArray *sessionArray;

@@ -34,7 +34,7 @@ import Foundation
     }
 
     func string(forKey key: String) -> String {
-        userDefaults.string(forKey: key)!
+        userDefaults.string(forKey: key) ?? "7.0.0"
     }
 
     func object(forKey key: String) -> Any {
