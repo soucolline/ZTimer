@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -628,9 +628,9 @@
 		0C2FA6D017B1E37F00A006B5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = CHT;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 1250;
-				ORGANIZATIONNAME = "Jichao Li";
+				ORGANIZATIONNAME = "Thomas Guilleminot";
 				TargetAttributes = {
 					0C2FA6D717B1E37F00A006B5 = {
 						DevelopmentTeam = A8WX3L9ALZ;
@@ -639,7 +639,7 @@
 				};
 			};
 			buildConfigurationList = 0C2FA6D317B1E37F00A006B5 /* Build configuration list for PBXProject "ChaoTimer" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -948,7 +948,10 @@
 				GCC_PREFIX_HEADER = "ChaoTimer/ChaoTimer-Prefix.pch";
 				INFOPLIST_FILE = "ChaoTimer/ChaoTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jichao.${PRODUCT_NAME:rfc1034identifier}";
@@ -978,7 +981,10 @@
 				GCC_PREFIX_HEADER = "ChaoTimer/ChaoTimer-Prefix.pch";
 				INFOPLIST_FILE = "ChaoTimer/ChaoTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jichao.${PRODUCT_NAME:rfc1034identifier}";

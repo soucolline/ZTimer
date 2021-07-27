@@ -3,7 +3,7 @@
 //  ChaoTimer
 //
 //  Created by Thomas Guilleminot on 18/07/2021.
-//  Copyright © 2021 Jichao Li. All rights reserved.
+//  Copyright © 2021 Thomas Guilleminot. All rights reserved.
 //
 
 import Foundation
