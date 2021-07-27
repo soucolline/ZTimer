@@ -283,8 +283,6 @@
     }
     else {
         NSLog(@"sessionManager not exit");
-        sessionManager = [CHTUpdater updateFromOldVersion];
-        return sessionManager;
     }
 }
 
