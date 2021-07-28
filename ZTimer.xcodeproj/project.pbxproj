@@ -27,7 +27,6 @@
 		0C11FCDD1818A3580054BC9C /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C11FCDC1818A3580054BC9C /* share.png */; };
 		0C2486631800661800209767 /* CHTStatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486621800661800209767 /* CHTStatDetailViewController.m */; };
 		0C2486661800663000209767 /* CHTSolveDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486651800663000209767 /* CHTSolveDetailViewController.m */; };
-		0C24866F1801224100209767 /* CHTThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C24866E1801224100209767 /* CHTThemeViewController.m */; };
 		0C2486741801F49000209767 /* CHTSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486731801F49000209767 /* CHTSessionViewController.m */; };
 		0C2486771801F4AB00209767 /* CHTEditSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486761801F4AB00209767 /* CHTEditSessionViewController.m */; };
 		0C2486911802331000209767 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486901802331000209767 /* CustomIOS7AlertView.m */; };
@@ -137,6 +136,7 @@
 		7F7D43DB26B164AB0017B4C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F7D43DA26B164AB0017B4C3 /* LaunchScreen.storyboard */; };
 		7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */; };
 		7F7D43E426B168B10017B4C3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7D43E326B168B10017B4C3 /* WebKit.framework */; };
+		7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
@@ -166,8 +166,6 @@
 		0C2486621800661800209767 /* CHTStatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTStatDetailViewController.m; sourceTree = "<group>"; };
 		0C2486641800663000209767 /* CHTSolveDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSolveDetailViewController.h; sourceTree = "<group>"; };
 		0C2486651800663000209767 /* CHTSolveDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSolveDetailViewController.m; sourceTree = "<group>"; };
-		0C24866D1801224000209767 /* CHTThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTThemeViewController.h; sourceTree = "<group>"; };
-		0C24866E1801224100209767 /* CHTThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTThemeViewController.m; sourceTree = "<group>"; };
 		0C2486721801F49000209767 /* CHTSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSessionViewController.h; sourceTree = "<group>"; };
 		0C2486731801F49000209767 /* CHTSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSessionViewController.m; sourceTree = "<group>"; };
 		0C2486751801F4AB00209767 /* CHTEditSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTEditSessionViewController.h; sourceTree = "<group>"; };
@@ -309,6 +307,7 @@
 		7F7D43DA26B164AB0017B4C3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		7F7D43E326B168B10017B4C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -472,8 +471,7 @@
 				0CE9480617FA5F6500FB770C /* CHTHelpViewController.m */,
 				0CE9482517FA7E8100FB770C /* CHTMoreViewController.h */,
 				0CE9482617FA7E8100FB770C /* CHTMoreViewController.m */,
-				0C24866D1801224000209767 /* CHTThemeViewController.h */,
-				0C24866E1801224100209767 /* CHTThemeViewController.m */,
+				7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */,
 				0CF23CD11810D45600BAEB40 /* CHTSettingViewController.h */,
 				0CF23CD21810D45600BAEB40 /* CHTSettingViewController.m */,
 				7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */,
@@ -788,8 +786,8 @@
 				E99F0CD326A48311002A8081 /* Utils.swift in Sources */,
 				0CE7D6CB18063910008989B3 /* Pyraminx.m in Sources */,
 				E97FF97426A6249400546236 /* Theme.swift in Sources */,
-				0C24866F1801224100209767 /* CHTThemeViewController.m in Sources */,
 				0CE7D6D318063928008989B3 /* Skewb.m in Sources */,
+				7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */,
 				0CE7D6E0180639FA008989B3 /* Im.m in Sources */,
 				7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */,
 				0C2FA71517B68D1C00A006B5 /* CHTSolve.m in Sources */,

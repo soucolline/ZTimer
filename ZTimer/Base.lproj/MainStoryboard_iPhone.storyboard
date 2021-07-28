@@ -412,7 +412,7 @@
         <!--Theme View Controller-->
         <scene sceneID="rfv-lJ-Rqe">
             <objects>
-                <tableViewController storyboardIdentifier="ThemeControl" id="Uu1-XO-1WC" customClass="CHTThemeViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ThemeViewController" id="Uu1-XO-1WC" customClass="ThemeViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eL8-gu-bcA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,7 +8,6 @@
 
 #import "CHTMoreViewController.h"
 
-#import "CHTThemeViewController.h"
 #import "CHTSettingViewController.h"
 #import "ZTimer-Swift.h"
 
@@ -220,7 +219,7 @@
     }
 }
 - (IBAction) pushToThemeView {
-    CHTThemeViewController *themeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ThemeControl"];
+    ThemeViewController *themeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ThemeViewController"];
     themeViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:themeViewController animated:YES];
 }
