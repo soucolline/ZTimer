@@ -58,7 +58,7 @@
     //self.types = [self.scrType allKeys];
     NSString *select = [self.types objectAtIndex:0];
     self.subsets = [self.scrType objectForKey:select];
-    if ([Utils getDevice] == ZDevicePhone) {
+    if ([Utils getDevice] == DevicePhone) {
         self.myPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 270, 300)];
     } else {
         self.myPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
@@ -102,13 +102,13 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     if (component == typeComponent) {
-        if ([Utils getDevice] == ZDevicePhone) {
+        if ([Utils getDevice] == DevicePhone) {
             return typeComponentWidth;
         } else {
             return typeComponentWidthPad;
         }
     } else {
-        if ([Utils getDevice] == ZDevicePhone) {
+        if ([Utils getDevice] == DevicePhone) {
             return subsetComponentWidth;
         } else {
             return subsetComponentWidthPad;
@@ -118,7 +118,7 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
-    if ([Utils getDevice] == ZDevicePhone) {
+    if ([Utils getDevice] == DevicePhone) {
         return rowHeight;
     } else {
         return rowHeightPad;

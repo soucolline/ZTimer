@@ -113,7 +113,7 @@
 }
 
 - (void) displayActionSheet {
-    if ([Utils getDevice] == ZDevicePad) {
+    if ([Utils getDevice] == DevicePad) {
         if (shareSheet.visible) {
             [shareSheet dismissWithClickedButtonIndex:-1 animated:YES];
         } else {

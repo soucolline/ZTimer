@@ -33,7 +33,7 @@
     [super viewDidLoad];
     self.navigationItem.title = [Utils getLocalizedStringFrom:@"setting"];
     self.timerTheme = [Theme getTimerTheme];
-    if ([Utils getDevice] == ZDevicePad) {
+    if ([Utils getDevice] == DevicePad) {
         fTime = [[UILabel alloc]initWithFrame:CGRectMake(16, 25, 200, 15)];
     } else {
         fTime = [[UILabel alloc]initWithFrame:CGRectMake(16, 25, 200, 15)];

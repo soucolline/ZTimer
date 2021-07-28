@@ -151,7 +151,7 @@
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([Utils getDevice] == ZDevicePhone) {
+    if ([Utils getDevice] == DevicePhone) {
         return 60;
     } else {
         return 80;

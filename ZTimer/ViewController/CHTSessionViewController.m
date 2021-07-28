@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = [Utils getLocalizedStringFrom:@"session"];
-    if ([Utils getDevice] == ZDevicePhone) {
+    if ([Utils getDevice] == DevicePhone) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backToStatsView:)];
     }
     [self.navigationController setToolbarHidden:NO];
@@ -48,7 +48,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.sessionManager = [CHTSessionManager load];
-    if ([Utils getDevice] == ZDevicePad) {
+    if ([Utils getDevice] == DevicePad) {
         [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
         [self.navigationController.navigationBar setTitleTextAttributes:@{
           NSFontAttributeName:[Theme fontWithStyle:FontStyleRegular iphoneSize:22.0f ipadSize:22.0f],

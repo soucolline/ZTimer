@@ -122,7 +122,7 @@
         return;
     }
     CHTSessionViewController *sessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionManage"];
-    if ([Utils getDevice] == ZDevicePad) {
+    if ([Utils getDevice] == DevicePad) {
         self.popoverController = [[UIPopoverController alloc] initWithContentViewController:sessionViewController];
         self.popoverController.delegate = self;
         [self.popoverController presentPopoverFromBarButtonItem:self.navigationItem.leftBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@objc enum ZDevice: Int {
+@objc enum Device: Int {
     case phone, pad
 }
 
@@ -46,7 +46,7 @@ import UIKit
         return outputTimeString
     }
 
-    static func getDevice() -> ZDevice {
+    static func getDevice() -> Device {
         if UIDevice().userInterfaceIdiom == .phone {
             return .phone
         } else {

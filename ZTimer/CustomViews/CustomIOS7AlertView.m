@@ -116,7 +116,7 @@ CGFloat buttonSpacerHeight = 0;
         }
         
         NSLog(@"width %f, height %f", self.frame.size.width, self.frame.size.height);
-        if ([Utils getDevice] == ZDevicePad) {
+        if ([Utils getDevice] == DevicePad) {
             [self setFrame:CGRectMake(0, 0, 768.0f, 1024.0f)];
         } else {
             [self setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
@@ -201,7 +201,7 @@ CGFloat buttonSpacerHeight = 0;
     CGFloat screenWidth;
     CGFloat screenHeight;
     
-    if ([Utils getDevice] == ZDevicePhone) {
+    if ([Utils getDevice] == DevicePhone) {
         screenWidth = [UIScreen mainScreen].bounds.size.width;
         screenHeight = [UIScreen mainScreen].bounds.size.height;
     } else {
