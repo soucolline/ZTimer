@@ -10,7 +10,6 @@
 
 #import "CHTThemeViewController.h"
 #import "CHTSettingViewController.h"
-#import "CHTLicenseViewController.h"
 #import "ZTimer-Swift.h"
 
 @interface CHTMoreViewController ()
@@ -240,7 +239,7 @@
 }
 
 - (IBAction) pushToLicenseView {
-    CHTLicenseViewController *licenseViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"license"];
+    LicenseViewController *licenseViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LicenseViewController"];
     licenseViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:licenseViewController animated:YES];
 }
