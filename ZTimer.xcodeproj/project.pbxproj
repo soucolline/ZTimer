@@ -76,7 +76,6 @@
 		0CE7D6E31806436F008989B3 /* Cross.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6E21806436E008989B3 /* Cross.m */; };
 		0CE7D6E618064557008989B3 /* Gear.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6E518064557008989B3 /* Gear.m */; };
 		0CE9480F17FA627900FB770C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CE9481117FA627900FB770C /* Localizable.strings */; };
-		0CE9482717FA7E8100FB770C /* CHTMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9482617FA7E8100FB770C /* CHTMoreViewController.m */; };
 		0CE9484217FCF17E00FB770C /* CHTStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9484117FCF17E00FB770C /* CHTStatsViewController.m */; };
 		0CE9484517FD184D00FB770C /* CHTSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9484417FD184D00FB770C /* CHTSessionManager.m */; };
 		0CEB9A9B180E33580064182B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB9A9A180E33580064182B /* MessageUI.framework */; };
@@ -137,6 +136,7 @@
 		7F7D43E426B168B10017B4C3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7D43E326B168B10017B4C3 /* WebKit.framework */; };
 		7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */; };
 		7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */; };
+		7F7D43F026B3EFB70017B4C3 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43EF26B3EFB70017B4C3 /* MoreViewController.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
@@ -242,8 +242,6 @@
 		0CE7D6E518064557008989B3 /* Gear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gear.m; sourceTree = "<group>"; };
 		0CE9481017FA627900FB770C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0CE9481217FA627E00FB770C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		0CE9482517FA7E8100FB770C /* CHTMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTMoreViewController.h; sourceTree = "<group>"; };
-		0CE9482617FA7E8100FB770C /* CHTMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTMoreViewController.m; sourceTree = "<group>"; };
 		0CE9484017FCF17E00FB770C /* CHTStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTStatsViewController.h; sourceTree = "<group>"; };
 		0CE9484117FCF17E00FB770C /* CHTStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTStatsViewController.m; sourceTree = "<group>"; };
 		0CE9484317FD184D00FB770C /* CHTSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSessionManager.h; sourceTree = "<group>"; };
@@ -307,6 +305,7 @@
 		7F7D43E326B168B10017B4C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		7F7D43EF26B3EFB70017B4C3 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -467,8 +466,7 @@
 				0C2486751801F4AB00209767 /* CHTEditSessionViewController.h */,
 				0C2486761801F4AB00209767 /* CHTEditSessionViewController.m */,
 				7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */,
-				0CE9482517FA7E8100FB770C /* CHTMoreViewController.h */,
-				0CE9482617FA7E8100FB770C /* CHTMoreViewController.m */,
+				7F7D43EF26B3EFB70017B4C3 /* MoreViewController.swift */,
 				7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */,
 				0CF23CD11810D45600BAEB40 /* CHTSettingViewController.h */,
 				0CF23CD21810D45600BAEB40 /* CHTSettingViewController.m */,
@@ -757,10 +755,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CE7D6E618064557008989B3 /* Gear.m in Sources */,
-				0CE9482717FA7E8100FB770C /* CHTMoreViewController.m in Sources */,
 				0CF23CD31810D45600BAEB40 /* CHTSettingViewController.m in Sources */,
 				0CE7D6C418063737008989B3 /* CubieCube.m in Sources */,
 				0CE7D6DC18063950008989B3 /* Megaminx.m in Sources */,
+				7F7D43F026B3EFB70017B4C3 /* MoreViewController.swift in Sources */,
 				0CE7D6C318063737008989B3 /* CoordCube.m in Sources */,
 				0C2FA6E817B1E37F00A006B5 /* main.m in Sources */,
 				0CE7D6C818063737008989B3 /* Util.m in Sources */,
