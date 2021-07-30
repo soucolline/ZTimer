@@ -75,7 +75,6 @@
 		0CE7D6E0180639FA008989B3 /* Im.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6DF180639FA008989B3 /* Im.m */; };
 		0CE7D6E31806436F008989B3 /* Cross.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6E21806436E008989B3 /* Cross.m */; };
 		0CE7D6E618064557008989B3 /* Gear.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6E518064557008989B3 /* Gear.m */; };
-		0CE9480717FA5F6500FB770C /* CHTHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9480617FA5F6500FB770C /* CHTHelpViewController.m */; };
 		0CE9480F17FA627900FB770C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CE9481117FA627900FB770C /* Localizable.strings */; };
 		0CE9482717FA7E8100FB770C /* CHTMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9482617FA7E8100FB770C /* CHTMoreViewController.m */; };
 		0CE9484217FCF17E00FB770C /* CHTStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9484117FCF17E00FB770C /* CHTStatsViewController.m */; };
@@ -137,6 +136,7 @@
 		7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */; };
 		7F7D43E426B168B10017B4C3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7D43E326B168B10017B4C3 /* WebKit.framework */; };
 		7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */; };
+		7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
@@ -240,8 +240,6 @@
 		0CE7D6E21806436E008989B3 /* Cross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cross.m; sourceTree = "<group>"; };
 		0CE7D6E418064557008989B3 /* Gear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gear.h; sourceTree = "<group>"; };
 		0CE7D6E518064557008989B3 /* Gear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gear.m; sourceTree = "<group>"; };
-		0CE9480517FA5F6500FB770C /* CHTHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTHelpViewController.h; sourceTree = "<group>"; };
-		0CE9480617FA5F6500FB770C /* CHTHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTHelpViewController.m; sourceTree = "<group>"; };
 		0CE9481017FA627900FB770C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0CE9481217FA627E00FB770C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0CE9482517FA7E8100FB770C /* CHTMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTMoreViewController.h; sourceTree = "<group>"; };
@@ -308,6 +306,7 @@
 		7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		7F7D43E326B168B10017B4C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -467,8 +466,7 @@
 				0C2486731801F49000209767 /* CHTSessionViewController.m */,
 				0C2486751801F4AB00209767 /* CHTEditSessionViewController.h */,
 				0C2486761801F4AB00209767 /* CHTEditSessionViewController.m */,
-				0CE9480517FA5F6500FB770C /* CHTHelpViewController.h */,
-				0CE9480617FA5F6500FB770C /* CHTHelpViewController.m */,
+				7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */,
 				0CE9482517FA7E8100FB770C /* CHTMoreViewController.h */,
 				0CE9482617FA7E8100FB770C /* CHTMoreViewController.m */,
 				7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */,
@@ -777,6 +775,7 @@
 				0C2486971802351E00209767 /* CHTScrambler.m in Sources */,
 				0CE7D6DB18063950008989B3 /* Clock.m in Sources */,
 				0C2486741801F49000209767 /* CHTSessionViewController.m in Sources */,
+				7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */,
 				0CE7D6E31806436F008989B3 /* Cross.m in Sources */,
 				0CE7D6C618063737008989B3 /* Search.m in Sources */,
 				0C2486911802331000209767 /* CustomIOS7AlertView.m in Sources */,
@@ -794,7 +793,6 @@
 				0CE7D6D218063928008989B3 /* Cube222.m in Sources */,
 				0C2486771801F4AB00209767 /* CHTEditSessionViewController.m in Sources */,
 				0C2FA71817B9DB5600A006B5 /* CHTScramble.m in Sources */,
-				0CE9480717FA5F6500FB770C /* CHTHelpViewController.m in Sources */,
 				0CE9484517FD184D00FB770C /* CHTSessionManager.m in Sources */,
 				E99F0CD526A487AF002A8081 /* Settings.swift in Sources */,
 			);

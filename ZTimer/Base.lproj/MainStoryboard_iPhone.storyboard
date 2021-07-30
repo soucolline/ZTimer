@@ -296,7 +296,7 @@
         <!--Gestures Help-->
         <scene sceneID="re4-7E-YqI">
             <objects>
-                <tableViewController id="Rgf-rM-Yoc" customClass="CHTHelpViewController" sceneMemberID="viewController">
+                <tableViewController id="Rgf-rM-Yoc" customClass="HelpViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MqT-mv-lff">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
