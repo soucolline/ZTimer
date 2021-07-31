@@ -450,10 +450,10 @@
             </objects>
             <point key="canvasLocation" x="3501" y="1725"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="4Wx-hw-8Jy">
             <objects>
-                <tableViewController storyboardIdentifier="setting" id="7N2-DW-iUc" customClass="CHTSettingViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="setting" id="7N2-DW-iUc" customClass="SettingsViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Etm-US-NXp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

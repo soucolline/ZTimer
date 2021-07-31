@@ -119,7 +119,6 @@
 		0CEB9B3A180FACB90064182B /* timing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB9B2A180FACB90064182B /* timing.png */; };
 		0CEB9B3B180FACB90064182B /* version.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB9B2B180FACB90064182B /* version.png */; };
 		0CEB9B3D180FAD120064182B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB9B3C180FAD120064182B /* Images.xcassets */; };
-		0CF23CD31810D45600BAEB40 /* CHTSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF23CD21810D45600BAEB40 /* CHTSettingViewController.m */; };
 		0CF23CD51810E62500BAEB40 /* retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF23CD41810E62500BAEB40 /* retina.png */; };
 		0CF23CDB1810E80D00BAEB40 /* lanscape_non_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF23CD61810E80D00BAEB40 /* lanscape_non_retina.png */; };
 		0CF23CDC1810E80D00BAEB40 /* lanscape_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF23CD71810E80D00BAEB40 /* lanscape_retina.png */; };
@@ -137,6 +136,7 @@
 		7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */; };
 		7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */; };
 		7F7D43F026B3EFB70017B4C3 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43EF26B3EFB70017B4C3 /* MoreViewController.swift */; };
+		7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43F326B5A5720017B4C3 /* SettingsViewController.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
@@ -287,8 +287,6 @@
 		0CEB9B2A180FACB90064182B /* timing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timing.png; sourceTree = "<group>"; };
 		0CEB9B2B180FACB90064182B /* version.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = version.png; sourceTree = "<group>"; };
 		0CEB9B3C180FAD120064182B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0CF23CD11810D45600BAEB40 /* CHTSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSettingViewController.h; sourceTree = "<group>"; };
-		0CF23CD21810D45600BAEB40 /* CHTSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSettingViewController.m; sourceTree = "<group>"; };
 		0CF23CD41810E62500BAEB40 /* retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina.png; sourceTree = "<group>"; };
 		0CF23CD61810E80D00BAEB40 /* lanscape_non_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lanscape_non_retina.png; sourceTree = "<group>"; };
 		0CF23CD71810E80D00BAEB40 /* lanscape_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lanscape_retina.png; sourceTree = "<group>"; };
@@ -306,6 +304,7 @@
 		7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		7F7D43EF26B3EFB70017B4C3 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		7F7D43F326B5A5720017B4C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -468,8 +467,7 @@
 				7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */,
 				7F7D43EF26B3EFB70017B4C3 /* MoreViewController.swift */,
 				7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */,
-				0CF23CD11810D45600BAEB40 /* CHTSettingViewController.h */,
-				0CF23CD21810D45600BAEB40 /* CHTSettingViewController.m */,
+				7F7D43F326B5A5720017B4C3 /* SettingsViewController.swift */,
 				7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */,
 			);
 			path = ViewController;
@@ -755,7 +753,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CE7D6E618064557008989B3 /* Gear.m in Sources */,
-				0CF23CD31810D45600BAEB40 /* CHTSettingViewController.m in Sources */,
 				0CE7D6C418063737008989B3 /* CubieCube.m in Sources */,
 				0CE7D6DC18063950008989B3 /* Megaminx.m in Sources */,
 				7F7D43F026B3EFB70017B4C3 /* MoreViewController.swift in Sources */,
@@ -777,6 +774,7 @@
 				0CE7D6E31806436F008989B3 /* Cross.m in Sources */,
 				0CE7D6C618063737008989B3 /* Search.m in Sources */,
 				0C2486911802331000209767 /* CustomIOS7AlertView.m in Sources */,
+				7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */,
 				0C2486631800661800209767 /* CHTStatDetailViewController.m in Sources */,
 				0C2FA6FB17B1E37F00A006B5 /* CHTTimingViewController.m in Sources */,
 				0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */,
