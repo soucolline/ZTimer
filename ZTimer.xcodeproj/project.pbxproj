@@ -26,7 +26,6 @@
 		0C11FCDB1818A3420054BC9C /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C11FCDA1818A3420054BC9C /* share@2x.png */; };
 		0C11FCDD1818A3580054BC9C /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C11FCDC1818A3580054BC9C /* share.png */; };
 		0C2486631800661800209767 /* CHTStatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486621800661800209767 /* CHTStatDetailViewController.m */; };
-		0C2486661800663000209767 /* CHTSolveDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486651800663000209767 /* CHTSolveDetailViewController.m */; };
 		0C2486911802331000209767 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486901802331000209767 /* CustomIOS7AlertView.m */; };
 		0C248694180234CC00209767 /* scrambleTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C248693180234CC00209767 /* scrambleTypes.plist */; };
 		0C2486971802351E00209767 /* CHTScrambler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486961802351E00209767 /* CHTScrambler.m */; };
@@ -137,6 +136,7 @@
 		7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43F326B5A5720017B4C3 /* SettingsViewController.swift */; };
 		7F7D43F826B6DF340017B4C3 /* EditSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43F726B6DF340017B4C3 /* EditSessionViewController.swift */; };
 		7F7D43FC26B6E6390017B4C3 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43FB26B6E6390017B4C3 /* SessionViewController.swift */; };
+		7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
@@ -164,8 +164,6 @@
 		0C11FCDC1818A3580054BC9C /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		0C2486611800661800209767 /* CHTStatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTStatDetailViewController.h; sourceTree = "<group>"; };
 		0C2486621800661800209767 /* CHTStatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTStatDetailViewController.m; sourceTree = "<group>"; };
-		0C2486641800663000209767 /* CHTSolveDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSolveDetailViewController.h; sourceTree = "<group>"; };
-		0C2486651800663000209767 /* CHTSolveDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSolveDetailViewController.m; sourceTree = "<group>"; };
 		0C24868F1802331000209767 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		0C2486901802331000209767 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
 		0C248693180234CC00209767 /* scrambleTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scrambleTypes.plist; sourceTree = "<group>"; };
@@ -303,6 +301,7 @@
 		7F7D43F326B5A5720017B4C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7F7D43F726B6DF340017B4C3 /* EditSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSessionViewController.swift; sourceTree = "<group>"; };
 		7F7D43FB26B6E6390017B4C3 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveDetailViewController.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -456,8 +455,7 @@
 				0CE9484117FCF17E00FB770C /* CHTStatsViewController.m */,
 				0C2486611800661800209767 /* CHTStatDetailViewController.h */,
 				0C2486621800661800209767 /* CHTStatDetailViewController.m */,
-				0C2486641800663000209767 /* CHTSolveDetailViewController.h */,
-				0C2486651800663000209767 /* CHTSolveDetailViewController.m */,
+				7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */,
 				7F7D43FB26B6E6390017B4C3 /* SessionViewController.swift */,
 				7F7D43F726B6DF340017B4C3 /* EditSessionViewController.swift */,
 				7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */,
@@ -758,9 +756,9 @@
 				0CE7D6C818063737008989B3 /* Util.m in Sources */,
 				0CE7D6DD18063950008989B3 /* SQ1.m in Sources */,
 				0CE7D6D418063928008989B3 /* Sq12phase.m in Sources */,
-				0C2486661800663000209767 /* CHTSolveDetailViewController.m in Sources */,
 				0C2FA6EC17B1E37F00A006B5 /* CHTAppDelegate.m in Sources */,
 				0C24869A1802370200209767 /* CHTScramblePickerView.m in Sources */,
+				7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */,
 				E97FF97226A6212C00546236 /* OneStat.swift in Sources */,
 				0CE9484217FCF17E00FB770C /* CHTStatsViewController.m in Sources */,
 				0CE7D6C718063737008989B3 /* TwoPhaseScrambler.m in Sources */,

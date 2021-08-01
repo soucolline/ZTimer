@@ -10,7 +10,6 @@
 #import "CHTSession.h"
 #import "CHTSessionManager.h"
 #import "CHTStatDetailViewController.h"
-#import "CHTSolveDetailViewController.h"
 #import "ZTimer-Swift.h"
 
 @interface CHTStatsViewController ()
@@ -187,7 +186,7 @@
     int row = indexPath.row;
     if (row != 0) {
         if (row == 1 || row == 2) {
-            CHTSolveDetailViewController *solveDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"oneSolveDetail"];
+            SolveDetailViewController *solveDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SolveDetailViewController"];
             solveDetailViewController.hidesBottomBarWhenPushed = YES;
             switch (row) {
                 case 1:

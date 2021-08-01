@@ -3,3 +3,4 @@
 //
 
 #import "CHTSessionManager.h"
+#import "CHTSolve.h"

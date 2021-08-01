@@ -233,7 +233,7 @@
         <!--Solve Detail View Controller-->
         <scene sceneID="a3L-Bm-Gx2">
             <objects>
-                <tableViewController storyboardIdentifier="oneSolveDetail" id="Sl0-eZ-boN" customClass="CHTSolveDetailViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SolveDetailViewController" id="Sl0-eZ-boN" customClass="SolveDetailViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="TKW-x3-nbz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
