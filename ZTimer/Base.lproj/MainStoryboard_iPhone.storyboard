@@ -188,7 +188,7 @@
         <!--Stat Detail View Controller-->
         <scene sceneID="uAy-16-9gN">
             <objects>
-                <tableViewController storyboardIdentifier="statDetail" id="Zrv-BW-dWI" customClass="CHTStatDetailViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StatDetailViewController" id="Zrv-BW-dWI" customClass="StatDetailViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="wde-tq-x9y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

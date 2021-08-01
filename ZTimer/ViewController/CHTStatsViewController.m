@@ -9,7 +9,6 @@
 #import "CHTStatsViewController.h"
 #import "CHTSession.h"
 #import "CHTSessionManager.h"
-#import "CHTStatDetailViewController.h"
 #import "ZTimer-Swift.h"
 
 @interface CHTStatsViewController ()
@@ -200,7 +199,7 @@
             }
             [self.navigationController pushViewController:solveDetailViewController animated:YES];
         } else {
-            CHTStatDetailViewController *statDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"statDetail"];
+            StatDetailViewController *statDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StatDetailViewController"];
             statDetailViewController.hidesBottomBarWhenPushed = YES;
             statDetailViewController.session = self.session;
             statDetailViewController.stat = [self.stats objectAtIndex:row];
