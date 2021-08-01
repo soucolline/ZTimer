@@ -10,7 +10,6 @@
 #import "CHTSession.h"
 #import "CHTSessionManager.h"
 #import "CHTStatDetailViewController.h"
-#import "CHTSessionViewController.h"
 #import "CHTSolveDetailViewController.h"
 #import "ZTimer-Swift.h"
 
@@ -121,7 +120,7 @@
         [self.popoverController dismissPopoverAnimated:YES];
         return;
     }
-    CHTSessionViewController *sessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionManage"];
+    SessionViewController *sessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SessionViewController"];
     if ([Utils getDevice] == DevicePad) {
         self.popoverController = [[UIPopoverController alloc] initWithContentViewController:sessionViewController];
         self.popoverController.delegate = self;

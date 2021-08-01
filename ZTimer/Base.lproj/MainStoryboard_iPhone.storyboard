@@ -103,7 +103,7 @@
         <!--Session-->
         <scene sceneID="AY9-7l-Wyn">
             <objects>
-                <tableViewController id="bP1-EO-COe" customClass="CHTSessionViewController" sceneMemberID="viewController">
+                <tableViewController id="bP1-EO-COe" customClass="SessionViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="pYl-Rs-3m3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
         <!--Navigation Controller-->
         <scene sceneID="czI-RB-xnF">
             <objects>
-                <navigationController storyboardIdentifier="sessionManage" definesPresentationContext="YES" id="y5o-An-58J" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SessionViewController" definesPresentationContext="YES" id="y5o-An-58J" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Jf-qq-EeS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
