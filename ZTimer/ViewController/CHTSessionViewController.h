@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CHTSessionManager.h"
-#import "CHTEditSessionViewController.h"
 
 @interface CHTSessionViewController : UITableViewController <UIActionSheetDelegate>
 @property (nonatomic, strong) CHTSessionManager *sessionManager;

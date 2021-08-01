@@ -144,7 +144,7 @@
         <!--Edit Session View Controller-->
         <scene sceneID="pBg-ik-Z7A">
             <objects>
-                <tableViewController storyboardIdentifier="editSession" id="u0C-PG-GpX" customClass="CHTEditSessionViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EditSessionViewController" id="u0C-PG-GpX" customClass="EditSessionViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uXe-rJ-y8U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

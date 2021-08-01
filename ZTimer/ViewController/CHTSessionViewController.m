@@ -302,7 +302,7 @@
 }
 
 - (IBAction)addNewSession:(id)sender {
-    CHTEditSessionViewController *newSessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"editSession"];
+    EditSessionViewController *newSessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditSessionViewController"];
     newSessionViewController.navigationItem.title = [Utils getLocalizedStringFrom:@"new session"];
     newSessionViewController.isNew = YES;
     [self.navigationController pushViewController:newSessionViewController animated:YES];
@@ -310,7 +310,7 @@
 }
 
 - (void)editSession:(NSIndexPath *)indexPath {
-    CHTEditSessionViewController *newSessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"editSession"];
+    EditSessionViewController *newSessionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditSessionViewController"];
     newSessionViewController.navigationItem.title = [Utils getLocalizedStringFrom:@"rename session"];
     newSessionViewController.isNew = NO;
     if (indexPath.section == 0) {
