@@ -72,7 +72,6 @@
 		0CE7D6E31806436F008989B3 /* Cross.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6E21806436E008989B3 /* Cross.m */; };
 		0CE7D6E618064557008989B3 /* Gear.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6E518064557008989B3 /* Gear.m */; };
 		0CE9480F17FA627900FB770C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CE9481117FA627900FB770C /* Localizable.strings */; };
-		0CE9484217FCF17E00FB770C /* CHTStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9484117FCF17E00FB770C /* CHTStatsViewController.m */; };
 		0CE9484517FD184D00FB770C /* CHTSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9484417FD184D00FB770C /* CHTSessionManager.m */; };
 		0CEB9A9B180E33580064182B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB9A9A180E33580064182B /* MessageUI.framework */; };
 		0CEB9AF5180FAC640064182B /* icon_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB9AEE180FAC640064182B /* icon_29.png */; };
@@ -141,6 +140,7 @@
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
 		E99F0CD526A487AF002A8081 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD426A487AF002A8081 /* Settings.swift */; };
+		E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8098226BC1967001C1095 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,8 +234,6 @@
 		0CE7D6E518064557008989B3 /* Gear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gear.m; sourceTree = "<group>"; };
 		0CE9481017FA627900FB770C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0CE9481217FA627E00FB770C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		0CE9484017FCF17E00FB770C /* CHTStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTStatsViewController.h; sourceTree = "<group>"; };
-		0CE9484117FCF17E00FB770C /* CHTStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTStatsViewController.m; sourceTree = "<group>"; };
 		0CE9484317FD184D00FB770C /* CHTSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSessionManager.h; sourceTree = "<group>"; };
 		0CE9484417FD184D00FB770C /* CHTSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSessionManager.m; sourceTree = "<group>"; };
 		0CEB9A9A180E33580064182B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -308,6 +306,7 @@
 		E99F0CD126A48311002A8081 /* ZTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZTimer-Bridging-Header.h"; sourceTree = "<group>"; };
 		E99F0CD226A48311002A8081 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E99F0CD426A487AF002A8081 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		E9B8098226BC1967001C1095 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,8 +449,7 @@
 			children = (
 				0C2FA6F917B1E37F00A006B5 /* CHTTimingViewController.h */,
 				0C2FA6FA17B1E37F00A006B5 /* CHTTimingViewController.m */,
-				0CE9484017FCF17E00FB770C /* CHTStatsViewController.h */,
-				0CE9484117FCF17E00FB770C /* CHTStatsViewController.m */,
+				E9B8098226BC1967001C1095 /* StatsViewController.swift */,
 				7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */,
 				7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */,
 				7F7D43FB26B6E6390017B4C3 /* SessionViewController.swift */,
@@ -622,7 +620,6 @@
 				ORGANIZATIONNAME = "Thomas Guilleminot";
 				TargetAttributes = {
 					0C2FA6D717B1E37F00A006B5 = {
-						DevelopmentTeam = A8WX3L9ALZ;
 						LastSwiftMigration = 1250;
 					};
 				};
@@ -759,9 +756,9 @@
 				0C24869A1802370200209767 /* CHTScramblePickerView.m in Sources */,
 				7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */,
 				E97FF97226A6212C00546236 /* OneStat.swift in Sources */,
-				0CE9484217FCF17E00FB770C /* CHTStatsViewController.m in Sources */,
 				0CE7D6C718063737008989B3 /* TwoPhaseScrambler.m in Sources */,
 				0C2486971802351E00209767 /* CHTScrambler.m in Sources */,
+				E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */,
 				0CE7D6DB18063950008989B3 /* Clock.m in Sources */,
 				7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */,
 				0CE7D6E31806436F008989B3 /* Cross.m in Sources */,
@@ -931,8 +928,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XDX42S5M9N;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -949,6 +948,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.ztimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = ztimer_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "ZTimer/ZTimer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -966,8 +966,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XDX42S5M9N;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -984,6 +986,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.ztimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = ztimer_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "ZTimer/ZTimer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
