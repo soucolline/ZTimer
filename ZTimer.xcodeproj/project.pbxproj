@@ -38,7 +38,6 @@
 		0C2FA6EC17B1E37F00A006B5 /* CHTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA6EB17B1E37F00A006B5 /* CHTAppDelegate.m */; };
 		0C2FA6F517B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */; };
 		0C2FA6F817B1E37F00A006B5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F617B1E37F00A006B5 /* MainStoryboard_iPad.storyboard */; };
-		0C2FA6FB17B1E37F00A006B5 /* CHTTimingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA6FA17B1E37F00A006B5 /* CHTTimingViewController.m */; };
 		0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71117B68C4900A006B5 /* CHTSession.m */; };
 		0C2FA71517B68D1C00A006B5 /* CHTSolve.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71417B68D1C00A006B5 /* CHTSolve.m */; };
 		0C2FA71817B9DB5600A006B5 /* CHTScramble.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71717B9DB5600A006B5 /* CHTScramble.m */; };
@@ -141,6 +140,7 @@
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
 		E99F0CD526A487AF002A8081 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD426A487AF002A8081 /* Settings.swift */; };
 		E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8098226BC1967001C1095 /* StatsViewController.swift */; };
+		E9B8098526BDB2DE001C1095 /* TimingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8098426BDB2DD001C1095 /* TimingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,8 +180,6 @@
 		0C2FA6E917B1E37F00A006B5 /* ZTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZTimer-Prefix.pch"; sourceTree = "<group>"; };
 		0C2FA6EA17B1E37F00A006B5 /* CHTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTAppDelegate.h; sourceTree = "<group>"; };
 		0C2FA6EB17B1E37F00A006B5 /* CHTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTAppDelegate.m; sourceTree = "<group>"; };
-		0C2FA6F917B1E37F00A006B5 /* CHTTimingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTTimingViewController.h; sourceTree = "<group>"; };
-		0C2FA6FA17B1E37F00A006B5 /* CHTTimingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTTimingViewController.m; sourceTree = "<group>"; };
 		0C2FA71017B68C4900A006B5 /* CHTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSession.h; sourceTree = "<group>"; };
 		0C2FA71117B68C4900A006B5 /* CHTSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSession.m; sourceTree = "<group>"; };
 		0C2FA71317B68D1C00A006B5 /* CHTSolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSolve.h; sourceTree = "<group>"; };
@@ -307,6 +305,7 @@
 		E99F0CD226A48311002A8081 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E99F0CD426A487AF002A8081 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E9B8098226BC1967001C1095 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		E9B8098426BDB2DD001C1095 /* TimingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,8 +446,7 @@
 		0C2FA70C17B68B9B00A006B5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0C2FA6F917B1E37F00A006B5 /* CHTTimingViewController.h */,
-				0C2FA6FA17B1E37F00A006B5 /* CHTTimingViewController.m */,
+				E9B8098426BDB2DD001C1095 /* TimingViewController.swift */,
 				E9B8098226BC1967001C1095 /* StatsViewController.swift */,
 				7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */,
 				7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */,
@@ -765,7 +763,6 @@
 				0CE7D6C618063737008989B3 /* Search.m in Sources */,
 				0C2486911802331000209767 /* CustomIOS7AlertView.m in Sources */,
 				7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */,
-				0C2FA6FB17B1E37F00A006B5 /* CHTTimingViewController.m in Sources */,
 				0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */,
 				E99F0CD326A48311002A8081 /* Utils.swift in Sources */,
 				0CE7D6CB18063910008989B3 /* Pyraminx.m in Sources */,
@@ -777,6 +774,7 @@
 				7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */,
 				0C2FA71517B68D1C00A006B5 /* CHTSolve.m in Sources */,
 				0CE7D6D218063928008989B3 /* Cube222.m in Sources */,
+				E9B8098526BDB2DE001C1095 /* TimingViewController.swift in Sources */,
 				0C2FA71817B9DB5600A006B5 /* CHTScramble.m in Sources */,
 				0CE9484517FD184D00FB770C /* CHTSessionManager.m in Sources */,
 				E99F0CD526A487AF002A8081 /* Settings.swift in Sources */,

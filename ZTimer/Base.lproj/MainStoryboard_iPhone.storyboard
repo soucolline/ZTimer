@@ -11,7 +11,7 @@
         <!--Timing-->
         <scene sceneID="11">
             <objects>
-                <viewController title="Timing" id="2" customClass="CHTTimingViewController" sceneMemberID="viewController">
+                <viewController title="Timing" id="2" customClass="TimingViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,8 +51,8 @@
                     <tabBarItem key="tabBarItem" title="Timing" image="timing.png" id="7"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="scrambleLabel" destination="Ban-oe-13z" id="YW9-GS-iDW"/>
-                        <outlet property="timeLabel" destination="aCf-A5-KDc" id="BiM-pe-GPQ"/>
+                        <outlet property="scrambleLabel" destination="Ban-oe-13z" id="Fwt-lj-ETW"/>
+                        <outlet property="timeLabel" destination="aCf-A5-KDc" id="8Q0-ig-LYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
