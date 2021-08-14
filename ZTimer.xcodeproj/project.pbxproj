@@ -25,10 +25,8 @@
 		0C0D6E6A1818BD1100BE22CB /* wxTimeline_sm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0D6E461818BD1100BE22CB /* wxTimeline_sm@2x.png */; };
 		0C11FCDB1818A3420054BC9C /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C11FCDA1818A3420054BC9C /* share@2x.png */; };
 		0C11FCDD1818A3580054BC9C /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C11FCDC1818A3580054BC9C /* share.png */; };
-		0C2486911802331000209767 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486901802331000209767 /* CustomIOS7AlertView.m */; };
 		0C248694180234CC00209767 /* scrambleTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C248693180234CC00209767 /* scrambleTypes.plist */; };
 		0C2486971802351E00209767 /* CHTScrambler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486961802351E00209767 /* CHTScrambler.m */; };
-		0C24869A1802370200209767 /* CHTScramblePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486991802370200209767 /* CHTScramblePickerView.m */; };
 		0C24869C1802411600209767 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C24869B1802411600209767 /* QuartzCore.framework */; };
 		0C2FA6DC17B1E37F00A006B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DB17B1E37F00A006B5 /* UIKit.framework */; };
 		0C2FA6DE17B1E37F00A006B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DD17B1E37F00A006B5 /* Foundation.framework */; };
@@ -135,6 +133,7 @@
 		7F7D43FC26B6E6390017B4C3 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43FB26B6E6390017B4C3 /* SessionViewController.swift */; };
 		7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */; };
 		7F7D440526B6FE490017B4C3 /* StatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */; };
+		E9081E9E26C7FCF900619AE2 /* ScramblePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9081E9D26C7FCF900619AE2 /* ScramblePickerViewController.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
@@ -162,13 +161,9 @@
 		0C0D6E461818BD1100BE22CB /* wxTimeline_sm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wxTimeline_sm@2x.png"; sourceTree = "<group>"; };
 		0C11FCDA1818A3420054BC9C /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
 		0C11FCDC1818A3580054BC9C /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
-		0C24868F1802331000209767 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
-		0C2486901802331000209767 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
 		0C248693180234CC00209767 /* scrambleTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scrambleTypes.plist; sourceTree = "<group>"; };
 		0C2486951802351E00209767 /* CHTScrambler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTScrambler.h; sourceTree = "<group>"; };
 		0C2486961802351E00209767 /* CHTScrambler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTScrambler.m; sourceTree = "<group>"; };
-		0C2486981802370200209767 /* CHTScramblePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTScramblePickerView.h; sourceTree = "<group>"; };
-		0C2486991802370200209767 /* CHTScramblePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTScramblePickerView.m; sourceTree = "<group>"; };
 		0C24869B1802411600209767 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0C2FA6D817B1E37F00A006B5 /* ZTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2FA6DB17B1E37F00A006B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -297,6 +292,7 @@
 		7F7D43FB26B6E6390017B4C3 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveDetailViewController.swift; sourceTree = "<group>"; };
 		7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDetailViewController.swift; sourceTree = "<group>"; };
+		E9081E9D26C7FCF900619AE2 /* ScramblePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScramblePickerViewController.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -334,10 +330,7 @@
 		0C24868E180232F300209767 /* CutomViews */ = {
 			isa = PBXGroup;
 			children = (
-				0C24868F1802331000209767 /* CustomIOS7AlertView.h */,
-				0C2486901802331000209767 /* CustomIOS7AlertView.m */,
-				0C2486981802370200209767 /* CHTScramblePickerView.h */,
-				0C2486991802370200209767 /* CHTScramblePickerView.m */,
+				E9081E9D26C7FCF900619AE2 /* ScramblePickerViewController.swift */,
 			);
 			name = CutomViews;
 			path = CustomViews;
@@ -751,7 +744,6 @@
 				0CE7D6DD18063950008989B3 /* SQ1.m in Sources */,
 				0CE7D6D418063928008989B3 /* Sq12phase.m in Sources */,
 				0C2FA6EC17B1E37F00A006B5 /* CHTAppDelegate.m in Sources */,
-				0C24869A1802370200209767 /* CHTScramblePickerView.m in Sources */,
 				7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */,
 				E97FF97226A6212C00546236 /* OneStat.swift in Sources */,
 				0CE7D6C718063737008989B3 /* TwoPhaseScrambler.m in Sources */,
@@ -761,7 +753,6 @@
 				7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */,
 				0CE7D6E31806436F008989B3 /* Cross.m in Sources */,
 				0CE7D6C618063737008989B3 /* Search.m in Sources */,
-				0C2486911802331000209767 /* CustomIOS7AlertView.m in Sources */,
 				7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */,
 				0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */,
 				E99F0CD326A48311002A8081 /* Utils.swift in Sources */,
@@ -770,6 +761,7 @@
 				0CE7D6D318063928008989B3 /* Skewb.m in Sources */,
 				7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */,
 				0CE7D6E0180639FA008989B3 /* Im.m in Sources */,
+				E9081E9E26C7FCF900619AE2 /* ScramblePickerViewController.swift in Sources */,
 				7F7D43FC26B6E6390017B4C3 /* SessionViewController.swift in Sources */,
 				7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */,
 				0C2FA71517B68D1C00A006B5 /* CHTSolve.m in Sources */,
