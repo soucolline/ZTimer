@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -511,6 +512,52 @@
             </objects>
             <point key="canvasLocation" x="1325" y="1725"/>
         </scene>
+        <!--Scramble Picker View Controller-->
+        <scene sceneID="6eh-5C-ZrS">
+            <objects>
+                <viewController storyboardIdentifier="ScramblePickerViewController" id="Umc-Z5-vaQ" customClass="ScramblePickerViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gXw-Qb-NLt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqq-46-Akp">
+                                <rect key="frame" x="0.0" y="340" width="414" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTq-zm-fpQ">
+                                <rect key="frame" x="24" y="788" width="366" height="50"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="T5K-9Y-F9S"/>
+                                </constraints>
+                                <state key="normal" title="Choose Scramble">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapValidate" destination="Umc-Z5-vaQ" eventType="touchUpInside" id="v4t-Eh-qyf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kwb-ab-gyS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kwb-ab-gyS" firstAttribute="trailing" secondItem="aTq-zm-fpQ" secondAttribute="trailing" constant="24" id="0cZ-1e-K6v"/>
+                            <constraint firstItem="Kwb-ab-gyS" firstAttribute="trailing" secondItem="kqq-46-Akp" secondAttribute="trailing" id="7gr-u5-DMC"/>
+                            <constraint firstItem="kqq-46-Akp" firstAttribute="centerY" secondItem="gXw-Qb-NLt" secondAttribute="centerY" id="K4o-TC-rAa"/>
+                            <constraint firstItem="kqq-46-Akp" firstAttribute="centerX" secondItem="gXw-Qb-NLt" secondAttribute="centerX" id="qtd-Tx-5ic"/>
+                            <constraint firstItem="Kwb-ab-gyS" firstAttribute="bottom" secondItem="aTq-zm-fpQ" secondAttribute="bottom" constant="24" id="uPg-1o-6BK"/>
+                            <constraint firstItem="kqq-46-Akp" firstAttribute="leading" secondItem="Kwb-ab-gyS" secondAttribute="leading" id="vBw-hP-4Vp"/>
+                            <constraint firstItem="aTq-zm-fpQ" firstAttribute="leading" secondItem="Kwb-ab-gyS" secondAttribute="leading" constant="24" id="wk5-Iz-glp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="kqq-46-Akp" id="NAn-nq-mY8"/>
+                        <outlet property="validateButton" destination="aTq-zm-fpQ" id="Ogf-VN-YsZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FXE-Fx-pjd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1325" y="2525"/>
+        </scene>
         <!--Help-->
         <scene sceneID="YTs-Jb-0gT">
             <objects>
@@ -561,6 +608,12 @@
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 import CoreMotion
 
-class TimingViewController: UIViewController, CustomIOS7AlertViewDelegate {
+class TimingViewController: UIViewController {
     @IBOutlet private var scrambleLabel: UILabel!
     @IBOutlet private var timeLabel: UILabel!
 
@@ -31,7 +31,6 @@ class TimingViewController: UIViewController, CustomIOS7AlertViewDelegate {
     private let scrambler = CHTScrambler()
     private var thisScramble: CHTScramble!
     private var nextScramble: CHTScramble!
-    private var pickerView: CHTScramblePickerView!
     private var inspectionTimer: Timer?
     private var inspectionOverTimeTimer: Timer!
     private var motionManager: CMMotionManager!
@@ -428,10 +427,11 @@ class TimingViewController: UIViewController, CustomIOS7AlertViewDelegate {
         print("Choose Scramble Type")
 
         if self.timerStatus != .timing && self.timerStatus != TimerStatus.inspect {
-            pickerView = CHTScramblePickerView(pickerView: ())
+            let pickerView = self.storyboard!.instantiateViewController(identifier: "ScramblePickerViewController") as! ScramblePickerViewController
+            pickerView.modalPresentationStyle = .popover
             pickerView.delegate = self
-            pickerView.tag = Const.TagAlertChangeScrambleType
-            pickerView.show()
+
+            self.present(pickerView, animated: true)
         }
     }
 
@@ -472,24 +472,6 @@ class TimingViewController: UIViewController, CustomIOS7AlertViewDelegate {
         }
     }
 
-    func customIOS7dialogButtonTouchUp(inside alertView: Any!, clickedButtonAt buttonIndex: Int) {
-        let alertView = alertView as! CHTScramblePickerView
-        alertView.close()
-
-        if buttonIndex == 1 {
-            scrType = Int(alertView.selectedType)
-            scrSubType = Int(alertView.selectedSubType)
-            self.session.currentType = alertView.selectedType
-            self.session.currentSubType = alertView.selectedSubType
-            oldScrType = scrType
-            oldScrSubType = scrSubType
-            self.changeScramble()
-            CHTSessionManager.save(self.session)
-
-            print("choose scramble index \(self.session.currentType) \(self.session.currentSubType)")
-        }
-    }
-
     private func changeScramble() {
         self.nextScramble = CHTScramble.getNewScramble(by: self.scrambler, type: self.session.currentType, subType: self.session.currentSubType)
         self.displayNextScramble()
@@ -526,3 +508,17 @@ class TimingViewController: UIViewController, CustomIOS7AlertViewDelegate {
 
 }
 
+extension TimingViewController: ScramblePickerViewControllerDelegate {
+    func didSelectScramble(type: Int, subType: Int) {
+        scrType = type
+        scrSubType = subType
+        self.session.currentType = Int32(type)
+        self.session.currentSubType = Int32(subType)
+        oldScrType = scrType
+        oldScrSubType = scrSubType
+        self.changeScramble()
+        CHTSessionManager.save(self.session)
+
+        print("choose scramble index \(self.session.currentType) \(self.session.currentSubType)")
+    }
+}

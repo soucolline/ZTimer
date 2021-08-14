@@ -5,4 +5,3 @@
 #import "CHTSessionManager.h"
 #import "CHTSolve.h"
 #import "CHTScrambler.h"
-#import "CHTScramblePickerView.h"
