@@ -17,7 +17,7 @@
 
 + (CHTSession *) initWithDefault;
 + (CHTSession *) initWithName:(NSString *)name;
-- (void)addSolve:(int)time withPenalty:(PenaltyType)penalty scramble:(CHTScramble *)scramble;
+- (void)addSolve:(int)time withPenalty:(PenaltyType)penalty scramble:(Scramble *)scramble;
 - (void)addPenaltyToLastSolve: (PenaltyType)penalty;
 - (void)deleteLastSolve;
 - (CHTSolve *)lastSolve;

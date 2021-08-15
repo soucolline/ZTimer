@@ -58,10 +58,10 @@
     self.timeStamp = [NSDate date];
     self.timeBeforePenalty = newTimeBeforePenalty;
     self.penalty = newPenalty;
-    self.scramble = [[CHTScramble alloc] init];
+    self.scramble = [[Scramble alloc] init];
 }
 
-+ (CHTSolve *) newSolveWithTime: (int)newTime andPenalty:(PenaltyType)newPenalty andScramble: (CHTScramble *)newScramble {
++ (CHTSolve *) newSolveWithTime: (int)newTime andPenalty:(PenaltyType)newPenalty andScramble: (Scramble *)newScramble {
     CHTSolve *newSolve = [[CHTSolve alloc] init];
     [newSolve setTime:newTime andPenalty:newPenalty];
     [newSolve setScramble:newScramble];

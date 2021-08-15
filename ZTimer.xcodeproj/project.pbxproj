@@ -38,7 +38,6 @@
 		0C2FA6F817B1E37F00A006B5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F617B1E37F00A006B5 /* MainStoryboard_iPad.storyboard */; };
 		0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71117B68C4900A006B5 /* CHTSession.m */; };
 		0C2FA71517B68D1C00A006B5 /* CHTSolve.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71417B68D1C00A006B5 /* CHTSolve.m */; };
-		0C2FA71817B9DB5600A006B5 /* CHTScramble.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71717B9DB5600A006B5 /* CHTScramble.m */; };
 		0C470A271818E1C500F52BFE /* weibo_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C470A251818E1C500F52BFE /* weibo_sm.png */; };
 		0C470A281818E1C500F52BFE /* weibo_sm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C470A261818E1C500F52BFE /* weibo_sm@2x.png */; };
 		0C902E70181A07090003A904 /* 1f2t.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C902E6A181A07090003A904 /* 1f2t.png */; };
@@ -134,6 +133,7 @@
 		7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */; };
 		7F7D440526B6FE490017B4C3 /* StatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */; };
 		E9081E9E26C7FCF900619AE2 /* ScramblePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9081E9D26C7FCF900619AE2 /* ScramblePickerViewController.swift */; };
+		E9081EA026C90F5500619AE2 /* Scramble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9081E9F26C90F5500619AE2 /* Scramble.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
@@ -179,8 +179,6 @@
 		0C2FA71117B68C4900A006B5 /* CHTSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSession.m; sourceTree = "<group>"; };
 		0C2FA71317B68D1C00A006B5 /* CHTSolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSolve.h; sourceTree = "<group>"; };
 		0C2FA71417B68D1C00A006B5 /* CHTSolve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSolve.m; sourceTree = "<group>"; };
-		0C2FA71617B9DB5600A006B5 /* CHTScramble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTScramble.h; sourceTree = "<group>"; };
-		0C2FA71717B9DB5600A006B5 /* CHTScramble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTScramble.m; sourceTree = "<group>"; };
 		0C470A251818E1C500F52BFE /* weibo_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo_sm.png; sourceTree = "<group>"; };
 		0C470A261818E1C500F52BFE /* weibo_sm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibo_sm@2x.png"; sourceTree = "<group>"; };
 		0C902E6A181A07090003A904 /* 1f2t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1f2t.png; sourceTree = "<group>"; };
@@ -293,6 +291,7 @@
 		7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveDetailViewController.swift; sourceTree = "<group>"; };
 		7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDetailViewController.swift; sourceTree = "<group>"; };
 		E9081E9D26C7FCF900619AE2 /* ScramblePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScramblePickerViewController.swift; sourceTree = "<group>"; };
+		E9081E9F26C90F5500619AE2 /* Scramble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scramble.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -545,8 +544,7 @@
 				0C2FA71117B68C4900A006B5 /* CHTSession.m */,
 				0C2FA71317B68D1C00A006B5 /* CHTSolve.h */,
 				0C2FA71417B68D1C00A006B5 /* CHTSolve.m */,
-				0C2FA71617B9DB5600A006B5 /* CHTScramble.h */,
-				0C2FA71717B9DB5600A006B5 /* CHTScramble.m */,
+				E9081E9F26C90F5500619AE2 /* Scramble.swift */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -745,6 +743,7 @@
 				0CE7D6D418063928008989B3 /* Sq12phase.m in Sources */,
 				0C2FA6EC17B1E37F00A006B5 /* CHTAppDelegate.m in Sources */,
 				7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */,
+				E9081EA026C90F5500619AE2 /* Scramble.swift in Sources */,
 				E97FF97226A6212C00546236 /* OneStat.swift in Sources */,
 				0CE7D6C718063737008989B3 /* TwoPhaseScrambler.m in Sources */,
 				0C2486971802351E00209767 /* CHTScrambler.m in Sources */,
@@ -767,7 +766,6 @@
 				0C2FA71517B68D1C00A006B5 /* CHTSolve.m in Sources */,
 				0CE7D6D218063928008989B3 /* Cube222.m in Sources */,
 				E9B8098526BDB2DE001C1095 /* TimingViewController.swift in Sources */,
-				0C2FA71817B9DB5600A006B5 /* CHTScramble.m in Sources */,
 				0CE9484517FD184D00FB770C /* CHTSessionManager.m in Sources */,
 				E99F0CD526A487AF002A8081 /* Settings.swift in Sources */,
 			);

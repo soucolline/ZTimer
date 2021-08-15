@@ -49,7 +49,7 @@
     return self.timeArray.count;
 }
 
-- (void)addSolve:(int)time withPenalty:(PenaltyType)penalty scramble:(CHTScramble *)scramble {
+- (void)addSolve:(int)time withPenalty:(PenaltyType)penalty scramble:(Scramble *)scramble {
     CHTSolve *newSolve = [CHTSolve newSolveWithTime:time andPenalty:penalty andScramble:scramble];
     newSolve.index = self.numberOfSolves;
     [self.timeArray addObject:newSolve];

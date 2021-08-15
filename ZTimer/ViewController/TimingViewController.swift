@@ -29,8 +29,8 @@ class TimingViewController: UIViewController {
     private var session: CHTSession = CHTSessionManager.load().loadCurrentSession()
     private var timerTheme = Theme.getTimerTheme()
     private let scrambler = CHTScrambler()
-    private var thisScramble: CHTScramble!
-    private var nextScramble: CHTScramble!
+    private var thisScramble: Scramble!
+    private var nextScramble: Scramble!
     private var inspectionTimer: Timer?
     private var inspectionOverTimeTimer: Timer!
     private var motionManager: CMMotionManager!
@@ -473,7 +473,7 @@ class TimingViewController: UIViewController {
     }
 
     private func changeScramble() {
-        self.nextScramble = CHTScramble.getNewScramble(by: self.scrambler, type: self.session.currentType, subType: self.session.currentSubType)
+        self.nextScramble = Scramble.getNewScramble(scrambler: self.scrambler, type: Int(self.session.currentType), subType: Int(self.session.currentSubType))
         self.displayNextScramble()
     }
 
@@ -494,7 +494,7 @@ class TimingViewController: UIViewController {
     }
 
     private func generateNextScramble() {
-        self.nextScramble = CHTScramble.getNewScramble(by: self.scrambler, type: self.session.currentType, subType: self.session.currentSubType)
+        self.nextScramble = Scramble.getNewScramble(scrambler: self.scrambler, type: Int(self.session.currentType), subType: Int(self.session.currentSubType))
         print("next scramble : \(String(describing: self.nextScramble.scramble))")
     }
 
