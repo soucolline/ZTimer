@@ -9,7 +9,7 @@
 import UIKit
 
 class SessionViewController: UITableViewController {
-    private var sessionManager: CHTSessionManager!
+    private var sessionManager: SessionManager!
     private var buttons: [UIBarButtonItem] = []
 
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class SessionViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.sessionManager = CHTSessionManager.load()
+        self.sessionManager = SessionManager.loadd()
 
         if Utils.getDevice() == .pad {
             self.navigationController?.navigationBar.tintColor = .black
@@ -71,9 +71,9 @@ class SessionViewController: UITableViewController {
         newSessionViewController.isNew = false
 
         if indexPath.section == 0 {
-            newSessionViewController.oldSessionName = self.sessionManager?.getStickySession(at: Int32(indexPath.row))
+            newSessionViewController.oldSessionName = self.sessionManager?.stickySessionArray[indexPath.row]
         } else {
-            newSessionViewController.oldSessionName = self.sessionManager?.getNormalSession(at: Int32(indexPath.row))
+            newSessionViewController.oldSessionName = self.sessionManager?.sessionArray[indexPath.row]
         }
 
         self.navigationController?.pushViewController(newSessionViewController, animated: true)
@@ -116,12 +116,13 @@ extension SessionViewController {
 
         switch indexPath.section {
         case 0:
-            let title = self.sessionManager?.getStickySession(at: Int32(indexPath.row))
-            let session = CHTSessionManager.loadSession(withName: title)
-            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session!.numberOfSolves)
+            let title = self.sessionManager?.stickySessionArray[indexPath.row]
+            let session = SessionManager.loadSessionWithName(name: title!)
+            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session.numberOfSolves)
 
             if indexPath.row == 0 {
                 cell.textLabel?.text = Utils.getLocalizedString(from: title!)
+                cell.detailTextLabel?.text = subTitle
                 cell.imageView?.image = UIImage(named: "mainSession.png")
             } else {
                 cell.textLabel?.text = title!
@@ -134,9 +135,9 @@ extension SessionViewController {
             }
 
         case 1:
-            let title = self.sessionManager?.getNormalSession(at: Int32(indexPath.row))
-            let session = CHTSessionManager.loadSession(withName: title)
-            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session!.numberOfSolves)
+            let title = self.sessionManager?.sessionArray[indexPath.row]
+            let session = SessionManager.loadSessionWithName(name: title!)
+            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session.numberOfSolves)
             cell.textLabel?.text = title
             cell.detailTextLabel?.text = subTitle
             cell.imageView?.image = UIImage(named: "session.png")
@@ -171,18 +172,18 @@ extension SessionViewController {
         if editingStyle == .delete {
             switch indexPath.section {
             case 0:
-                let deleteSession = self.sessionManager?.getStickySession(at: Int32(indexPath.row))
+                let deleteSession = self.sessionManager?.stickySessionArray[indexPath.row]
                 if deleteSession == self.sessionManager?.currentSessionName {
                     self.sessionManager?.currentSessionName = "main session"
                 }
-                self.sessionManager?.removeStickySession(at: Int32(indexPath.row))
+                self.sessionManager?.removeStickySession(at: indexPath.row)
 
             case 1:
-                let deleteSession = self.sessionManager?.getNormalSession(at: Int32(indexPath.row))
+                let deleteSession = self.sessionManager?.sessionArray[indexPath.row]
                 if deleteSession == self.sessionManager?.currentSessionName {
                     self.sessionManager?.currentSessionName = "main session"
                 }
-                self.sessionManager?.removeNormalSession(at: Int32(indexPath.row))
+                self.sessionManager?.removeNormalSession(at: indexPath.row)
 
             default: ()
             }
@@ -196,7 +197,8 @@ extension SessionViewController {
     }
 
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        self.sessionManager?.moveObject(from: sourceIndexPath, to: destinationIndexPath)
+        // TODO : check what to do with move 
+        //self.sessionManager?.moveObject(from: sourceIndexPath, to: destinationIndexPath)
         self.sessionManager?.save()
     }
 
@@ -239,9 +241,9 @@ extension SessionViewController {
 
             switch indexPath.section {
             case 0:
-                session = self.sessionManager!.getStickySession(at: Int32(indexPath.row))
+                session = self.sessionManager!.stickySessionArray[indexPath.row]
             case 1:
-                session = self.sessionManager!.getNormalSession(at: Int32(indexPath.row))
+                session = self.sessionManager!.sessionArray[indexPath.row]
             default: ()
             }
 

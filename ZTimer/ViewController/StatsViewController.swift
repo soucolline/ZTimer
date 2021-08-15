@@ -13,7 +13,7 @@ class StatsViewController: UITableViewController {
     private var stats: [OneStat] = []
 
     private var session: CHTSession {
-        CHTSessionManager.load().loadCurrentSession()
+        SessionManager.loadd().loadCurrentSession()
     }
 
     override func viewDidLoad() {

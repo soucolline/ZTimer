@@ -26,7 +26,7 @@ class TimingViewController: UIViewController {
     private var time: Int!
     private var longPressGesture: UILongPressGestureRecognizer!
     private var timeWhenTimerStart: Int!
-    private var session: CHTSession = CHTSessionManager.load().loadCurrentSession()
+    private var session: CHTSession = SessionManager.loadd().loadCurrentSession()
     private var timerTheme = Theme.getTimerTheme()
     private let scrambler = CHTScrambler()
     private var thisScramble: Scramble!
@@ -79,7 +79,7 @@ class TimingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setTheme()
-        self.session = CHTSessionManager.load().loadCurrentSession()
+        self.session = SessionManager.loadd().loadCurrentSession()
         self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
 
         if self.session.currentType != oldScrType || self.session.currentSubType != oldScrSubType {
@@ -102,7 +102,7 @@ class TimingViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        CHTSessionManager.save(self.session)
+        SessionManager.saveSession(session: self.session)
         self.perform(#selector(stopTimer))
     }
 
@@ -309,7 +309,7 @@ class TimingViewController: UIViewController {
             self.timerStatus = .idle
             self.inspectionBegin = false
             self.session.addSolve(0, with: PENALTY_DNF, scramble: self.thisScramble)
-            CHTSessionManager.save(self.session)
+            SessionManager.saveSession(session: self.session)
             self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
             self.displayNextScramble()
         }
@@ -334,7 +334,7 @@ class TimingViewController: UIViewController {
                 self.timeLabel.text = self.session.lastSolve().toString()
             }
 
-            CHTSessionManager.save(self.session)
+            SessionManager.saveSession(session: self.session)
             self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
             self.displayNextScramble()
             self.stopCoreMotion()
@@ -363,7 +363,7 @@ class TimingViewController: UIViewController {
                 deleteLastTimerAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "yes"), style: .default, handler: { _ in
                     self.session.deleteLastSolve()
                     self.timeLabel.text = "Ready"
-                    CHTSessionManager.save(self.session)
+                    SessionManager.saveSession(session: self.session)
                     self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
                 }))
                 self.present(deleteLastTimerAlert, animated: true)
@@ -384,7 +384,7 @@ class TimingViewController: UIViewController {
             clearTimeAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "yes"), style: .default, handler: { _ in
                 self.session.clear()
                 self.timeLabel.text = "Ready"
-                CHTSessionManager.save(self.session)
+                SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
             }))
             self.present(clearTimeAlert, animated: true)
@@ -404,19 +404,19 @@ class TimingViewController: UIViewController {
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "+2"), style: .default, handler: { _ in
                 self.session.addPenalty(toLastSolve: PENALTY_PLUS_2)
                 self.timeLabel.text = self.session.lastSolve().toString()
-                CHTSessionManager.save(self.session)
+                SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
             }))
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "+DNF"), style: .default, handler: { _ in
                 self.session.addPenalty(toLastSolve: PENALTY_DNF)
                 self.timeLabel.text = self.session.lastSolve().toString()
-                CHTSessionManager.save(self.session)
+                SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
             }))
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: Utils.getLocalizedString(from: "no penalty")), style: .default, handler: { _ in
                 self.session.addPenalty(toLastSolve: PENALTY_NO_PENALTY)
                 self.timeLabel.text = self.session.lastSolve().toString()
-                CHTSessionManager.save(self.session)
+                SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
             }))
             self.present(addPenaltyAlert, animated: true)
@@ -459,7 +459,7 @@ class TimingViewController: UIViewController {
                 let time = Int(myNumber!.doubleValue * 1000)
 
                 self.session.addSolve(Int32(time), with: PENALTY_NO_PENALTY, scramble: self.thisScramble)
-                CHTSessionManager.save(self.session)
+                SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
                 self.timeLabel.text = self.session.lastSolve().toString()
                 self.displayNextScramble()
@@ -517,7 +517,7 @@ extension TimingViewController: ScramblePickerViewControllerDelegate {
         oldScrType = scrType
         oldScrSubType = scrSubType
         self.changeScramble()
-        CHTSessionManager.save(self.session)
+        SessionManager.saveSession(session: self.session)
 
         print("choose scramble index \(self.session.currentType) \(self.session.currentSubType)")
     }

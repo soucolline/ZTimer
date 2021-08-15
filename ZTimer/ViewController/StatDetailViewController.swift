@@ -274,7 +274,7 @@ extension StatDetailViewController {
 
         self.session.remove(solve)
         self.statDetails.remove(at: indexPath.row)
-        CHTSessionManager.save(self.session)
+        SessionManager.saveSession(session: self.session)
         tableView.deleteRows(at: [indexPath], with: .middle)
 
         self.tabBarController?.tabBar.items?[0].badgeValue = String(format: "%d", self.session.numberOfSolves)
