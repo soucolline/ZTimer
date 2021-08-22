@@ -9,7 +9,7 @@
 import UIKit
 
 class SolveDetailViewController: UITableViewController {
-    @objc var solve: CHTSolve!
+    @objc var solve: Solve!
     private var shareSheet: UIAlertController!
 
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ extension SolveDetailViewController {
             cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 17.0, ipadSize: 17.0)
             cell.textLabel?.text = self.solve.toString()
 
-            if self.solve.penalty != PENALTY_NO_PENALTY {
+            if self.solve.penalty != .noPenalty {
                 cell.detailTextLabel?.text = String(format: "(%@)", Utils.convertTimeFromMsecondToString(msecond: Int(self.solve.timeBeforePenalty)))
             } else {
                 cell.detailTextLabel?.text = ""

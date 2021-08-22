@@ -12,8 +12,8 @@ class StatsViewController: UITableViewController {
     private let timerTheme = Theme.getTimerTheme()
     private var stats: [OneStat] = []
 
-    private var session: CHTSession {
-        CHTSessionManager.load().loadCurrentSession()
+    private var session: Session {
+        SessionManager.loadd().loadCurrentSession()
     }
 
     override func viewDidLoad() {
@@ -31,10 +31,10 @@ class StatsViewController: UITableViewController {
 
     private func reload() {
         //self.session = CHTSessionManager.load().loadCurrentSession()
-        let numberOfSolves = self.session.numberOfSolves
-        self.tabBarController?.tabBar.items?[0].badgeValue = String(format: "%d", self.session.numberOfSolves)
+        let numberOfSolves = self.session.numberOfSolves()
+        self.tabBarController?.tabBar.items?[0].badgeValue = String(format: "%d", self.session.numberOfSolves())
         self.stats.removeAll()
-        let numOfSolves = OneStat(statType: "Number of solves: ", statValue: String(format: "%d", self.session.numberOfSolves))
+        let numOfSolves = OneStat(statType: "Number of solves: ", statValue: String(format: "%d", self.session.numberOfSolves()))
         self.stats.append(numOfSolves)
 
         if numberOfSolves > 0 {
@@ -49,22 +49,22 @@ class StatsViewController: UITableViewController {
             self.stats.append(sessionMean)
 
             if numberOfSolves >= 5 {
-                let current5 = OneStat(statType: "Current average of 5: ", statValue: self.session.currentAvg(of: 5).toString())
-                let best5 = OneStat(statType: "Best average of 5: ", statValue: self.session.bestAvg(of: 5).toString())
+                let current5 = OneStat(statType: "Current average of 5: ", statValue: self.session.currentAvgOf(num: 5).toString())
+                let best5 = OneStat(statType: "Best average of 5: ", statValue: self.session.bestAvgOf(num: 5).toString())
 
                 self.stats.append(current5)
                 self.stats.append(best5)
 
                 if numberOfSolves >= 12 {
-                    let current12 = OneStat(statType: "Current average of 12: ", statValue: self.session.currentAvg(of: 12).toString())
-                    let best12 = OneStat(statType: "Best average of 12: ", statValue: self.session.bestAvg(of: 12).toString())
+                    let current12 = OneStat(statType: "Current average of 12: ", statValue: self.session.currentAvgOf(num: 12).toString())
+                    let best12 = OneStat(statType: "Best average of 12: ", statValue: self.session.bestAvgOf(num: 12).toString())
 
                     self.stats.append(current12)
                     self.stats.append(best12)
 
                     if numberOfSolves >= 100 {
-                        let current100 = OneStat(statType: "Current average of 100: ", statValue: self.session.currentAvg(of: 100).toString())
-                        let best100 = OneStat(statType: "Best average of 100: ", statValue: self.session.bestAvg(of: 100).toString())
+                        let current100 = OneStat(statType: "Current average of 100: ", statValue: self.session.currentAvgOf(num: 100).toString())
+                        let best100 = OneStat(statType: "Best average of 100: ", statValue: self.session.bestAvgOf(num: 100).toString())
 
                         self.stats.append(current100)
                         self.stats.append(best100)
@@ -146,13 +146,13 @@ extension StatsViewController {
                 statDetailViewController.row = row
 
                 switch row {
-                    case 3, 4: statDetailViewController.statDetails = self.session.getAllSolves() as! [CHTSolve]
-                    case 5: statDetailViewController.statDetails = self.session.getCurrent(5) as! [CHTSolve]
-                    case 6: statDetailViewController.statDetails = self.session.getBest(5) as! [CHTSolve]
-                    case 7: statDetailViewController.statDetails = self.session.getCurrent(12) as! [CHTSolve]
-                    case 8: statDetailViewController.statDetails = self.session.getBest(12) as! [CHTSolve]
-                    case 9: statDetailViewController.statDetails = self.session.getCurrent(100) as! [CHTSolve]
-                    case 10: statDetailViewController.statDetails = self.session.getBest(100) as! [CHTSolve]
+                    case 3, 4: statDetailViewController.statDetails = self.session.getAllSolves()
+                    case 5: statDetailViewController.statDetails = self.session.getCurrent(solves: 5)
+                    case 6: statDetailViewController.statDetails = self.session.getBest(solves: 5)
+                    case 7: statDetailViewController.statDetails = self.session.getCurrent(solves: 12)
+                    case 8: statDetailViewController.statDetails = self.session.getBest(solves: 12)
+                    case 9: statDetailViewController.statDetails = self.session.getCurrent(solves: 100)
+                    case 10: statDetailViewController.statDetails = self.session.getBest(solves: 100)
                     default: ()
                 }
 

@@ -13,7 +13,7 @@ class EditSessionViewController: UITableViewController {
     private var myTextField: UITextField!
     @objc var isNew: Bool = false
     @objc var oldSessionName: String!
-    private var sessionManager = CHTSessionManager.load()
+    private var sessionManager = SessionManager.loadd()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ extension EditSessionViewController: UITextFieldDelegate {
         if self.isNew {
             let newSession = textField.text ?? ""
 
-            if sessionManager?.hasSession(newSession) == true {
+            if sessionManager.hasSession(sessionName: newSession) == true {
                 textField.text = ""
                 textField.resignFirstResponder()
 
@@ -86,8 +86,8 @@ extension EditSessionViewController: UITextFieldDelegate {
                 self.present(duplicateName, animated: true)
                 return false
             } else {
-                self.sessionManager?.addSession(newSession)
-                self.sessionManager?.save()
+                self.sessionManager.addSession(addName: newSession)
+                self.sessionManager.save()
                 self.navigationController?.popViewController(animated: true)
                 return true
             }
@@ -95,7 +95,7 @@ extension EditSessionViewController: UITextFieldDelegate {
             let newSession = textField.text ?? ""
 
             if !(newSession
-                == oldSessionName) && (sessionManager?.hasSession(newSession) == true) {
+                    == oldSessionName) && (sessionManager.hasSession(sessionName: newSession) == true) {
                 textField.text = oldSessionName
                 textField.resignFirstResponder()
 
@@ -108,8 +108,8 @@ extension EditSessionViewController: UITextFieldDelegate {
                 self.present(duplicateName, animated: true)
                 return false
             } else {
-                self.sessionManager?.renameSession(oldSessionName, to: newSession)
-                self.sessionManager?.save()
+                self.sessionManager.renameSession(from: oldSessionName, to: newSession)
+                self.sessionManager.save()
                 self.navigationController?.popViewController(animated: true)
                 return true
             }

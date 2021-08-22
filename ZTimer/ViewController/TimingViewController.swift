@@ -26,11 +26,11 @@ class TimingViewController: UIViewController {
     private var time: Int!
     private var longPressGesture: UILongPressGestureRecognizer!
     private var timeWhenTimerStart: Int!
-    private var session: CHTSession = CHTSessionManager.load().loadCurrentSession()
+    private var session: Session = SessionManager.loadd().loadCurrentSession()
     private var timerTheme = Theme.getTimerTheme()
     private let scrambler = CHTScrambler()
-    private var thisScramble: CHTScramble!
-    private var nextScramble: CHTScramble!
+    private var thisScramble: Scramble!
+    private var nextScramble: Scramble!
     private var inspectionTimer: Timer?
     private var inspectionOverTimeTimer: Timer!
     private var motionManager: CMMotionManager!
@@ -79,8 +79,8 @@ class TimingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setTheme()
-        self.session = CHTSessionManager.load().loadCurrentSession()
-        self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
+        self.session = SessionManager.loadd().loadCurrentSession()
+        self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
 
         if self.session.currentType != oldScrType || self.session.currentSubType != oldScrSubType {
             self.changeScramble()
@@ -102,7 +102,7 @@ class TimingViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        CHTSessionManager.save(self.session)
+        SessionManager.saveSession(session: self.session)
         self.perform(#selector(stopTimer))
     }
 
@@ -308,9 +308,9 @@ class TimingViewController: UIViewController {
             self.inspectionOverTimeTimer.invalidate()
             self.timerStatus = .idle
             self.inspectionBegin = false
-            self.session.addSolve(0, with: PENALTY_DNF, scramble: self.thisScramble)
-            CHTSessionManager.save(self.session)
-            self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
+            self.session.addSolve(time: 0, withPenalty: .dnf, scramble: self.thisScramble)
+            SessionManager.saveSession(session: self.session)
+            self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             self.displayNextScramble()
         }
     }
@@ -327,15 +327,15 @@ class TimingViewController: UIViewController {
             self.inspectionBegin = false
 
             if !self.plus2 {
-                self.session.addSolve(Int32(Int(self.time)), with: PENALTY_NO_PENALTY, scramble: self.thisScramble)
+                self.session.addSolve(time: self.time, withPenalty: .noPenalty, scramble: self.thisScramble)
             } else {
-                self.session.addSolve(Int32(self.time), with: PENALTY_PLUS_2, scramble: self.thisScramble)
+                self.session.addSolve(time: self.time, withPenalty: .plus2, scramble: self.thisScramble)
                 self.plus2 = false
                 self.timeLabel.text = self.session.lastSolve().toString()
             }
 
-            CHTSessionManager.save(self.session)
-            self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
+            SessionManager.saveSession(session: self.session)
+            self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             self.displayNextScramble()
             self.stopCoreMotion()
             self.checkRated()
@@ -352,7 +352,7 @@ class TimingViewController: UIViewController {
     @objc private func deleteLastSolve(swipGesture: UISwipeGestureRecognizer) {
         print("Swipe left")
 
-        if self.timerStatus != .timing && self.timerStatus != TimerStatus.inspect && self.session.numberOfSolves > 0 {
+        if self.timerStatus != .timing && self.timerStatus != TimerStatus.inspect && self.session.numberOfSolves() > 0 {
             if swipGesture.direction == .left {
                 let deleteLastTimerAlert = UIAlertController(
                     title: Utils.getLocalizedString(from: "delete last"),
@@ -363,8 +363,8 @@ class TimingViewController: UIViewController {
                 deleteLastTimerAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "yes"), style: .default, handler: { _ in
                     self.session.deleteLastSolve()
                     self.timeLabel.text = "Ready"
-                    CHTSessionManager.save(self.session)
-                    self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
+                    SessionManager.saveSession(session: self.session)
+                    self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
                 }))
                 self.present(deleteLastTimerAlert, animated: true)
             }
@@ -374,7 +374,7 @@ class TimingViewController: UIViewController {
     @objc private func resetSession(tapGesture: UITapGestureRecognizer) {
         print("Swipe right")
 
-        if self.timerStatus != .timing && self.timerStatus != TimerStatus.inspect && self.session.numberOfSolves > 0 {
+        if self.timerStatus != .timing && self.timerStatus != TimerStatus.inspect && self.session.numberOfSolves() > 0 {
             let clearTimeAlert = UIAlertController(
                 title: Utils.getLocalizedString(from: "reset session"),
                 message: Utils.getLocalizedString(from: "sure?"),
@@ -384,8 +384,8 @@ class TimingViewController: UIViewController {
             clearTimeAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "yes"), style: .default, handler: { _ in
                 self.session.clear()
                 self.timeLabel.text = "Ready"
-                CHTSessionManager.save(self.session)
-                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
+                SessionManager.saveSession(session: self.session)
+                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             }))
             self.present(clearTimeAlert, animated: true)
         }
@@ -394,7 +394,7 @@ class TimingViewController: UIViewController {
     @objc private func addPenalty(tapGesture: UITapGestureRecognizer) {
         print("add penalty")
 
-        if self.session.numberOfSolves > 0 && !(self.timeLabel.text == "Ready") && self.timerStatus != TimerStatus.timing && self.timerStatus != TimerStatus.inspect && self.session.lastSolve().timeBeforePenalty != 2147483647 {
+        if self.session.numberOfSolves() > 0 && !(self.timeLabel.text == "Ready") && self.timerStatus != TimerStatus.timing && self.timerStatus != TimerStatus.inspect && self.session.lastSolve().timeBeforePenalty != 2147483647 {
             let addPenaltyAlert = UIAlertController(
                 title: Utils.getLocalizedString(from: "penalty"),
                 message: Utils.getLocalizedString(from: "this time was"),
@@ -402,22 +402,22 @@ class TimingViewController: UIViewController {
             )
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "cancel"), style: .cancel))
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "+2"), style: .default, handler: { _ in
-                self.session.addPenalty(toLastSolve: PENALTY_PLUS_2)
+                self.session.addPenaltyToLastSolve(penalty: .plus2)
                 self.timeLabel.text = self.session.lastSolve().toString()
-                CHTSessionManager.save(self.session)
-                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
+                SessionManager.saveSession(session: self.session)
+                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             }))
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "+DNF"), style: .default, handler: { _ in
-                self.session.addPenalty(toLastSolve: PENALTY_DNF)
+                self.session.addPenaltyToLastSolve(penalty: .dnf)
                 self.timeLabel.text = self.session.lastSolve().toString()
-                CHTSessionManager.save(self.session)
-                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
+                SessionManager.saveSession(session: self.session)
+                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             }))
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: Utils.getLocalizedString(from: "no penalty")), style: .default, handler: { _ in
-                self.session.addPenalty(toLastSolve: PENALTY_NO_PENALTY)
+                self.session.addPenaltyToLastSolve(penalty: .noPenalty)
                 self.timeLabel.text = self.session.lastSolve().toString()
-                CHTSessionManager.save(self.session)
-                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
+                SessionManager.saveSession(session: self.session)
+                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             }))
             self.present(addPenaltyAlert, animated: true)
         }
@@ -458,9 +458,9 @@ class TimingViewController: UIViewController {
                 let myNumber = nf.number(from: text)
                 let time = Int(myNumber!.doubleValue * 1000)
 
-                self.session.addSolve(Int32(time), with: PENALTY_NO_PENALTY, scramble: self.thisScramble)
-                CHTSessionManager.save(self.session)
-                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves)
+                self.session.addSolve(time: time, withPenalty: .noPenalty, scramble: self.thisScramble)
+                SessionManager.saveSession(session: self.session)
+                self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
                 self.timeLabel.text = self.session.lastSolve().toString()
                 self.displayNextScramble()
                 self.checkRated()
@@ -473,7 +473,7 @@ class TimingViewController: UIViewController {
     }
 
     private func changeScramble() {
-        self.nextScramble = CHTScramble.getNewScramble(by: self.scrambler, type: self.session.currentType, subType: self.session.currentSubType)
+        self.nextScramble = Scramble.getNewScramble(scrambler: self.scrambler, type: Int(self.session.currentType), subType: Int(self.session.currentSubType))
         self.displayNextScramble()
     }
 
@@ -494,7 +494,7 @@ class TimingViewController: UIViewController {
     }
 
     private func generateNextScramble() {
-        self.nextScramble = CHTScramble.getNewScramble(by: self.scrambler, type: self.session.currentType, subType: self.session.currentSubType)
+        self.nextScramble = Scramble.getNewScramble(scrambler: self.scrambler, type: Int(self.session.currentType), subType: Int(self.session.currentSubType))
         print("next scramble : \(String(describing: self.nextScramble.scramble))")
     }
 
@@ -512,12 +512,12 @@ extension TimingViewController: ScramblePickerViewControllerDelegate {
     func didSelectScramble(type: Int, subType: Int) {
         scrType = type
         scrSubType = subType
-        self.session.currentType = Int32(type)
-        self.session.currentSubType = Int32(subType)
+        self.session.currentType = type
+        self.session.currentSubType = subType
         oldScrType = scrType
         oldScrSubType = scrSubType
         self.changeScramble()
-        CHTSessionManager.save(self.session)
+        SessionManager.saveSession(session: self.session)
 
         print("choose scramble index \(self.session.currentType) \(self.session.currentSubType)")
     }
