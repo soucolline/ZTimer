@@ -15,19 +15,19 @@ import Foundation
 
     override init() {}
 
-    static func loadSessionWithName(name: String) -> CHTSession {
+    static func loadSessionWithName(name: String) -> Session {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let fileName = path[0].appending("/\(Const.fileSessionPrefix)").appending(Utils().escapeString(string: name))
-        var session: CHTSession
+        var session: Session
         let data = NSData(contentsOfFile: fileName)
 
         if let data = data {
             do {
                 let unarchiver = try NSKeyedUnarchiver(forReadingWith: data as Data)
-                session = unarchiver.decodeObject(forKey: Const.keySession) as! CHTSession
+                session = unarchiver.decodeObject(forKey: Const.keySession) as! Session
                 unarchiver.finishDecoding()
             } catch {
-                session = CHTSession.initWithDefault()
+                session = Session.initWithDefault()
                 print("init with default")
             }
 
@@ -35,12 +35,12 @@ import Foundation
             return session
         } else {
             print("Session named \(name) not exit")
-            session = CHTSession.initWithName(name)
+            session = Session.initWithName(name: name)
             return session
         }
     }
 
-    func loadCurrentSession() -> CHTSession {
+    func loadCurrentSession() -> Session {
         print("current session name = \(String(describing: self.currentSessionName))")
         return SessionManager.loadSessionWithName(name: self.currentSessionName ?? "main session")
     }
@@ -49,19 +49,6 @@ import Foundation
         self.sessionArray.insert(addName, at: 0)
         self.currentSessionName = addName
     }
-
-//    func removeSession(removeName: String) {
-//        if self.stickySessionArray.contains(removeName) {
-//            self.stickySessionArray.removeAll(where: { $0 == removeName })
-//        } else {
-//            self.sessionArray.removeAll(where: { $0 == removeName })
-//        }
-//
-//        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-//        let fileName = path[0].appending(Const.fileSessionPrefix).appending(removeName)
-//        let fileManager = FileManager.default
-//        try! fileManager.removeItem(atPath: fileName)
-//    }
 
     func removeStickySession(at index: Int) {
         let removeName = self.stickySessionArray[index]
@@ -154,7 +141,7 @@ import Foundation
         }
     }
 
-    static func saveSession(session: CHTSession) {
+    static func saveSession(session: Session) {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let fileName = path[0].appending("/\(Const.fileSessionPrefix)").appending(Utils().escapeString(string: session.sessionName))
         let data = NSMutableData()
@@ -182,8 +169,8 @@ import Foundation
             return sessionManager
         } else {
             sessionManager = SessionManager()
-            let defaultSession = CHTSession.initWithDefault()
-            SessionManager.saveSession(session: defaultSession!)
+            let defaultSession = Session.initWithDefault()
+            SessionManager.saveSession(session: defaultSession)
             sessionManager.save()
 
             return sessionManager

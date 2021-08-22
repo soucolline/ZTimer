@@ -36,7 +36,6 @@
 		0C2FA6EC17B1E37F00A006B5 /* CHTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA6EB17B1E37F00A006B5 /* CHTAppDelegate.m */; };
 		0C2FA6F517B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */; };
 		0C2FA6F817B1E37F00A006B5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F617B1E37F00A006B5 /* MainStoryboard_iPad.storyboard */; };
-		0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71117B68C4900A006B5 /* CHTSession.m */; };
 		0C2FA71517B68D1C00A006B5 /* CHTSolve.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA71417B68D1C00A006B5 /* CHTSolve.m */; };
 		0C470A271818E1C500F52BFE /* weibo_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C470A251818E1C500F52BFE /* weibo_sm.png */; };
 		0C470A281818E1C500F52BFE /* weibo_sm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C470A261818E1C500F52BFE /* weibo_sm@2x.png */; };
@@ -141,6 +140,7 @@
 		E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8098226BC1967001C1095 /* StatsViewController.swift */; };
 		E9B8098526BDB2DE001C1095 /* TimingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8098426BDB2DD001C1095 /* TimingViewController.swift */; };
 		E9D499D026D191220069C9A1 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D499CF26D191220069C9A1 /* SessionManager.swift */; };
+		E9D499D326D245840069C9A1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D499D226D245840069C9A1 /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,8 +176,6 @@
 		0C2FA6E917B1E37F00A006B5 /* ZTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZTimer-Prefix.pch"; sourceTree = "<group>"; };
 		0C2FA6EA17B1E37F00A006B5 /* CHTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTAppDelegate.h; sourceTree = "<group>"; };
 		0C2FA6EB17B1E37F00A006B5 /* CHTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTAppDelegate.m; sourceTree = "<group>"; };
-		0C2FA71017B68C4900A006B5 /* CHTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSession.h; sourceTree = "<group>"; };
-		0C2FA71117B68C4900A006B5 /* CHTSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSession.m; sourceTree = "<group>"; };
 		0C2FA71317B68D1C00A006B5 /* CHTSolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSolve.h; sourceTree = "<group>"; };
 		0C2FA71417B68D1C00A006B5 /* CHTSolve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSolve.m; sourceTree = "<group>"; };
 		0C470A251818E1C500F52BFE /* weibo_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo_sm.png; sourceTree = "<group>"; };
@@ -302,6 +300,7 @@
 		E9B8098226BC1967001C1095 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		E9B8098426BDB2DD001C1095 /* TimingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingViewController.swift; sourceTree = "<group>"; };
 		E9D499CF26D191220069C9A1 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		E9D499D226D245840069C9A1 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,8 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D499CF26D191220069C9A1 /* SessionManager.swift */,
-				0C2FA71017B68C4900A006B5 /* CHTSession.h */,
-				0C2FA71117B68C4900A006B5 /* CHTSession.m */,
+				E9D499D226D245840069C9A1 /* Session.swift */,
 				0C2FA71317B68D1C00A006B5 /* CHTSolve.h */,
 				0C2FA71417B68D1C00A006B5 /* CHTSolve.m */,
 				E90A57C226C91DF500424DCF /* Solve.swift */,
@@ -751,11 +749,11 @@
 				E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */,
 				0CE7D6DB18063950008989B3 /* Clock.m in Sources */,
 				7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */,
+				E9D499D326D245840069C9A1 /* Session.swift in Sources */,
 				0CE7D6E31806436F008989B3 /* Cross.m in Sources */,
 				0CE7D6C618063737008989B3 /* Search.m in Sources */,
 				E90A57C326C91DF500424DCF /* Solve.swift in Sources */,
 				7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */,
-				0C2FA71217B68C4900A006B5 /* CHTSession.m in Sources */,
 				E99F0CD326A48311002A8081 /* Utils.swift in Sources */,
 				0CE7D6CB18063910008989B3 /* Pyraminx.m in Sources */,
 				E97FF97426A6249400546236 /* Theme.swift in Sources */,

@@ -118,7 +118,7 @@ extension SessionViewController {
         case 0:
             let title = self.sessionManager?.stickySessionArray[indexPath.row]
             let session = SessionManager.loadSessionWithName(name: title!)
-            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session.numberOfSolves)
+            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session.numberOfSolves())
 
             if indexPath.row == 0 {
                 cell.textLabel?.text = Utils.getLocalizedString(from: title!)
@@ -137,7 +137,7 @@ extension SessionViewController {
         case 1:
             let title = self.sessionManager?.sessionArray[indexPath.row]
             let session = SessionManager.loadSessionWithName(name: title!)
-            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session.numberOfSolves)
+            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session.numberOfSolves())
             cell.textLabel?.text = title
             cell.detailTextLabel?.text = subTitle
             cell.imageView?.image = UIImage(named: "session.png")

@@ -12,7 +12,7 @@ class StatDetailViewController: UITableViewController {
     private var best: CHTSolve!
     private var worst: CHTSolve!
     private var timerTheme = Theme.getTimerTheme()
-    @objc var session: CHTSession!
+    @objc var session: Session!
     @objc var stat: OneStat!
     @objc var row: Int = 0
     @objc var statDetails: [CHTSolve] = []
@@ -42,76 +42,76 @@ class StatDetailViewController: UITableViewController {
 
         switch self.row {
         case 3:
-            if self.session.numberOfSolves == 0 {
+            if self.session.numberOfSolves() == 0 {
                 self.navigationController?.popViewController(animated: true)
                 return
             }
 
-            self.statDetails = self.session.getAllSolves() as! [CHTSolve]
-            self.stat.statValue = self.session.sessionAvg()!.toString()
+            self.statDetails = self.session.getAllSolves()
+            self.stat.statValue = self.session.sessionAvg().toString()
 
         case 4:
-            if self.session.numberOfSolves == 0 {
+            if self.session.numberOfSolves() == 0 {
                 self.navigationController?.popViewController(animated: true)
                 return
             }
 
-            self.statDetails = self.session.getAllSolves() as! [CHTSolve]
-            self.stat.statValue = self.session.sessionMean()!.toString()
+            self.statDetails = self.session.getAllSolves()
+            self.stat.statValue = self.session.sessionMean().toString()
 
         case 5:
-            if self.session.numberOfSolves < 5 {
+            if self.session.numberOfSolves() < 5 {
                 self.navigationController?.popViewController(animated: true)
                 return
             }
 
-            self.statDetails = self.session.getCurrent(5) as! [CHTSolve]
-            self.stat.statValue = self.session.currentAvg(of: 5)!.toString()
+            self.statDetails = self.session.getCurrent(solves: 5)
+            self.stat.statValue = self.session.currentAvgOf(num: 5).toString()
 
         case 6:
-            if self.session.numberOfSolves < 5 {
+            if self.session.numberOfSolves() < 5 {
                 self.navigationController?.popViewController(animated: true)
                 return
             }
 
-            self.statDetails = self.session.getBest(5) as! [CHTSolve]
-            self.stat.statValue = self.session.bestAvg(of: 5)!.toString()
+            self.statDetails = self.session.getBest(solves: 5)
+            self.stat.statValue = self.session.bestAvgOf(num: 5).toString()
 
         case 7:
-            if self.session.numberOfSolves < 12 {
+            if self.session.numberOfSolves() < 12 {
                 self.navigationController?.popViewController(animated: true)
                 return
             }
 
-            self.statDetails = self.session.getCurrent(12) as! [CHTSolve]
-            self.stat.statValue = self.session.currentAvg(of: 12)!.toString()
+            self.statDetails = self.session.getCurrent(solves: 12)
+            self.stat.statValue = self.session.currentAvgOf(num: 12).toString()
 
         case 8:
-            if self.session.numberOfSolves < 12 {
+            if self.session.numberOfSolves() < 12 {
                 self.navigationController?.popViewController(animated: true)
                 return
             }
 
-            self.statDetails = self.session.getBest(12) as! [CHTSolve]
-            self.stat.statValue = self.session.bestAvg(of: 12)!.toString()
+            self.statDetails = self.session.getBest(solves: 12)
+            self.stat.statValue = self.session.bestAvgOf(num: 12).toString()
 
         case 9:
-            if self.session.numberOfSolves < 100 {
+            if self.session.numberOfSolves() < 100 {
                 self.navigationController?.popViewController(animated: true)
                 return
             }
 
-            self.statDetails = self.session.getCurrent(100) as! [CHTSolve]
-            self.stat.statValue = self.session.currentAvg(of: 100)!.toString()
+            self.statDetails = self.session.getCurrent(solves: 100)
+            self.stat.statValue = self.session.currentAvgOf(num: 100).toString()
 
         case 10:
-            if self.session.numberOfSolves < 100 {
+            if self.session.numberOfSolves() < 100 {
                 self.navigationController?.popViewController(animated: true)
                 return
             }
 
-            self.statDetails = self.session.getBest(100) as! [CHTSolve]
-            self.stat.statValue = self.session.bestAvg(of: 100)!.toString()
+            self.statDetails = self.session.getBest(solves: 100)
+            self.stat.statValue = self.session.bestAvgOf(num: 100).toString()
 
         default: self.navigationController?.popViewController(animated: true)
         }
@@ -272,12 +272,12 @@ extension StatDetailViewController {
             solve = self.statDetails[indexPath.row]
         }
 
-        self.session.remove(solve)
+        self.session.removeSolve(aSolve: solve)
         self.statDetails.remove(at: indexPath.row)
         SessionManager.saveSession(session: self.session)
         tableView.deleteRows(at: [indexPath], with: .middle)
 
-        self.tabBarController?.tabBar.items?[0].badgeValue = String(format: "%d", self.session.numberOfSolves)
+        self.tabBarController?.tabBar.items?[0].badgeValue = String(format: "%d", self.session.numberOfSolves())
         self.reload()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
