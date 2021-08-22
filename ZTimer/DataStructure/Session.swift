@@ -9,7 +9,7 @@
 import Foundation
 
 class Session: NSObject, NSCoding {
-    private var timeArray: [CHTSolve] = []
+    private var timeArray: [Solve] = []
     var currentType: Int!
     var currentSubType: Int!
     var sessionName: String!
@@ -17,7 +17,7 @@ class Session: NSObject, NSCoding {
     override init() { }
 
     required init?(coder: NSCoder) {
-        self.timeArray = coder.decodeObject(forKey: "timeArray") as! [CHTSolve]
+        self.timeArray = coder.decodeObject(forKey: "timeArray") as! [Solve]
         self.currentType = coder.decodeObject(forKey: "currentType") as? Int
         self.currentSubType = coder.decodeObject(forKey: "currentSubType") as? Int
         self.sessionName = coder.decodeObject(forKey: "sessionName") as? String
@@ -48,16 +48,16 @@ class Session: NSObject, NSCoding {
     }
 
     func addSolve(time: Int, withPenalty: PenaltyType, scramble: Scramble) {
-        let newSolve = CHTSolve.newSolve(withTime: Int32(time), andPenalty: withPenalty, andScramble: scramble)!
-        newSolve.index = Int32(self.numberOfSolves())
+        let newSolve = Solve.newSolveWithTime(newTime: time, penalty: withPenalty, scramble: scramble)
+        newSolve.index = self.numberOfSolves()
         self.timeArray.append(newSolve)
     }
 
-    func bestSolveOf(array: [CHTSolve]) -> CHTSolve {
+    func bestSolveOf(array: [Solve]) -> Solve {
         var min = array.last!
 
         for solve in self.timeArray {
-            if solve.timeAfterPenalty < min.timeAfterPenalty {
+            if solve.timeAfterPenalty() < min.timeAfterPenalty() {
                 min = solve
             }
         }
@@ -65,11 +65,11 @@ class Session: NSObject, NSCoding {
         return min
     }
 
-    func worstSolveOf(array: [CHTSolve]) -> CHTSolve {
+    func worstSolveOf(array: [Solve]) -> Solve {
         var max = array.last!
 
         for solve in self.timeArray {
-            if solve.timeAfterPenalty > max.timeAfterPenalty {
+            if solve.timeAfterPenalty() > max.timeAfterPenalty() {
                 max = solve
             }
         }
@@ -89,19 +89,19 @@ class Session: NSObject, NSCoding {
         }
     }
 
-    func lastSolve() -> CHTSolve {
+    func lastSolve() -> Solve {
         self.timeArray.last!
     }
 
-    func bestSolve() -> CHTSolve {
+    func bestSolve() -> Solve {
         self.bestSolveOf(array: self.timeArray)
     }
 
-    func worstSolve() -> CHTSolve {
+    func worstSolve() -> Solve {
         self.worstSolveOf(array: self.timeArray)
     }
 
-    func bestAvgOf(num: Int) -> CHTSolve {
+    func bestAvgOf(num: Int) -> Solve {
         var bestavg = Int.max
 
         if self.numberOfSolves() >= num && self.numberOfSolves() >= 3 {
@@ -115,9 +115,9 @@ class Session: NSObject, NSCoding {
                 var min = Int.max
 
                 for j in 0..<num {
-                    let thisTime = self.timeArray[i+j].timeAfterPenalty
+                    let thisTime = self.timeArray[i+j].timeAfterPenalty()
                     let p = self.timeArray[i+j].penalty
-                    if p == PENALTY_DNF {
+                    if p == .dnf {
                         DNFs += 1
                     }
 
@@ -151,16 +151,16 @@ class Session: NSObject, NSCoding {
             bestavg = -1
         }
 
-        var newPenalty = PENALTY_NO_PENALTY
+        var newPenalty = PenaltyType.noPenalty
 
         if bestavg == -1 {
-            newPenalty = PENALTY_DNF
+            newPenalty = PenaltyType.dnf
         }
 
-        return CHTSolve.newSolve(withTime: Int32(bestavg), andPenalty: newPenalty, andScramble: nil)
+        return Solve.newSolveWithTime(newTime: bestavg, penalty: newPenalty, scramble: nil)
     }
 
-    func currentAvgOf(num: Int) -> CHTSolve {
+    func currentAvgOf(num: Int) -> Solve {
         var avg = 0
 
         if self.numberOfSolves() >= num && self.numberOfSolves() >= 3 {
@@ -172,21 +172,21 @@ class Session: NSObject, NSCoding {
             var i = self.timeArray.count - num
 
             while i < self.timeArray.count {
-                let thisTime = self.timeArray[i].timeAfterPenalty
+                let thisTime = self.timeArray[i].timeAfterPenalty()
                 let p = self.timeArray[i].penalty
 
-                if p == PENALTY_DNF {
+                if p == .dnf {
                     DNFs += 1
                 }
 
-                sum = sum + Int(thisTime)
+                sum = sum + thisTime
 
                 if thisTime > max {
-                    max = Int(thisTime)
+                    max = thisTime
                 }
 
                 if thisTime < min {
-                    min = Int(thisTime)
+                    min = thisTime
                 }
 
                 i += 1
@@ -200,16 +200,16 @@ class Session: NSObject, NSCoding {
             }
         }
 
-        var newPenalty = PENALTY_NO_PENALTY
+        var newPenalty = PenaltyType.noPenalty
 
         if avg == -1 {
-            newPenalty = PENALTY_DNF
+            newPenalty = PenaltyType.dnf
         }
 
-        return CHTSolve.newSolve(withTime: Int32(avg), andPenalty: newPenalty, andScramble: nil)
+        return Solve.newSolveWithTime(newTime: avg, penalty: newPenalty, scramble: nil)
     }
 
-    func sessionAvg() -> CHTSolve {
+    func sessionAvg() -> Solve {
         var avg = 0
 
         if self.numberOfSolves() >= 3 {
@@ -217,11 +217,11 @@ class Session: NSObject, NSCoding {
             var DNFs = 0
 
             for times in self.timeArray {
-                let thisTime = times.timeAfterPenalty
+                let thisTime = times.timeAfterPenalty()
                 let p = times.penalty
 
-                sum = sum + Int(thisTime)
-                if p == PENALTY_DNF {
+                sum = sum + thisTime
+                if p == .dnf {
                     DNFs += 1
                 }
             }
@@ -229,21 +229,21 @@ class Session: NSObject, NSCoding {
             if DNFs > 1 {
                 avg = -1
             } else {
-                sum = Int(Int32(sum) - self.bestSolve().timeAfterPenalty - self.worstSolve().timeAfterPenalty)
+                sum = sum - self.bestSolve().timeAfterPenalty() - self.worstSolve().timeAfterPenalty()
                 avg = sum / (self.numberOfSolves() - 2)
             }
         }
 
-        var newPenalty = PENALTY_NO_PENALTY
+        var newPenalty = PenaltyType.noPenalty
 
         if avg == -1 {
-            newPenalty = PENALTY_DNF
+            newPenalty = PenaltyType.dnf
         }
 
-        return CHTSolve.newSolve(withTime: Int32(avg), andPenalty: newPenalty, andScramble: nil)
+        return Solve.newSolveWithTime(newTime: avg, penalty: newPenalty, scramble: nil)
     }
 
-    func sessionMean() -> CHTSolve {
+    func sessionMean() -> Solve {
         var mean = 0
 
         if self.numberOfSolves() > 0 {
@@ -251,13 +251,13 @@ class Session: NSObject, NSCoding {
             var DNFs = 0
 
             for times in self.timeArray {
-                let thisTime = times.timeAfterPenalty
+                let thisTime = times.timeAfterPenalty()
                 let p = times.penalty
 
-                if p == PENALTY_DNF {
+                if p == .dnf {
                     DNFs += 1
                 } else {
-                    sum = sum + Int(thisTime)
+                    sum = sum + thisTime
                 }
             }
 
@@ -268,17 +268,17 @@ class Session: NSObject, NSCoding {
             }
         }
 
-        var newPenalty = PENALTY_NO_PENALTY
+        var newPenalty = PenaltyType.noPenalty
 
         if mean == -1 {
-            newPenalty = PENALTY_DNF
+            newPenalty = PenaltyType.dnf
         }
 
-        return CHTSolve.newSolve(withTime: Int32(mean), andPenalty: newPenalty, andScramble: nil)
+        return Solve.newSolveWithTime(newTime: mean, penalty: newPenalty, scramble: nil)
     }
 
-    func getBest(solves: Int) -> [CHTSolve] {
-        var array: [CHTSolve] = []
+    func getBest(solves: Int) -> [Solve] {
+        var array: [Solve] = []
         var bestavg = Int.max
         var index = 0
 
@@ -291,21 +291,21 @@ class Session: NSObject, NSCoding {
                 var DNFs = 0
 
                 for j in 0..<solves {
-                    let thisTime = self.timeArray[i+j].timeAfterPenalty
+                    let thisTime = self.timeArray[i+j].timeAfterPenalty()
                     let p = self.timeArray[i+j].penalty
 
-                    if p == PENALTY_DNF {
+                    if p == .dnf {
                         DNFs += 1
                     }
 
-                    sum = sum + Int(thisTime)
+                    sum = sum + thisTime
 
                     if thisTime > max {
-                        max = Int(thisTime)
+                        max = thisTime
                     }
 
                     if thisTime < min {
-                        min = Int(thisTime)
+                        min = thisTime
                     }
                 }
 
@@ -330,8 +330,8 @@ class Session: NSObject, NSCoding {
         return array
     }
 
-    func getCurrent(solves: Int) -> [CHTSolve] {
-        var array: [CHTSolve] = []
+    func getCurrent(solves: Int) -> [Solve] {
+        var array: [Solve] = []
 
         if self.numberOfSolves() >= solves && self.numberOfSolves() >= 3 {
             var i = self.timeArray.count - solves
@@ -345,7 +345,7 @@ class Session: NSObject, NSCoding {
         return array
     }
 
-    func getAllSolves() -> [CHTSolve] {
+    func getAllSolves() -> [Solve] {
         self.timeArray
     }
 
@@ -393,17 +393,17 @@ class Session: NSObject, NSCoding {
                 var tempWorst = self.timeArray.last!
 
                 for aTime in self.timeArray {
-                    if aTime.timeAfterPenalty > tempWorst.timeAfterPenalty {
+                    if aTime.timeAfterPenalty() > tempWorst.timeAfterPenalty() {
                         tempWorst = aTime
                     }
 
-                    if aTime.timeAfterPenalty < tempBest.timeAfterPenalty {
+                    if aTime.timeAfterPenalty() < tempBest.timeAfterPenalty() {
                         tempBest = aTime
                     }
                 }
 
                 for aTime in self.timeArray {
-                    var appendTime = aTime.toString()!
+                    var appendTime = aTime.toString()
 
                     if aTime == tempBest && notHasBest {
                         appendTime = String(format: "(%@)", appendTime)
@@ -437,7 +437,7 @@ class Session: NSObject, NSCoding {
         }
     }
 
-    func removeSolve(aSolve: CHTSolve) {
+    func removeSolve(aSolve: Solve) {
         self.timeArray.removeAll(where: { $0 == aSolve })
     }
 
@@ -445,7 +445,7 @@ class Session: NSObject, NSCoding {
         self.timeArray.removeAll()
     }
 
-    func setSolves(solves: [CHTSolve]) {
+    func setSolves(solves: [Solve]) {
         self.timeArray = solves
     }
 }

@@ -308,7 +308,7 @@ class TimingViewController: UIViewController {
             self.inspectionOverTimeTimer.invalidate()
             self.timerStatus = .idle
             self.inspectionBegin = false
-            self.session.addSolve(time: 0, withPenalty: PENALTY_DNF, scramble: self.thisScramble)
+            self.session.addSolve(time: 0, withPenalty: .dnf, scramble: self.thisScramble)
             SessionManager.saveSession(session: self.session)
             self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             self.displayNextScramble()
@@ -327,9 +327,9 @@ class TimingViewController: UIViewController {
             self.inspectionBegin = false
 
             if !self.plus2 {
-                self.session.addSolve(time: self.time, withPenalty: PENALTY_NO_PENALTY, scramble: self.thisScramble)
+                self.session.addSolve(time: self.time, withPenalty: .noPenalty, scramble: self.thisScramble)
             } else {
-                self.session.addSolve(time: self.time, withPenalty: PENALTY_PLUS_2, scramble: self.thisScramble)
+                self.session.addSolve(time: self.time, withPenalty: .plus2, scramble: self.thisScramble)
                 self.plus2 = false
                 self.timeLabel.text = self.session.lastSolve().toString()
             }
@@ -402,19 +402,19 @@ class TimingViewController: UIViewController {
             )
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "cancel"), style: .cancel))
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "+2"), style: .default, handler: { _ in
-                self.session.addPenaltyToLastSolve(penalty: PENALTY_PLUS_2)
+                self.session.addPenaltyToLastSolve(penalty: .plus2)
                 self.timeLabel.text = self.session.lastSolve().toString()
                 SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             }))
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "+DNF"), style: .default, handler: { _ in
-                self.session.addPenaltyToLastSolve(penalty: PENALTY_DNF)
+                self.session.addPenaltyToLastSolve(penalty: .dnf)
                 self.timeLabel.text = self.session.lastSolve().toString()
                 SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             }))
             addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: Utils.getLocalizedString(from: "no penalty")), style: .default, handler: { _ in
-                self.session.addPenaltyToLastSolve(penalty: PENALTY_NO_PENALTY)
+                self.session.addPenaltyToLastSolve(penalty: .noPenalty)
                 self.timeLabel.text = self.session.lastSolve().toString()
                 SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
@@ -458,7 +458,7 @@ class TimingViewController: UIViewController {
                 let myNumber = nf.number(from: text)
                 let time = Int(myNumber!.doubleValue * 1000)
 
-                self.session.addSolve(time: time, withPenalty: PENALTY_NO_PENALTY, scramble: self.thisScramble)
+                self.session.addSolve(time: time, withPenalty: .noPenalty, scramble: self.thisScramble)
                 SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
                 self.timeLabel.text = self.session.lastSolve().toString()

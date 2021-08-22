@@ -9,13 +9,13 @@
 import UIKit
 
 class StatDetailViewController: UITableViewController {
-    private var best: CHTSolve!
-    private var worst: CHTSolve!
+    private var best: Solve!
+    private var worst: Solve!
     private var timerTheme = Theme.getTimerTheme()
     @objc var session: Session!
     @objc var stat: OneStat!
     @objc var row: Int = 0
-    @objc var statDetails: [CHTSolve] = []
+    @objc var statDetails: [Solve] = []
     private var solveDetailDisplay: Int!
 
     private var solveOrder: Int {
@@ -128,11 +128,11 @@ class StatDetailViewController: UITableViewController {
         self.worst = self.statDetails.last
 
         for time in self.statDetails {
-            if time.timeAfterPenalty > self.worst.timeAfterPenalty {
+            if time.timeAfterPenalty() > self.worst.timeAfterPenalty() {
                 self.worst = time
             }
 
-            if time.timeAfterPenalty < self.best.timeAfterPenalty {
+            if time.timeAfterPenalty() < self.best.timeAfterPenalty() {
                 self.best = time
             }
         }
@@ -186,7 +186,7 @@ extension StatDetailViewController {
             }
 
         case 1:
-            let solve: CHTSolve
+            let solve: Solve
 
             if self.solveOrder == 1 {
                 solve = self.statDetails[self.statDetails.count - 1 - indexPath.row]
@@ -264,7 +264,7 @@ extension StatDetailViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
 
-        let solve: CHTSolve
+        let solve: Solve
 
         if self.solveOrder == 1 {
             solve = statDetails[self.statDetails.count - 1 - indexPath.row]
@@ -290,7 +290,7 @@ extension StatDetailViewController {
         cell?.setSelected(false, animated: true)
 
         if indexPath.section == 1 {
-            let solve: CHTSolve
+            let solve: Solve
 
             if self.solveOrder == 1 {
                 solve = self.statDetails[self.statDetails.count - 1 - indexPath.row]

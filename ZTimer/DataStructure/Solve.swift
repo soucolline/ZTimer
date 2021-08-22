@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum PenaltyType: Int {
+    case noPenalty = 0
+    case plus2
+    case dnf
+}
+
 @objcMembers class Solve: NSObject, NSCoding {
     var index: Int!
     var timeStamp: Date!
@@ -22,23 +28,23 @@ import Foundation
     required init?(coder: NSCoder) {
         self.timeStamp = coder.decodeObject(forKey: "timeStamp") as? Date
         self.timeBeforePenalty = coder.decodeObject(forKey: "timeBeforePenalty") as? Int
-        self.penalty = coder.decodeObject(forKey: "timePenalty") as? PenaltyType
+        self.penalty = PenaltyType(rawValue: coder.decodeInteger(forKey: "timePenalty"))
         self.scramble = coder.decodeObject(forKey: "solveScramble") as? Scramble
     }
 
     func encode(with coder: NSCoder) {
         coder.encode(timeStamp, forKey: "timeStamp")
         coder.encode(timeBeforePenalty, forKey: "timeBeforePenalty")
-        coder.encode(penalty, forKey: "timePenalty")
+        coder.encode(penalty.rawValue, forKey: "timePenalty")
         coder.encode(scramble, forKey: "solveScramble")
     }
 
     func timeAfterPenalty() -> Int {
         var time = self.timeBeforePenalty
 
-        if self.penalty == PENALTY_PLUS_2 {
+        if self.penalty == .plus2 {
             time = self.timeBeforePenalty + 2000
-        } else if self.penalty == PENALTY_DNF {
+        } else if self.penalty == .dnf {
             time = Int.max
         }
 
@@ -48,9 +54,9 @@ import Foundation
     func toString() -> String {
         var str = Utils.convertTimeFromMsecondToString(msecond: self.timeAfterPenalty())
 
-        if penalty == PENALTY_PLUS_2 {
+        if penalty == .plus2 {
             str = str.appending("+")
-        } else if penalty == PENALTY_DNF {
+        } else if penalty == .dnf {
             str = "DNF"
         }
 
@@ -68,7 +74,7 @@ import Foundation
         self.scramble = Scramble()
     }
 
-    static func newSolveWithTime(newTime: Int, penalty: PenaltyType, scramble: Scramble) -> Solve {
+    static func newSolveWithTime(newTime: Int, penalty: PenaltyType, scramble: Scramble?) -> Solve {
         let newSolve = Solve()
         newSolve.setTime(newTimeBeforePenalty: newTime, penalty: penalty)
         newSolve.scramble = scramble
