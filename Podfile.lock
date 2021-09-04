@@ -1,0 +1,21 @@
+PODS:
+  - ZScrambler (1.0.0)
+
+DEPENDENCIES:
+  - ZScrambler (from `https://github.com/soucolline/ZScrambler`)
+
+EXTERNAL SOURCES:
+  ZScrambler:
+    :git: https://github.com/soucolline/ZScrambler
+
+CHECKOUT OPTIONS:
+  ZScrambler:
+    :commit: 10af3be5c2f3d2ef26753af9f6ddfe4ab0117fd9
+    :git: https://github.com/soucolline/ZScrambler
+
+SPEC CHECKSUMS:
+  ZScrambler: 8172caa0519234232a8abf25965ec5d3bc978d2a
+
+PODFILE CHECKSUM: 7c449a2b1439f1edd3e06fa6da8edf4a5f04f111
+
+COCOAPODS: 1.11.0
