@@ -25,8 +25,6 @@
 		0C0D6E6A1818BD1100BE22CB /* wxTimeline_sm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0D6E461818BD1100BE22CB /* wxTimeline_sm@2x.png */; };
 		0C11FCDB1818A3420054BC9C /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C11FCDA1818A3420054BC9C /* share@2x.png */; };
 		0C11FCDD1818A3580054BC9C /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C11FCDC1818A3580054BC9C /* share.png */; };
-		0C248694180234CC00209767 /* scrambleTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C248693180234CC00209767 /* scrambleTypes.plist */; };
-		0C2486971802351E00209767 /* CHTScrambler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2486961802351E00209767 /* CHTScrambler.m */; };
 		0C24869C1802411600209767 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C24869B1802411600209767 /* QuartzCore.framework */; };
 		0C2FA6DC17B1E37F00A006B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DB17B1E37F00A006B5 /* UIKit.framework */; };
 		0C2FA6DE17B1E37F00A006B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DD17B1E37F00A006B5 /* Foundation.framework */; };
@@ -49,22 +47,6 @@
 		0CB52987181DDCB300EB4EA5 /* license@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CB52986181DDCB300EB4EA5 /* license@2x.png */; };
 		0CB52989181DDCE500EB4EA5 /* license.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CB52988181DDCE500EB4EA5 /* license.png */; };
 		0CB5298E181DF13F00EB4EA5 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5298D181DF13F00EB4EA5 /* license.html */; };
-		0CE7D6C318063737008989B3 /* CoordCube.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6B918063737008989B3 /* CoordCube.m */; };
-		0CE7D6C418063737008989B3 /* CubieCube.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6BB18063737008989B3 /* CubieCube.m */; };
-		0CE7D6C518063737008989B3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0CE7D6BC18063737008989B3 /* README.md */; };
-		0CE7D6C618063737008989B3 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6BE18063737008989B3 /* Search.m */; };
-		0CE7D6C718063737008989B3 /* TwoPhaseScrambler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6C018063737008989B3 /* TwoPhaseScrambler.m */; };
-		0CE7D6C818063737008989B3 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6C218063737008989B3 /* Util.m */; };
-		0CE7D6CB18063910008989B3 /* Pyraminx.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6CA18063910008989B3 /* Pyraminx.m */; };
-		0CE7D6D218063928008989B3 /* Cube222.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6CD18063928008989B3 /* Cube222.m */; };
-		0CE7D6D318063928008989B3 /* Skewb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6CF18063928008989B3 /* Skewb.m */; };
-		0CE7D6D418063928008989B3 /* Sq12phase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6D118063928008989B3 /* Sq12phase.m */; };
-		0CE7D6DB18063950008989B3 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6D618063950008989B3 /* Clock.m */; };
-		0CE7D6DC18063950008989B3 /* Megaminx.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6D818063950008989B3 /* Megaminx.m */; };
-		0CE7D6DD18063950008989B3 /* SQ1.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6DA18063950008989B3 /* SQ1.m */; };
-		0CE7D6E0180639FA008989B3 /* Im.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6DF180639FA008989B3 /* Im.m */; };
-		0CE7D6E31806436F008989B3 /* Cross.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6E21806436E008989B3 /* Cross.m */; };
-		0CE7D6E618064557008989B3 /* Gear.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7D6E518064557008989B3 /* Gear.m */; };
 		0CE9480F17FA627900FB770C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CE9481117FA627900FB770C /* Localizable.strings */; };
 		0CEB9A9B180E33580064182B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB9A9A180E33580064182B /* MessageUI.framework */; };
 		0CEB9AF5180FAC640064182B /* icon_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB9AEE180FAC640064182B /* icon_29.png */; };
@@ -129,6 +111,8 @@
 		7F7D43FC26B6E6390017B4C3 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43FB26B6E6390017B4C3 /* SessionViewController.swift */; };
 		7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */; };
 		7F7D440526B6FE490017B4C3 /* StatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */; };
+		CD176BEAA9B4A56A74143881 /* Pods_ZTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1458A5680F73444F8C79AD17 /* Pods_ZTimer.framework */; };
+		E906511B26E2CE08001159BC /* scrambleTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = E906511A26E2CE08001159BC /* scrambleTypes.plist */; };
 		E9081E9E26C7FCF900619AE2 /* ScramblePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9081E9D26C7FCF900619AE2 /* ScramblePickerViewController.swift */; };
 		E9081EA026C90F5500619AE2 /* Scramble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9081E9F26C90F5500619AE2 /* Scramble.swift */; };
 		E90A57C326C91DF500424DCF /* Solve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A57C226C91DF500424DCF /* Solve.swift */; };
@@ -161,9 +145,6 @@
 		0C0D6E461818BD1100BE22CB /* wxTimeline_sm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wxTimeline_sm@2x.png"; sourceTree = "<group>"; };
 		0C11FCDA1818A3420054BC9C /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
 		0C11FCDC1818A3580054BC9C /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
-		0C248693180234CC00209767 /* scrambleTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scrambleTypes.plist; sourceTree = "<group>"; };
-		0C2486951802351E00209767 /* CHTScrambler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTScrambler.h; sourceTree = "<group>"; };
-		0C2486961802351E00209767 /* CHTScrambler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTScrambler.m; sourceTree = "<group>"; };
 		0C24869B1802411600209767 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0C2FA6D817B1E37F00A006B5 /* ZTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2FA6DB17B1E37F00A006B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -188,37 +169,6 @@
 		0CB52986181DDCB300EB4EA5 /* license@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "license@2x.png"; sourceTree = "<group>"; };
 		0CB52988181DDCE500EB4EA5 /* license.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = license.png; sourceTree = "<group>"; };
 		0CB5298D181DF13F00EB4EA5 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
-		0CE7D6B818063737008989B3 /* CoordCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordCube.h; sourceTree = "<group>"; };
-		0CE7D6B918063737008989B3 /* CoordCube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordCube.m; sourceTree = "<group>"; };
-		0CE7D6BA18063737008989B3 /* CubieCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubieCube.h; sourceTree = "<group>"; };
-		0CE7D6BB18063737008989B3 /* CubieCube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubieCube.m; sourceTree = "<group>"; };
-		0CE7D6BC18063737008989B3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		0CE7D6BD18063737008989B3 /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
-		0CE7D6BE18063737008989B3 /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
-		0CE7D6BF18063737008989B3 /* TwoPhaseScrambler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoPhaseScrambler.h; sourceTree = "<group>"; };
-		0CE7D6C018063737008989B3 /* TwoPhaseScrambler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoPhaseScrambler.m; sourceTree = "<group>"; };
-		0CE7D6C118063737008989B3 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
-		0CE7D6C218063737008989B3 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
-		0CE7D6C918063910008989B3 /* Pyraminx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pyraminx.h; sourceTree = "<group>"; };
-		0CE7D6CA18063910008989B3 /* Pyraminx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pyraminx.m; sourceTree = "<group>"; };
-		0CE7D6CC18063928008989B3 /* Cube222.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cube222.h; sourceTree = "<group>"; };
-		0CE7D6CD18063928008989B3 /* Cube222.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cube222.m; sourceTree = "<group>"; };
-		0CE7D6CE18063928008989B3 /* Skewb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skewb.h; sourceTree = "<group>"; };
-		0CE7D6CF18063928008989B3 /* Skewb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skewb.m; sourceTree = "<group>"; };
-		0CE7D6D018063928008989B3 /* Sq12phase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sq12phase.h; sourceTree = "<group>"; };
-		0CE7D6D118063928008989B3 /* Sq12phase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sq12phase.m; sourceTree = "<group>"; };
-		0CE7D6D518063950008989B3 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clock.h; sourceTree = "<group>"; };
-		0CE7D6D618063950008989B3 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clock.m; sourceTree = "<group>"; };
-		0CE7D6D718063950008989B3 /* Megaminx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Megaminx.h; sourceTree = "<group>"; };
-		0CE7D6D818063950008989B3 /* Megaminx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Megaminx.m; sourceTree = "<group>"; };
-		0CE7D6D918063950008989B3 /* SQ1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQ1.h; sourceTree = "<group>"; };
-		0CE7D6DA18063950008989B3 /* SQ1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQ1.m; sourceTree = "<group>"; };
-		0CE7D6DE180639FA008989B3 /* Im.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Im.h; sourceTree = "<group>"; };
-		0CE7D6DF180639FA008989B3 /* Im.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Im.m; sourceTree = "<group>"; };
-		0CE7D6E11806436E008989B3 /* Cross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cross.h; sourceTree = "<group>"; };
-		0CE7D6E21806436E008989B3 /* Cross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cross.m; sourceTree = "<group>"; };
-		0CE7D6E418064557008989B3 /* Gear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gear.h; sourceTree = "<group>"; };
-		0CE7D6E518064557008989B3 /* Gear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gear.m; sourceTree = "<group>"; };
 		0CE9481017FA627900FB770C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0CE9481217FA627E00FB770C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0CEB9A9A180E33580064182B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -273,6 +223,9 @@
 		0CF468931814B8AE00643E69 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		0CF468951814B8B800643E69 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		0CF7B4B2187E44D800B7500B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		12ADA20233F2BDF3C8227647 /* Pods-ZTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTimer.debug.xcconfig"; path = "Target Support Files/Pods-ZTimer/Pods-ZTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		1458A5680F73444F8C79AD17 /* Pods_ZTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EFA162806CDFE1593448D78 /* Pods-ZTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTimer.release.xcconfig"; path = "Target Support Files/Pods-ZTimer/Pods-ZTimer.release.xcconfig"; sourceTree = "<group>"; };
 		7F7D43DA26B164AB0017B4C3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		7F7D43E326B168B10017B4C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -284,6 +237,7 @@
 		7F7D43FB26B6E6390017B4C3 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveDetailViewController.swift; sourceTree = "<group>"; };
 		7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDetailViewController.swift; sourceTree = "<group>"; };
+		E906511A26E2CE08001159BC /* scrambleTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scrambleTypes.plist; sourceTree = "<group>"; };
 		E9081E9D26C7FCF900619AE2 /* ScramblePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScramblePickerViewController.swift; sourceTree = "<group>"; };
 		E9081E9F26C90F5500619AE2 /* Scramble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scramble.swift; sourceTree = "<group>"; };
 		E90A57C226C91DF500424DCF /* Solve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solve.swift; sourceTree = "<group>"; };
@@ -317,6 +271,7 @@
 				0C2FA6DC17B1E37F00A006B5 /* UIKit.framework in Frameworks */,
 				0C2FA6DE17B1E37F00A006B5 /* Foundation.framework in Frameworks */,
 				0C2FA6E017B1E37F00A006B5 /* CoreGraphics.framework in Frameworks */,
+				CD176BEAA9B4A56A74143881 /* Pods_ZTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,43 +287,13 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		0C2486921802349100209767 /* Scrambler */ = {
-			isa = PBXGroup;
-			children = (
-				0C248693180234CC00209767 /* scrambleTypes.plist */,
-				0C2486951802351E00209767 /* CHTScrambler.h */,
-				0C2486961802351E00209767 /* CHTScrambler.m */,
-				0CE7D6B718063737008989B3 /* min2phase */,
-				0CE7D6E11806436E008989B3 /* Cross.h */,
-				0CE7D6E21806436E008989B3 /* Cross.m */,
-				0CE7D6C918063910008989B3 /* Pyraminx.h */,
-				0CE7D6CA18063910008989B3 /* Pyraminx.m */,
-				0CE7D6CC18063928008989B3 /* Cube222.h */,
-				0CE7D6CD18063928008989B3 /* Cube222.m */,
-				0CE7D6CE18063928008989B3 /* Skewb.h */,
-				0CE7D6CF18063928008989B3 /* Skewb.m */,
-				0CE7D6D018063928008989B3 /* Sq12phase.h */,
-				0CE7D6D118063928008989B3 /* Sq12phase.m */,
-				0CE7D6DE180639FA008989B3 /* Im.h */,
-				0CE7D6DF180639FA008989B3 /* Im.m */,
-				0CE7D6D518063950008989B3 /* Clock.h */,
-				0CE7D6D618063950008989B3 /* Clock.m */,
-				0CE7D6D718063950008989B3 /* Megaminx.h */,
-				0CE7D6D818063950008989B3 /* Megaminx.m */,
-				0CE7D6D918063950008989B3 /* SQ1.h */,
-				0CE7D6DA18063950008989B3 /* SQ1.m */,
-				0CE7D6E418064557008989B3 /* Gear.h */,
-				0CE7D6E518064557008989B3 /* Gear.m */,
-			);
-			path = Scrambler;
-			sourceTree = "<group>";
-		};
 		0C2FA6CF17B1E37F00A006B5 = {
 			isa = PBXGroup;
 			children = (
 				0C2FA6E117B1E37F00A006B5 /* ZTimer */,
 				0C2FA6DA17B1E37F00A006B5 /* Frameworks */,
 				0C2FA6D917B1E37F00A006B5 /* Products */,
+				9850F6293E8C7551CA5974A4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -395,6 +320,7 @@
 				0C2FA6DB17B1E37F00A006B5 /* UIKit.framework */,
 				0C2FA6DD17B1E37F00A006B5 /* Foundation.framework */,
 				0C2FA6DF17B1E37F00A006B5 /* CoreGraphics.framework */,
+				1458A5680F73444F8C79AD17 /* Pods_ZTimer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -406,7 +332,6 @@
 				0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */,
 				0C2FA6F617B1E37F00A006B5 /* MainStoryboard_iPad.storyboard */,
 				7F7D43DA26B164AB0017B4C3 /* LaunchScreen.storyboard */,
-				0C2486921802349100209767 /* Scrambler */,
 				0C2FA70E17B68BAF00A006B5 /* DataStructure */,
 				0C24868E180232F300209767 /* CutomViews */,
 				0C2FA70C17B68B9B00A006B5 /* ViewController */,
@@ -428,6 +353,7 @@
 				0C2FA6E417B1E37F00A006B5 /* InfoPlist.strings */,
 				0C2FA6E717B1E37F00A006B5 /* main.m */,
 				0C2FA6E917B1E37F00A006B5 /* ZTimer-Prefix.pch */,
+				E906511A26E2CE08001159BC /* scrambleTypes.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -554,22 +480,13 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		0CE7D6B718063737008989B3 /* min2phase */ = {
+		9850F6293E8C7551CA5974A4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0CE7D6B818063737008989B3 /* CoordCube.h */,
-				0CE7D6B918063737008989B3 /* CoordCube.m */,
-				0CE7D6BA18063737008989B3 /* CubieCube.h */,
-				0CE7D6BB18063737008989B3 /* CubieCube.m */,
-				0CE7D6BC18063737008989B3 /* README.md */,
-				0CE7D6BD18063737008989B3 /* Search.h */,
-				0CE7D6BE18063737008989B3 /* Search.m */,
-				0CE7D6BF18063737008989B3 /* TwoPhaseScrambler.h */,
-				0CE7D6C018063737008989B3 /* TwoPhaseScrambler.m */,
-				0CE7D6C118063737008989B3 /* Util.h */,
-				0CE7D6C218063737008989B3 /* Util.m */,
+				12ADA20233F2BDF3C8227647 /* Pods-ZTimer.debug.xcconfig */,
+				2EFA162806CDFE1593448D78 /* Pods-ZTimer.release.xcconfig */,
 			);
-			path = min2phase;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,9 +496,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C2FA70917B1E37F00A006B5 /* Build configuration list for PBXNativeTarget "ZTimer" */;
 			buildPhases = (
+				71A2A1E7B366DAF86FEAE493 /* [CP] Check Pods Manifest.lock */,
 				0C2FA6D417B1E37F00A006B5 /* Sources */,
 				0C2FA6D517B1E37F00A006B5 /* Frameworks */,
 				0C2FA6D617B1E37F00A006B5 /* Resources */,
+				35B4D57666ED6E14A0D0F6ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -652,6 +571,7 @@
 				0C0D6E6A1818BD1100BE22CB /* wxTimeline_sm@2x.png in Resources */,
 				0C0D6E651818BD1100BE22CB /* weixin_sm.png in Resources */,
 				0C902E72181A07090003A904 /* 1fr.png in Resources */,
+				E906511B26E2CE08001159BC /* scrambleTypes.plist in Resources */,
 				0CEB9B36180FACB90064182B /* stats.png in Resources */,
 				7F7D43DB26B164AB0017B4C3 /* LaunchScreen.storyboard in Resources */,
 				0C0D6E661818BD1100BE22CB /* weixin_sm@2x.png in Resources */,
@@ -669,7 +589,6 @@
 				0CF23CDF1810E80D00BAEB40 /* retina_4inch.png in Resources */,
 				0CEB9B2F180FACB90064182B /* mainSession.png in Resources */,
 				0CEB9B0E180FAC730064182B /* help@2x.png in Resources */,
-				0CE7D6C518063737008989B3 /* README.md in Resources */,
 				0C0D6E591818BD1100BE22CB /* sms_sm.png in Resources */,
 				0CEB9AFA180FAC640064182B /* icon_120.png in Resources */,
 				0C0D6E511818BD1100BE22CB /* facebook_sm.png in Resources */,
@@ -692,7 +611,6 @@
 				0C0D6E4E1818BD1100BE22CB /* email_sm@2x.png in Resources */,
 				0CEB9B0F180FAC730064182B /* mainSession@2x.png in Resources */,
 				0CEB9AFB180FAC640064182B /* icon_152.png in Resources */,
-				0C248694180234CC00209767 /* scrambleTypes.plist in Resources */,
 				0C902E70181A07090003A904 /* 1f2t.png in Resources */,
 				0C902E74181A07090003A904 /* 2f2t.png in Resources */,
 				0CEB9B2D180FACB90064182B /* feedback.png in Resources */,
@@ -719,46 +637,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35B4D57666ED6E14A0D0F6ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZTimer/Pods-ZTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZTimer/Pods-ZTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZTimer/Pods-ZTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71A2A1E7B366DAF86FEAE493 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0C2FA6D417B1E37F00A006B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE7D6E618064557008989B3 /* Gear.m in Sources */,
-				0CE7D6C418063737008989B3 /* CubieCube.m in Sources */,
-				0CE7D6DC18063950008989B3 /* Megaminx.m in Sources */,
 				7F7D43F826B6DF340017B4C3 /* EditSessionViewController.swift in Sources */,
 				7F7D43F026B3EFB70017B4C3 /* MoreViewController.swift in Sources */,
-				0CE7D6C318063737008989B3 /* CoordCube.m in Sources */,
 				0C2FA6E817B1E37F00A006B5 /* main.m in Sources */,
 				7F7D440526B6FE490017B4C3 /* StatDetailViewController.swift in Sources */,
-				0CE7D6C818063737008989B3 /* Util.m in Sources */,
-				0CE7D6DD18063950008989B3 /* SQ1.m in Sources */,
-				0CE7D6D418063928008989B3 /* Sq12phase.m in Sources */,
 				0C2FA6EC17B1E37F00A006B5 /* CHTAppDelegate.m in Sources */,
 				7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */,
 				E9081EA026C90F5500619AE2 /* Scramble.swift in Sources */,
 				E97FF97226A6212C00546236 /* OneStat.swift in Sources */,
-				0CE7D6C718063737008989B3 /* TwoPhaseScrambler.m in Sources */,
-				0C2486971802351E00209767 /* CHTScrambler.m in Sources */,
 				E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */,
-				0CE7D6DB18063950008989B3 /* Clock.m in Sources */,
 				7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */,
 				E9D499D326D245840069C9A1 /* Session.swift in Sources */,
-				0CE7D6E31806436F008989B3 /* Cross.m in Sources */,
-				0CE7D6C618063737008989B3 /* Search.m in Sources */,
 				E90A57C326C91DF500424DCF /* Solve.swift in Sources */,
 				7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */,
 				E99F0CD326A48311002A8081 /* Utils.swift in Sources */,
-				0CE7D6CB18063910008989B3 /* Pyraminx.m in Sources */,
 				E97FF97426A6249400546236 /* Theme.swift in Sources */,
-				0CE7D6D318063928008989B3 /* Skewb.m in Sources */,
 				7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */,
-				0CE7D6E0180639FA008989B3 /* Im.m in Sources */,
 				E9081E9E26C7FCF900619AE2 /* ScramblePickerViewController.swift in Sources */,
 				7F7D43FC26B6E6390017B4C3 /* SessionViewController.swift in Sources */,
 				7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */,
-				0CE7D6D218063928008989B3 /* Cube222.m in Sources */,
 				E9B8098526BDB2DE001C1095 /* TimingViewController.swift in Sources */,
 				E9D499D026D191220069C9A1 /* SessionManager.swift in Sources */,
 				E99F0CD526A487AF002A8081 /* Settings.swift in Sources */,
@@ -849,7 +793,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -893,9 +837,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -903,6 +848,7 @@
 		};
 		0C2FA70A17B1E37F00A006B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12ADA20233F2BDF3C8227647 /* Pods-ZTimer.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -919,14 +865,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZTimer/ZTimer-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ZTimer/ZTimer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 0.1;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.ztimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -941,6 +887,7 @@
 		};
 		0C2FA70B17B1E37F00A006B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EFA162806CDFE1593448D78 /* Pods-ZTimer.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -957,14 +904,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZTimer/ZTimer-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ZTimer/ZTimer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 0.1;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.ztimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

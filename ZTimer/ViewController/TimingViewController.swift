@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import ZScrambler
 
 class TimingViewController: UIViewController {
     @IBOutlet private var scrambleLabel: UILabel!
@@ -28,7 +29,7 @@ class TimingViewController: UIViewController {
     private var timeWhenTimerStart: Int!
     private var session: Session = SessionManager.loadd().loadCurrentSession()
     private var timerTheme = Theme.getTimerTheme()
-    private let scrambler = CHTScrambler()
+    private let scrambler = ZScrambler()
     private var thisScramble: Scramble!
     private var nextScramble: Scramble!
     private var inspectionTimer: Timer?

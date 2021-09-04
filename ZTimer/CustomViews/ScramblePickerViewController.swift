@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZScrambler
 
 protocol ScramblePickerViewControllerDelegate: AnyObject {
     func didSelectScramble(type: Int, subType: Int)
@@ -39,7 +40,7 @@ class ScramblePickerViewController: UIViewController {
     private func setupPicker() {
         let plistUrl = Bundle.main.url(forResource: "scrambleTypes", withExtension: "plist")!
         self.scrType = NSDictionary(contentsOf: plistUrl)
-        self.types = CHTScrambler.scrambleTypes() as? [String]
+        self.types = ZScrambler.scrambleTypes()
         let select = self.types[0]
         self.subsets = self.scrType[select] as? [String]
 

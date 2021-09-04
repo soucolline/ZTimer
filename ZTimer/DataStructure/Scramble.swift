@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ZScrambler
 
 @objcMembers class Scramble: NSObject, NSCoding {
     var scrType = ""
@@ -29,7 +30,7 @@ import Foundation
         coder.encode(self.scramble, forKey: "scrambleString")
     }
 
-    static func getNewScramble(scrambler: CHTScrambler, type: Int, subType: Int) -> Scramble {
+    static func getNewScramble(scrambler: ZScrambler, type: Int, subType: Int) -> Scramble {
         let newScramble = Scramble()
         newScramble.setTypeAndSubTypeByType(type: type, subset: subType)
         newScramble.scramble = scrambler.getScrString(byType: Int32(type), subset: Int32(subType))
@@ -40,7 +41,7 @@ import Foundation
     func setTypeAndSubTypeByType(type: Int, subset: Int) {
         let plistUrl = Bundle.main.url(forResource: "scrambleTypes", withExtension: "plist")!
         let scrTypeDic = NSDictionary(contentsOf: plistUrl)
-        let types = CHTScrambler.scrambleTypes() as! [String]
+        let types = ZScrambler.scrambleTypes()
         let typeStr = types[type]
         let subsets = scrTypeDic?.object(forKey: typeStr) as! [String]
         let subsetStr = subsets[subset]
