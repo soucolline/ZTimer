@@ -30,8 +30,6 @@
 		0C2FA6DE17B1E37F00A006B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DD17B1E37F00A006B5 /* Foundation.framework */; };
 		0C2FA6E017B1E37F00A006B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DF17B1E37F00A006B5 /* CoreGraphics.framework */; };
 		0C2FA6E617B1E37F00A006B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6E417B1E37F00A006B5 /* InfoPlist.strings */; };
-		0C2FA6E817B1E37F00A006B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA6E717B1E37F00A006B5 /* main.m */; };
-		0C2FA6EC17B1E37F00A006B5 /* CHTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FA6EB17B1E37F00A006B5 /* CHTAppDelegate.m */; };
 		0C2FA6F517B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */; };
 		0C2FA6F817B1E37F00A006B5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F617B1E37F00A006B5 /* MainStoryboard_iPad.storyboard */; };
 		0C470A271818E1C500F52BFE /* weibo_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C470A251818E1C500F52BFE /* weibo_sm.png */; };
@@ -118,6 +116,7 @@
 		E90A57C326C91DF500424DCF /* Solve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A57C226C91DF500424DCF /* Solve.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
+		E982080826E3787A00DD7A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982080726E3787A00DD7A9E /* AppDelegate.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
 		E99F0CD526A487AF002A8081 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD426A487AF002A8081 /* Settings.swift */; };
 		E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8098226BC1967001C1095 /* StatsViewController.swift */; };
@@ -152,10 +151,6 @@
 		0C2FA6DF17B1E37F00A006B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0C2FA6E317B1E37F00A006B5 /* ZTimer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZTimer-Info.plist"; sourceTree = "<group>"; };
 		0C2FA6E517B1E37F00A006B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0C2FA6E717B1E37F00A006B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0C2FA6E917B1E37F00A006B5 /* ZTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZTimer-Prefix.pch"; sourceTree = "<group>"; };
-		0C2FA6EA17B1E37F00A006B5 /* CHTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTAppDelegate.h; sourceTree = "<group>"; };
-		0C2FA6EB17B1E37F00A006B5 /* CHTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTAppDelegate.m; sourceTree = "<group>"; };
 		0C470A251818E1C500F52BFE /* weibo_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo_sm.png; sourceTree = "<group>"; };
 		0C470A261818E1C500F52BFE /* weibo_sm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibo_sm@2x.png"; sourceTree = "<group>"; };
 		0C902E6A181A07090003A904 /* 1f2t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1f2t.png; sourceTree = "<group>"; };
@@ -243,9 +238,9 @@
 		E90A57C226C91DF500424DCF /* Solve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solve.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E982080726E3787A00DD7A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		E99F0CD026A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		E99F0CD126A48311002A8081 /* ZTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZTimer-Bridging-Header.h"; sourceTree = "<group>"; };
 		E99F0CD226A48311002A8081 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E99F0CD426A487AF002A8081 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E9B8098226BC1967001C1095 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -337,10 +332,8 @@
 				0C2FA70C17B68B9B00A006B5 /* ViewController */,
 				0C2FA70F17B68BB900A006B5 /* Util */,
 				0C2FA70D17B68BA400A006B5 /* Resource */,
-				0C2FA6EA17B1E37F00A006B5 /* CHTAppDelegate.h */,
-				0C2FA6EB17B1E37F00A006B5 /* CHTAppDelegate.m */,
+				E982080726E3787A00DD7A9E /* AppDelegate.swift */,
 				0CEB9B3C180FAD120064182B /* Images.xcassets */,
-				E99F0CD126A48311002A8081 /* ZTimer-Bridging-Header.h */,
 				0C2FA6E217B1E37F00A006B5 /* Supporting Files */,
 			);
 			path = ZTimer;
@@ -351,8 +344,6 @@
 			children = (
 				0C2FA6E317B1E37F00A006B5 /* ZTimer-Info.plist */,
 				0C2FA6E417B1E37F00A006B5 /* InfoPlist.strings */,
-				0C2FA6E717B1E37F00A006B5 /* main.m */,
-				0C2FA6E917B1E37F00A006B5 /* ZTimer-Prefix.pch */,
 				E906511A26E2CE08001159BC /* scrambleTypes.plist */,
 			);
 			name = "Supporting Files";
@@ -686,9 +677,7 @@
 			files = (
 				7F7D43F826B6DF340017B4C3 /* EditSessionViewController.swift in Sources */,
 				7F7D43F026B3EFB70017B4C3 /* MoreViewController.swift in Sources */,
-				0C2FA6E817B1E37F00A006B5 /* main.m in Sources */,
 				7F7D440526B6FE490017B4C3 /* StatDetailViewController.swift in Sources */,
-				0C2FA6EC17B1E37F00A006B5 /* CHTAppDelegate.m in Sources */,
 				7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */,
 				E9081EA026C90F5500619AE2 /* Scramble.swift in Sources */,
 				E97FF97226A6212C00546236 /* OneStat.swift in Sources */,
@@ -706,6 +695,7 @@
 				E9B8098526BDB2DE001C1095 /* TimingViewController.swift in Sources */,
 				E9D499D026D191220069C9A1 /* SessionManager.swift in Sources */,
 				E99F0CD526A487AF002A8081 /* Settings.swift in Sources */,
+				E982080826E3787A00DD7A9E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,7 +867,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = ztimer_dev;
-				SWIFT_OBJC_BRIDGING_HEADER = "ZTimer/ZTimer-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -916,7 +907,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = ztimer_dev;
-				SWIFT_OBJC_BRIDGING_HEADER = "ZTimer/ZTimer-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
