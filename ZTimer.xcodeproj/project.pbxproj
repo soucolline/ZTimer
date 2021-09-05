@@ -11,10 +11,8 @@
 		0C2FA6DC17B1E37F00A006B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DB17B1E37F00A006B5 /* UIKit.framework */; };
 		0C2FA6DE17B1E37F00A006B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DD17B1E37F00A006B5 /* Foundation.framework */; };
 		0C2FA6E017B1E37F00A006B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DF17B1E37F00A006B5 /* CoreGraphics.framework */; };
-		0C2FA6E617B1E37F00A006B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6E417B1E37F00A006B5 /* InfoPlist.strings */; };
 		0C2FA6F517B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */; };
 		0CA7691F1837D05D00EF3191 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA7691E1837D05D00EF3191 /* CoreMotion.framework */; };
-		0CB5298E181DF13F00EB4EA5 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5298D181DF13F00EB4EA5 /* license.html */; };
 		0CE9480F17FA627900FB770C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CE9481117FA627900FB770C /* Localizable.strings */; };
 		0CEB9A9B180E33580064182B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB9A9A180E33580064182B /* MessageUI.framework */; };
 		0CEB9B3D180FAD120064182B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB9B3C180FAD120064182B /* Images.xcassets */; };
@@ -23,7 +21,6 @@
 		0CF468941814B8AE00643E69 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468931814B8AE00643E69 /* libicucore.dylib */; };
 		0CF468961814B8B800643E69 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468951814B8B800643E69 /* libz.1.2.5.dylib */; };
 		0CF7B4B3187E44D800B7500B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7B4B2187E44D800B7500B /* CFNetwork.framework */; };
-		7F7D43DB26B164AB0017B4C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F7D43DA26B164AB0017B4C3 /* LaunchScreen.storyboard */; };
 		7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */; };
 		7F7D43E426B168B10017B4C3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7D43E326B168B10017B4C3 /* WebKit.framework */; };
 		7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */; };
@@ -35,13 +32,15 @@
 		7F7D440026B6F3770017B4C3 /* SolveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */; };
 		7F7D440526B6FE490017B4C3 /* StatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */; };
 		CD176BEAA9B4A56A74143881 /* Pods_ZTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1458A5680F73444F8C79AD17 /* Pods_ZTimer.framework */; };
-		E906511B26E2CE08001159BC /* scrambleTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = E906511A26E2CE08001159BC /* scrambleTypes.plist */; };
 		E9081E9E26C7FCF900619AE2 /* ScramblePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9081E9D26C7FCF900619AE2 /* ScramblePickerViewController.swift */; };
 		E9081EA026C90F5500619AE2 /* Scramble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9081E9F26C90F5500619AE2 /* Scramble.swift */; };
 		E90A57C326C91DF500424DCF /* Solve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A57C226C91DF500424DCF /* Solve.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
 		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
-		E982080826E3787A00DD7A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982080726E3787A00DD7A9E /* AppDelegate.swift */; };
+		E982081226E4B96200DD7A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E982080D26E4B96200DD7A9E /* LaunchScreen.storyboard */; };
+		E982081326E4B96200DD7A9E /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = E982080E26E4B96200DD7A9E /* license.html */; };
+		E982081426E4B96200DD7A9E /* scrambleTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = E982080F26E4B96200DD7A9E /* scrambleTypes.plist */; };
+		E982081526E4B96200DD7A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982081026E4B96200DD7A9E /* AppDelegate.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
 		E99F0CD526A487AF002A8081 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD426A487AF002A8081 /* Settings.swift */; };
 		E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8098226BC1967001C1095 /* StatsViewController.swift */; };
@@ -56,10 +55,7 @@
 		0C2FA6DB17B1E37F00A006B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0C2FA6DD17B1E37F00A006B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0C2FA6DF17B1E37F00A006B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0C2FA6E317B1E37F00A006B5 /* ZTimer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZTimer-Info.plist"; sourceTree = "<group>"; };
-		0C2FA6E517B1E37F00A006B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CA7691E1837D05D00EF3191 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		0CB5298D181DF13F00EB4EA5 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
 		0CE9481017FA627900FB770C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0CE9481217FA627E00FB770C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0CEB9A9A180E33580064182B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -72,7 +68,6 @@
 		12ADA20233F2BDF3C8227647 /* Pods-ZTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTimer.debug.xcconfig"; path = "Target Support Files/Pods-ZTimer/Pods-ZTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		1458A5680F73444F8C79AD17 /* Pods_ZTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFA162806CDFE1593448D78 /* Pods-ZTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTimer.release.xcconfig"; path = "Target Support Files/Pods-ZTimer/Pods-ZTimer.release.xcconfig"; sourceTree = "<group>"; };
-		7F7D43DA26B164AB0017B4C3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		7F7D43E326B168B10017B4C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
@@ -83,13 +78,16 @@
 		7F7D43FB26B6E6390017B4C3 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		7F7D43FF26B6F3770017B4C3 /* SolveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveDetailViewController.swift; sourceTree = "<group>"; };
 		7F7D440426B6FE490017B4C3 /* StatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDetailViewController.swift; sourceTree = "<group>"; };
-		E906511A26E2CE08001159BC /* scrambleTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scrambleTypes.plist; sourceTree = "<group>"; };
 		E9081E9D26C7FCF900619AE2 /* ScramblePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScramblePickerViewController.swift; sourceTree = "<group>"; };
 		E9081E9F26C90F5500619AE2 /* Scramble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scramble.swift; sourceTree = "<group>"; };
 		E90A57C226C91DF500424DCF /* Solve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solve.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		E982080726E3787A00DD7A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E982080D26E4B96200DD7A9E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E982080E26E4B96200DD7A9E /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
+		E982080F26E4B96200DD7A9E /* scrambleTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scrambleTypes.plist; sourceTree = "<group>"; };
+		E982081026E4B96200DD7A9E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E982081126E4B96200DD7A9E /* ZTimer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ZTimer-Info.plist"; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		E99F0CD226A48311002A8081 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E99F0CD426A487AF002A8081 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -175,27 +173,15 @@
 			children = (
 				0CE9481117FA627900FB770C /* Localizable.strings */,
 				0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */,
-				7F7D43DA26B164AB0017B4C3 /* LaunchScreen.storyboard */,
 				0C2FA70E17B68BAF00A006B5 /* DataStructure */,
 				0C24868E180232F300209767 /* CutomViews */,
 				0C2FA70C17B68B9B00A006B5 /* ViewController */,
 				0C2FA70F17B68BB900A006B5 /* Util */,
 				0C2FA70D17B68BA400A006B5 /* Resource */,
-				E982080726E3787A00DD7A9E /* AppDelegate.swift */,
+				E982080C26E4B96200DD7A9E /* SupportingFiles */,
 				0CEB9B3C180FAD120064182B /* Images.xcassets */,
-				0C2FA6E217B1E37F00A006B5 /* Supporting Files */,
 			);
 			path = ZTimer;
-			sourceTree = "<group>";
-		};
-		0C2FA6E217B1E37F00A006B5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0C2FA6E317B1E37F00A006B5 /* ZTimer-Info.plist */,
-				0C2FA6E417B1E37F00A006B5 /* InfoPlist.strings */,
-				E906511A26E2CE08001159BC /* scrambleTypes.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		0C2FA70C17B68B9B00A006B5 /* ViewController */ = {
@@ -219,7 +205,6 @@
 		0C2FA70D17B68BA400A006B5 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				0CB5298D181DF13F00EB4EA5 /* license.html */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -253,6 +238,18 @@
 				2EFA162806CDFE1593448D78 /* Pods-ZTimer.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E982080C26E4B96200DD7A9E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E982080D26E4B96200DD7A9E /* LaunchScreen.storyboard */,
+				E982080E26E4B96200DD7A9E /* license.html */,
+				E982080F26E4B96200DD7A9E /* scrambleTypes.plist */,
+				E982081026E4B96200DD7A9E /* AppDelegate.swift */,
+				E982081126E4B96200DD7A9E /* ZTimer-Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,13 +313,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C2FA6E617B1E37F00A006B5 /* InfoPlist.strings in Resources */,
 				0CE9480F17FA627900FB770C /* Localizable.strings in Resources */,
-				E906511B26E2CE08001159BC /* scrambleTypes.plist in Resources */,
-				7F7D43DB26B164AB0017B4C3 /* LaunchScreen.storyboard in Resources */,
+				E982081226E4B96200DD7A9E /* LaunchScreen.storyboard in Resources */,
 				0C2FA6F517B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard in Resources */,
+				E982081326E4B96200DD7A9E /* license.html in Resources */,
 				0CEB9B3D180FAD120064182B /* Images.xcassets in Resources */,
-				0CB5298E181DF13F00EB4EA5 /* license.html in Resources */,
+				E982081426E4B96200DD7A9E /* scrambleTypes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,23 +389,15 @@
 				7F7D43FC26B6E6390017B4C3 /* SessionViewController.swift in Sources */,
 				7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */,
 				E9B8098526BDB2DE001C1095 /* TimingViewController.swift in Sources */,
+				E982081526E4B96200DD7A9E /* AppDelegate.swift in Sources */,
 				E9D499D026D191220069C9A1 /* SessionManager.swift in Sources */,
 				E99F0CD526A487AF002A8081 /* Settings.swift in Sources */,
-				E982080826E3787A00DD7A9E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0C2FA6E417B1E37F00A006B5 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C2FA6E517B1E37F00A006B5 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -546,7 +534,7 @@
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZTimer/ZTimer-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/ZTimer/ZTimer-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ZTimer/SupportingFiles/ZTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -586,7 +574,7 @@
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZTimer/ZTimer-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/ZTimer/ZTimer-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ZTimer/SupportingFiles/ZTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
