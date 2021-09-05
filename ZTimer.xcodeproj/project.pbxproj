@@ -57,7 +57,6 @@
 		0C2FA6DF17B1E37F00A006B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0CA7691E1837D05D00EF3191 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		0CE9481017FA627900FB770C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0CE9481217FA627E00FB770C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0CEB9A9A180E33580064182B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0CEB9B3C180FAD120064182B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0CF4688F1814B87A00643E69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -171,8 +170,6 @@
 		0C2FA6E117B1E37F00A006B5 /* ZTimer */ = {
 			isa = PBXGroup;
 			children = (
-				0CE9481117FA627900FB770C /* Localizable.strings */,
-				0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */,
 				0C2FA70E17B68BAF00A006B5 /* DataStructure */,
 				0C24868E180232F300209767 /* CutomViews */,
 				0C2FA70C17B68B9B00A006B5 /* ViewController */,
@@ -243,6 +240,8 @@
 		E982080C26E4B96200DD7A9E /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				0CE9481117FA627900FB770C /* Localizable.strings */,
+				0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */,
 				E982080D26E4B96200DD7A9E /* LaunchScreen.storyboard */,
 				E982080E26E4B96200DD7A9E /* license.html */,
 				E982080F26E4B96200DD7A9E /* scrambleTypes.plist */,
@@ -295,7 +294,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				"zh-Hans",
 				Base,
 			);
 			mainGroup = 0C2FA6CF17B1E37F00A006B5;
@@ -410,7 +408,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				0CE9481017FA627900FB770C /* en */,
-				0CE9481217FA627E00FB770C /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
