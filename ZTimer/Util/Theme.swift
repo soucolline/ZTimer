@@ -180,18 +180,10 @@ import UIKit
     }
 
     static func font(style: FontStyle, iphoneSize: CGFloat, ipadSize: CGFloat) -> UIFont {
-        if Utils.getDevice() == .phone {
-            switch style {
-                case .bold: return UIFont(name: "Avenir-Medium", size: iphoneSize)!
-                case .light: return UIFont(name: "Avenir-Light", size: iphoneSize)!
-                case .regular: return UIFont(name: "Avenir-Book", size: iphoneSize)!
-            }
-        } else {
-            switch style {
-                case .bold: return UIFont(name: "Avenir-Medium", size: ipadSize)!
-                case .light: return UIFont(name: "Avenir-Light", size: ipadSize)!
-                case .regular: return UIFont(name: "Avenir-Book", size: ipadSize)!
-            }
+        switch style {
+            case .bold: return UIFont(name: "Avenir-Medium", size: iphoneSize)!
+            case .light: return UIFont(name: "Avenir-Light", size: iphoneSize)!
+            case .regular: return UIFont(name: "Avenir-Book", size: iphoneSize)!
         }
     }
 }

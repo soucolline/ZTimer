@@ -17,9 +17,7 @@ class SessionViewController: UITableViewController {
 
         self.navigationItem.title = Utils.getLocalizedString(from: "session")
 
-        if Utils.getDevice() == .phone {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(backToStatsView))
-        }
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(backToStatsView))
 
         self.navigationController?.setToolbarHidden(false, animated: false)
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -41,14 +39,6 @@ class SessionViewController: UITableViewController {
         super.viewWillAppear(animated)
 
         self.sessionManager = SessionManager.loadd()
-
-        if Utils.getDevice() == .pad {
-            self.navigationController?.navigationBar.tintColor = .black
-            self.navigationController?.navigationBar.titleTextAttributes = [
-                NSAttributedString.Key.font: Theme.font(style: .regular, iphoneSize: 22.0, ipadSize: 22.0),
-                NSAttributedString.Key.foregroundColor: UIColor.black
-            ]
-        }
 
         self.tableView.reloadData()
     }

@@ -95,11 +95,7 @@ extension HelpViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if Utils.getDevice() == .phone {
-            return 60
-        } else {
-            return 80
-        }
+        60
     }
 
     override func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {

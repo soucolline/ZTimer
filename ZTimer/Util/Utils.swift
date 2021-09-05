@@ -9,11 +9,7 @@
 import Foundation
 import UIKit
 
-@objc enum Device: Int {
-    case phone, pad
-}
-
-@objcMembers class Utils: NSObject {
+struct Utils {
 
     private let settings = Settings()
 
@@ -46,30 +42,10 @@ import UIKit
         return outputTimeString
     }
 
-    static func getDevice() -> Device {
-        if UIDevice().userInterfaceIdiom == .phone {
-            return .phone
-        } else {
-            return .pad
-        }
-    }
-
     func escapeString(string: String) -> String {
         var fileName = string
         fileName = fileName.replacingOccurrences(of: "/", with: "slash")
         return fileName
-    }
-
-    func getScreenWidth() -> CGFloat {
-        var screenWidth: CGFloat
-        screenWidth = UIScreen.main.bounds.width
-        print("screen width = \(screenWidth)")
-
-        if screenWidth == 748.0 {
-            screenWidth = 1024.0
-        }
-
-        return screenWidth
     }
 
     func heightOfContent(content: String, font: UIFont) -> CGFloat {
@@ -79,26 +55,15 @@ import UIKit
         return rect.size.height + 20
     }
 
-    func versionUpdateds() -> Bool {
-        guard let infoDictionary = Bundle.main.infoDictionary else {
-            fatalError("could not load info dictionnary")
+    private func getScreenWidth() -> CGFloat {
+        var screenWidth: CGFloat
+        screenWidth = UIScreen.main.bounds.width
+        print("screen width = \(screenWidth)")
+
+        if screenWidth == 748.0 {
+            screenWidth = 1024.0
         }
 
-        let crtVersion = infoDictionary["CFBundleShortVersionString"] as! String
-        let oldVersion = self.settings.string(forKey: "appVersion")
-
-        print("App version old : \(oldVersion), new: \(crtVersion)")
-
-        if crtVersion == oldVersion {
-            return false
-        } else {
-            self.settings.save(string: crtVersion, forKey: "appVersion")
-
-            if crtVersion[..<String.Index(utf16Offset: 3, in: crtVersion)] == oldVersion[..<String.Index(utf16Offset: 3, in: oldVersion)] {
-                return false
-            } else {
-                return true
-            }
-        }
+        return screenWidth
     }
 }

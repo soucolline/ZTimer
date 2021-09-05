@@ -31,7 +31,6 @@
 		0C2FA6E017B1E37F00A006B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2FA6DF17B1E37F00A006B5 /* CoreGraphics.framework */; };
 		0C2FA6E617B1E37F00A006B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6E417B1E37F00A006B5 /* InfoPlist.strings */; };
 		0C2FA6F517B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */; };
-		0C2FA6F817B1E37F00A006B5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FA6F617B1E37F00A006B5 /* MainStoryboard_iPad.storyboard */; };
 		0C470A271818E1C500F52BFE /* weibo_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C470A251818E1C500F52BFE /* weibo_sm.png */; };
 		0C470A281818E1C500F52BFE /* weibo_sm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C470A261818E1C500F52BFE /* weibo_sm@2x.png */; };
 		0C902E70181A07090003A904 /* 1f2t.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C902E6A181A07090003A904 /* 1f2t.png */; };
@@ -240,7 +239,6 @@
 		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E982080726E3787A00DD7A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		E99F0CD026A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		E99F0CD226A48311002A8081 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E99F0CD426A487AF002A8081 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E9B8098226BC1967001C1095 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 			children = (
 				0CE9481117FA627900FB770C /* Localizable.strings */,
 				0C2FA6F317B1E37F00A006B5 /* MainStoryboard_iPhone.storyboard */,
-				0C2FA6F617B1E37F00A006B5 /* MainStoryboard_iPad.storyboard */,
 				7F7D43DA26B164AB0017B4C3 /* LaunchScreen.storyboard */,
 				0C2FA70E17B68BAF00A006B5 /* DataStructure */,
 				0C24868E180232F300209767 /* CutomViews */,
@@ -596,7 +593,6 @@
 				0C0D6E5E1818BD1100BE22CB /* twitter_sm@2x.png in Resources */,
 				0C0D6E491818BD1100BE22CB /* copy_sm.png in Resources */,
 				0C0D6E521818BD1100BE22CB /* facebook_sm@2x.png in Resources */,
-				0C2FA6F817B1E37F00A006B5 /* MainStoryboard_iPad.storyboard in Resources */,
 				0CEB9AF6180FAC640064182B /* icon_40.png in Resources */,
 				0C470A281818E1C500F52BFE /* weibo_sm@2x.png in Resources */,
 				0C0D6E4E1818BD1100BE22CB /* email_sm@2x.png in Resources */,
@@ -716,14 +712,6 @@
 				E99F0CCF26A480C0002A8081 /* Base */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		0C2FA6F617B1E37F00A006B5 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E99F0CD026A480C0002A8081 /* Base */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		0CE9481117FA627900FB770C /* Localizable.strings */ = {
