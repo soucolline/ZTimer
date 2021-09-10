@@ -15,7 +15,7 @@ class MoreViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = Utils.getLocalizedString(from: "More")
+        self.navigationItem.title = R.string.localizable.more()
     }
 }
 
@@ -43,9 +43,9 @@ extension MoreViewController {
             case 0:
                 let infoDictionnary = Bundle.main.infoDictionary!
                 let version = infoDictionnary["CFBundleShortVersionString"]
-                cell.textLabel?.text = Utils.getLocalizedString(from: "version") as String
+                cell.textLabel?.text = R.string.localizable.version()
                 cell.detailTextLabel?.text = version as? String
-                cell.imageView?.image = UIImage(named: "version.png")
+                cell.imageView?.image = R.image.version()
                 cell.accessoryType = .none
                 cell.selectionStyle = .none
             default: ()
@@ -54,31 +54,31 @@ extension MoreViewController {
         case 1:
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = Utils.getLocalizedString(from: "theme")
+                cell.textLabel?.text = R.string.localizable.theme()
                 cell.detailTextLabel?.text = self.timerTheme.getMyThemeName()
-                cell.imageView?.image = UIImage(named: "theme.png")
+                cell.imageView?.image = R.image.theme()
 
             case 1:
-                cell.textLabel?.text = Utils.getLocalizedString(from: "setting")
+                cell.textLabel?.text = R.string.localizable.setting()
                 cell.detailTextLabel?.text = ""
-                cell.imageView?.image = UIImage(named: "setting.png")
+                cell.imageView?.image = R.image.setting()
             default: ()
             }
 
         case 2:
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = Utils.getLocalizedString(from: "license")
+                cell.textLabel?.text = R.string.localizable.license()
                 cell.detailTextLabel?.text = ""
-                cell.imageView?.image = UIImage(named: "license.png")
+                cell.imageView?.image = R.image.license()
             default: ()
             }
         default:()
         }
 
         cell.detailTextLabel?.textColor = self.timerTheme.getTintColor()
-        cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 18.0, ipadSize: 18.0)
-        cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 18.0, ipadSize: 18.0)
+        cell.textLabel?.font = R.font.regular(size: 18)
+        cell.detailTextLabel?.font = R.font.light(size: 18)
 
         return cell
     }

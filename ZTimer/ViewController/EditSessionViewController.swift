@@ -42,7 +42,7 @@ extension EditSessionViewController {
         myTextField = UITextField(frame: CGRect(x: 20, y: 5, width: 280, height: 36))
         myTextField.borderStyle = .none
         myTextField.contentVerticalAlignment = .center
-        myTextField.placeholder = Utils.getLocalizedString(from: "inputSessionName")
+        myTextField.placeholder = R.string.localizable.input_session_name()
         myTextField.clearButtonMode = .whileEditing
         myTextField.returnKeyType = .done
 
@@ -52,7 +52,7 @@ extension EditSessionViewController {
 
         myTextField.enablesReturnKeyAutomatically = true
         myTextField.delegate = self
-        myTextField.font = Theme.font(style: .regular, iphoneSize: 17.0, ipadSize: 17.0)
+        myTextField.font = R.font.regular(size: 17)
         myTextField.becomeFirstResponder()
 
         cell.addSubview(myTextField)
@@ -60,11 +60,11 @@ extension EditSessionViewController {
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        Utils.getLocalizedString(from: "sessionName")
+        R.string.localizable.session_name()
     }
 
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        Utils.getLocalizedString(from: "sessionNameDup")
+        R.string.localizable.session_name_dup()
     }
 }
 
@@ -78,11 +78,11 @@ extension EditSessionViewController: UITextFieldDelegate {
                 textField.resignFirstResponder()
 
                 let duplicateName = UIAlertController(
-                    title: Utils.getLocalizedString(from: "dup warning"),
-                    message: Utils.getLocalizedString(from: "choose another name"),
+                    title: R.string.localizable.dup_warning(),
+                    message: R.string.localizable.choose_another_name(),
                     preferredStyle: .alert
                 )
-                duplicateName.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "ok"), style: .cancel))
+                duplicateName.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .cancel))
                 self.present(duplicateName, animated: true)
                 return false
             } else {
@@ -100,11 +100,11 @@ extension EditSessionViewController: UITextFieldDelegate {
                 textField.resignFirstResponder()
 
                 let duplicateName = UIAlertController(
-                    title: Utils.getLocalizedString(from: "dup warning"),
-                    message: Utils.getLocalizedString(from: "choose another name"),
+                    title: R.string.localizable.dup_warning(),
+                    message: R.string.localizable.choose_another_name(),
                     preferredStyle: .alert
                 )
-                duplicateName.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "ok"), style: .cancel))
+                duplicateName.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .cancel))
                 self.present(duplicateName, animated: true)
                 return false
             } else {

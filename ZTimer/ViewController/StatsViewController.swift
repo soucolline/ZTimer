@@ -19,8 +19,8 @@ class StatsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = Utils.getLocalizedString(from: "Stats")
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "sessions.png"), style: .plain, target: self, action: #selector(presentSessionView))
+        self.navigationItem.title = R.string.localizable.stats()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: R.image.sessions(), style: .plain, target: self, action: #selector(presentSessionView))
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,14 +34,14 @@ class StatsViewController: UITableViewController {
         let numberOfSolves = self.session.numberOfSolves()
         self.tabBarController?.tabBar.items?[0].badgeValue = String(format: "%d", self.session.numberOfSolves())
         self.stats.removeAll()
-        let numOfSolves = OneStat(statType: "Number of solves: ", statValue: String(format: "%d", self.session.numberOfSolves()))
+        let numOfSolves = OneStat(statType: .numberOfSolves, statValue: String(format: "%d", self.session.numberOfSolves()))
         self.stats.append(numOfSolves)
 
         if numberOfSolves > 0 {
-            let bestTime = OneStat(statType: "Best time: ", statValue: self.session.bestSolve().toString())
-            let worstTime = OneStat(statType: "Worst time: ", statValue: self.session.worstSolve().toString())
-            let sessionAvg = OneStat(statType: "Session Average: ", statValue: self.session.sessionAvg().toString())
-            let sessionMean = OneStat(statType: "Session Mean: ", statValue: self.session.sessionMean().toString())
+            let bestTime = OneStat(statType: .bestTime, statValue: self.session.bestSolve().toString())
+            let worstTime = OneStat(statType: .worstTime, statValue: self.session.worstSolve().toString())
+            let sessionAvg = OneStat(statType: .sessionAverage, statValue: self.session.sessionAvg().toString())
+            let sessionMean = OneStat(statType: .sessionMean, statValue: self.session.sessionMean().toString())
 
             self.stats.append(bestTime)
             self.stats.append(worstTime)
@@ -49,22 +49,22 @@ class StatsViewController: UITableViewController {
             self.stats.append(sessionMean)
 
             if numberOfSolves >= 5 {
-                let current5 = OneStat(statType: "Current average of 5: ", statValue: self.session.currentAvgOf(num: 5).toString())
-                let best5 = OneStat(statType: "Best average of 5: ", statValue: self.session.bestAvgOf(num: 5).toString())
+                let current5 = OneStat(statType: .currentAvg5, statValue: self.session.currentAvgOf(num: 5).toString())
+                let best5 = OneStat(statType: .bestAvg5, statValue: self.session.bestAvgOf(num: 5).toString())
 
                 self.stats.append(current5)
                 self.stats.append(best5)
 
                 if numberOfSolves >= 12 {
-                    let current12 = OneStat(statType: "Current average of 12: ", statValue: self.session.currentAvgOf(num: 12).toString())
-                    let best12 = OneStat(statType: "Best average of 12: ", statValue: self.session.bestAvgOf(num: 12).toString())
+                    let current12 = OneStat(statType: .currentAvg12, statValue: self.session.currentAvgOf(num: 12).toString())
+                    let best12 = OneStat(statType: .bestAvg12, statValue: self.session.bestAvgOf(num: 12).toString())
 
                     self.stats.append(current12)
                     self.stats.append(best12)
 
                     if numberOfSolves >= 100 {
-                        let current100 = OneStat(statType: "Current average of 100: ", statValue: self.session.currentAvgOf(num: 100).toString())
-                        let best100 = OneStat(statType: "Best average of 100: ", statValue: self.session.bestAvgOf(num: 100).toString())
+                        let current100 = OneStat(statType: .currentAvg100, statValue: self.session.currentAvgOf(num: 100).toString())
+                        let best100 = OneStat(statType: .bestAvg100, statValue: self.session.bestAvgOf(num: 100).toString())
 
                         self.stats.append(current100)
                         self.stats.append(best100)
@@ -96,7 +96,7 @@ extension StatsViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let oneStats = self.stats[indexPath.row]
 
-        cell.textLabel?.text = Utils.getLocalizedString(from: oneStats.statType)
+        cell.textLabel?.text = oneStats.localizedStatType()
         cell.detailTextLabel?.text = oneStats.statValue
 
         if indexPath.row == 0 {
@@ -107,15 +107,15 @@ extension StatsViewController {
         }
 
         cell.detailTextLabel?.textColor = self.timerTheme.getTintColor()
-        cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 18.0, ipadSize: 18.0)
-        cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 18.0, ipadSize: 18.0)
+        cell.textLabel?.font = R.font.regular(size: 18)
+        cell.detailTextLabel?.font = R.font.light(size: 18)
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if self.session.sessionName == "main session" {
-            return Utils.getLocalizedString(from: "main session")
+            return R.string.localizable.main_session()
         } else {
             return self.session.sessionName
         }

@@ -41,6 +41,7 @@
 		E982081326E4B96200DD7A9E /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = E982080E26E4B96200DD7A9E /* license.html */; };
 		E982081426E4B96200DD7A9E /* scrambleTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = E982080F26E4B96200DD7A9E /* scrambleTypes.plist */; };
 		E982081526E4B96200DD7A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982081026E4B96200DD7A9E /* AppDelegate.swift */; };
+		E99E3EC426EBFAE0006565F0 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E3EC326EBFAE0006565F0 /* R.generated.swift */; };
 		E99F0CD326A48311002A8081 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD226A48311002A8081 /* Utils.swift */; };
 		E99F0CD526A487AF002A8081 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F0CD426A487AF002A8081 /* Settings.swift */; };
 		E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8098226BC1967001C1095 /* StatsViewController.swift */; };
@@ -87,6 +88,7 @@
 		E982080F26E4B96200DD7A9E /* scrambleTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scrambleTypes.plist; sourceTree = "<group>"; };
 		E982081026E4B96200DD7A9E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E982081126E4B96200DD7A9E /* ZTimer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ZTimer-Info.plist"; sourceTree = "<group>"; };
+		E99E3EC326EBFAE0006565F0 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		E99F0CCF26A480C0002A8081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		E99F0CD226A48311002A8081 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E99F0CD426A487AF002A8081 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -174,7 +176,6 @@
 				0C24868E180232F300209767 /* CutomViews */,
 				0C2FA70C17B68B9B00A006B5 /* ViewController */,
 				0C2FA70F17B68BB900A006B5 /* Util */,
-				0C2FA70D17B68BA400A006B5 /* Resource */,
 				E982080C26E4B96200DD7A9E /* SupportingFiles */,
 				0CEB9B3C180FAD120064182B /* Images.xcassets */,
 			);
@@ -197,13 +198,6 @@
 				7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		0C2FA70D17B68BA400A006B5 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		0C2FA70E17B68BAF00A006B5 /* DataStructure */ = {
@@ -247,6 +241,7 @@
 				E982080F26E4B96200DD7A9E /* scrambleTypes.plist */,
 				E982081026E4B96200DD7A9E /* AppDelegate.swift */,
 				E982081126E4B96200DD7A9E /* ZTimer-Info.plist */,
+				E99E3EC326EBFAE0006565F0 /* R.generated.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -259,6 +254,7 @@
 			buildConfigurationList = 0C2FA70917B1E37F00A006B5 /* Build configuration list for PBXNativeTarget "ZTimer" */;
 			buildPhases = (
 				71A2A1E7B366DAF86FEAE493 /* [CP] Check Pods Manifest.lock */,
+				E99E3EC226EBFA40006565F0 /* R.swift */,
 				0C2FA6D417B1E37F00A006B5 /* Sources */,
 				0C2FA6D517B1E37F00A006B5 /* Frameworks */,
 				0C2FA6D617B1E37F00A006B5 /* Resources */,
@@ -362,6 +358,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E99E3EC226EBFA40006565F0 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/ZTimer/SupportingFiles/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ZTimer/SupportingFiles/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -378,6 +394,7 @@
 				E9B8098326BC1967001C1095 /* StatsViewController.swift in Sources */,
 				7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */,
 				E9D499D326D245840069C9A1 /* Session.swift in Sources */,
+				E99E3EC426EBFAE0006565F0 /* R.generated.swift in Sources */,
 				E90A57C326C91DF500424DCF /* Solve.swift in Sources */,
 				7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */,
 				E99F0CD326A48311002A8081 /* Utils.swift in Sources */,

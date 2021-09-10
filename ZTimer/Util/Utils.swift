@@ -13,10 +13,6 @@ struct Utils {
 
     private let settings = Settings()
 
-    static func getLocalizedString(from string: String) -> String {
-        NSLocalizedString(string, comment: "")
-    }
-
     static func convertTimeFromMsecondToString(msecond: Int) -> String {
         var outputTimeString: String
 

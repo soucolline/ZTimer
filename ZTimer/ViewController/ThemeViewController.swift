@@ -15,7 +15,7 @@ class ThemeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = Utils.getLocalizedString(from: "theme")
+        self.navigationItem.title = R.string.localizable.theme()
         self.themes = Theme.getAllTheme()
     }
 }
@@ -43,7 +43,7 @@ extension ThemeViewController {
             cell.accessoryType = .none
         }
 
-        cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 18.0, ipadSize: 18.0)
+        cell.textLabel?.font = R.font.regular(size: 18)
 
         return cell
     }
@@ -53,7 +53,7 @@ extension ThemeViewController {
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        Utils.getLocalizedString(from: "select theme")
+        R.string.localizable.select_theme()
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

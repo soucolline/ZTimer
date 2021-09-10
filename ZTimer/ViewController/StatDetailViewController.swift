@@ -25,7 +25,7 @@ class StatDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = Utils.getLocalizedString(from: "Detail")
+        self.navigationItem.title = R.string.localizable.detail()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
@@ -165,13 +165,10 @@ extension StatDetailViewController {
         switch indexPath.section {
         case 0:
             if indexPath.row == 0 {
-                cell.textLabel?.text = Utils.getLocalizedString(from: self.stat.statType)
+                cell.textLabel?.text = self.stat.localizedStatType()
                 cell.detailTextLabel?.text = self.stat.statValue
                 cell.selectionStyle = .none
-                let solveOrders = [
-                    Utils.getLocalizedString(from: "↓"),
-                    Utils.getLocalizedString(from: "↑")
-                ]
+                let solveOrders = ["↓", "↑"]
 
                 let solveOrderSegment = UISegmentedControl(items: solveOrders)
                 solveOrderSegment.tintColor = self.timerTheme.getTintColor()
@@ -218,8 +215,8 @@ extension StatDetailViewController {
         default: ()
         }
 
-        cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 18.0, ipadSize: 18.0)
-        cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 12.0, ipadSize: 12.0)
+        cell.textLabel?.font = R.font.regular(size: 18)
+        cell.detailTextLabel?.font = R.font.light(size: 12)
         cell.detailTextLabel?.textColor = .darkGray
 
         return cell
@@ -241,13 +238,13 @@ extension StatDetailViewController {
         switch section {
         case 0:
             if self.session.sessionName == "main session" {
-                return Utils.getLocalizedString(from: "main session")
+                return R.string.localizable.main_session()
             } else {
                 return self.session.sessionName
             }
 
         case 1:
-            return Utils.getLocalizedString(from: "solve list")
+            return R.string.localizable.solve_list()
 
         default: return ""
         }

@@ -15,9 +15,9 @@ class SessionViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = Utils.getLocalizedString(from: "session")
+        self.navigationItem.title = R.string.localizable.session()
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(backToStatsView))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: R.image.back(), style: .plain, target: self, action: #selector(backToStatsView))
 
         self.navigationController?.setToolbarHidden(false, animated: false)
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -25,7 +25,7 @@ class SessionViewController: UITableViewController {
         self.buttons.append(self.editButtonItem)
         self.buttons.append(flexibleSpace)
         let newButton = UIBarButtonItem(
-            title: Utils.getLocalizedString(from: "new session"),
+            title: R.string.localizable.new_session(),
             style: .plain,
             target: self,
             action: #selector(addNewSession)
@@ -50,14 +50,14 @@ class SessionViewController: UITableViewController {
 
     @objc private func addNewSession() {
         let newSessionViewController = self.storyboard!.instantiateViewController(identifier: "EditSessionViewController") as! EditSessionViewController
-        newSessionViewController.navigationItem.title = Utils.getLocalizedString(from: "new session")
+        newSessionViewController.navigationItem.title = R.string.localizable.new_session()
         newSessionViewController.isNew = true
         self.navigationController?.pushViewController(newSessionViewController, animated: true)
     }
 
     func editSession(indexPath: IndexPath) {
         let newSessionViewController = self.storyboard!.instantiateViewController(identifier: "EditSessionViewController") as! EditSessionViewController
-        newSessionViewController.navigationItem.title = Utils.getLocalizedString(from: "rename session")
+        newSessionViewController.navigationItem.title = R.string.localizable.rename_session()
         newSessionViewController.isNew = false
 
         if indexPath.section == 0 {
@@ -108,16 +108,16 @@ extension SessionViewController {
         case 0:
             let title = self.sessionManager?.stickySessionArray[indexPath.row]
             let session = SessionManager.loadSessionWithName(name: title!)
-            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session.numberOfSolves())
+            let subTitle = String(format: "%@%d", R.string.localizable.number_of_solves(), session.numberOfSolves())
 
             if indexPath.row == 0 {
-                cell.textLabel?.text = Utils.getLocalizedString(from: title!)
+                cell.textLabel?.text = title!
                 cell.detailTextLabel?.text = subTitle
-                cell.imageView?.image = UIImage(named: "mainSession.png")
+                cell.imageView?.image = R.image.mainSession()
             } else {
                 cell.textLabel?.text = title!
                 cell.detailTextLabel?.text = subTitle
-                cell.imageView?.image = UIImage(named: "sticky.png")
+                cell.imageView?.image = R.image.sticky()
             }
 
             if title == self.sessionManager?.currentSessionName {
@@ -127,10 +127,10 @@ extension SessionViewController {
         case 1:
             let title = self.sessionManager?.sessionArray[indexPath.row]
             let session = SessionManager.loadSessionWithName(name: title!)
-            let subTitle = String(format: "%@%d", Utils.getLocalizedString(from: "Number of solves: "), session.numberOfSolves())
+            let subTitle = String(format: "%@%d", R.string.localizable.number_of_solves(), session.numberOfSolves())
             cell.textLabel?.text = title
             cell.detailTextLabel?.text = subTitle
-            cell.imageView?.image = UIImage(named: "session.png")
+            cell.imageView?.image = R.image.session()
 
             if title == self.sessionManager?.currentSessionName {
                 cell.accessoryType = .checkmark
@@ -139,8 +139,8 @@ extension SessionViewController {
         default: ()
         }
 
-        cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 18.0, ipadSize: 18.0)
-        cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 12.0, ipadSize: 12.0)
+        cell.textLabel?.font = R.font.regular(size: 18)
+        cell.detailTextLabel?.font = R.font.light(size: 12)
         cell.detailTextLabel?.textColor = .darkGray
 
         return cell
@@ -164,7 +164,7 @@ extension SessionViewController {
             case 0:
                 let deleteSession = self.sessionManager?.stickySessionArray[indexPath.row]
                 if deleteSession == self.sessionManager?.currentSessionName {
-                    self.sessionManager?.currentSessionName = "main session"
+                    self.sessionManager?.currentSessionName = R.string.localizable.main_session()
                 }
                 self.sessionManager?.removeStickySession(at: indexPath.row)
 
@@ -246,8 +246,8 @@ extension SessionViewController {
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 0: return Utils.getLocalizedString(from: "stickySessions")
-        case 1: return Utils.getLocalizedString(from: "mySessions")
+            case 0: return R.string.localizable.sticky_sessions()
+            case 1: return R.string.localizable.my_sessions()
         default: return ""
         }
     }

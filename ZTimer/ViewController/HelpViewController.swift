@@ -12,33 +12,33 @@ class HelpViewController: UITableViewController {
     private var timerTheme: Theme?
 
     private let helps = [
-        Utils.getLocalizedString(from: "1fhold"),
-        Utils.getLocalizedString(from: "sr"),
-        Utils.getLocalizedString(from: "sl"),
-        Utils.getLocalizedString(from: "1f2t"),
-        Utils.getLocalizedString(from: "2f2t"),
-        Utils.getLocalizedString(from: "2fup"),
-        Utils.getLocalizedString(from: "1fd")
+        R.string.localizable.one_finger_long_press(),
+        R.string.localizable.swipe_right(),
+        R.string.localizable.swipe_left(),
+        R.string.localizable.one_finger_double_tap(),
+        R.string.localizable.two_fingers_two_tap(),
+        R.string.localizable.two_fingers_swipe_up(),
+        R.string.localizable.swipe_down()
     ]
 
     private let helpsTodo = [
-        Utils.getLocalizedString(from: "1fholdto"),
-        Utils.getLocalizedString(from: "srto"),
-        Utils.getLocalizedString(from: "slto"),
-        Utils.getLocalizedString(from: "1f2tto"),
-        Utils.getLocalizedString(from: "2f2tto"),
-        Utils.getLocalizedString(from: "2fupto"),
-        Utils.getLocalizedString(from: "1fdto")
+        R.string.localizable.start_timer(),
+        R.string.localizable.new_scramble(),
+        R.string.localizable.delete_last_solve(),
+        R.string.localizable.choose_penalty(),
+        R.string.localizable.reset_session(),
+        R.string.localizable.choose_scramble_type(),
+        R.string.localizable.manually_add_solve()
     ]
 
     private let helpsImage = [
-        UIImage(named: "1hold.png"),
-        UIImage(named: "1fr.png"),
-        UIImage(named: "1fl.png"),
-        UIImage(named: "1f2t.png"),
-        UIImage(named: "2f2t.png"),
-        UIImage(named: "2fup.png"),
-        UIImage(named: "1fd.png")
+        R.image.onehold(),
+        R.image.onefr(),
+        R.image.onefl(),
+        R.image.onef2t(),
+        R.image.twof2t(),
+        R.image.twofup(),
+        R.image.onefd()
     ]
 
     override var canBecomeFirstResponder: Bool {
@@ -48,7 +48,7 @@ class HelpViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = Utils.getLocalizedString(from: "Gestures Help")
+        self.navigationItem.title = R.string.localizable.gesture_help()
         self.tabBarController?.tabBar.items?[2].badgeValue = nil
         self.timerTheme = Theme.getTimerTheme()
     }
@@ -87,8 +87,8 @@ extension HelpViewController {
         cell.textLabel?.text = self.helpsTodo[indexPath.row]
         cell.detailTextLabel?.text = self.helps[indexPath.row]
         cell.imageView?.image = self.helpsImage[indexPath.row]
-        cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 19.0, ipadSize: 22.0)
-        cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 14.0, ipadSize: 15.0)
+        cell.textLabel?.font = R.font.regular(size: 19)
+        cell.detailTextLabel?.font = R.font.light(size: 14)
         cell.detailTextLabel?.textColor = .darkGray
 
         return cell

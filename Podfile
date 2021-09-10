@@ -8,6 +8,7 @@ target 'ZTimer' do
 
   # Pods for ZTimer
   pod "ZScrambler", :git => "https://github.com/soucolline/ZScrambler"
+  pod "R.swift", '= 5.4.0'
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
