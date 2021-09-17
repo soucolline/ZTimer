@@ -17,6 +17,6 @@ class LicenseViewController: UIViewController {
 
         self.navigationItem.title = R.string.localizable.license()
 
-        self.webView.load(URLRequest(url: URL(fileURLWithPath: Bundle.main.path(forResource: "license", ofType: "html")!, isDirectory: false)))
+        self.webView.load(URLRequest(url: R.file.licenseHtml()!))
     }
 }
