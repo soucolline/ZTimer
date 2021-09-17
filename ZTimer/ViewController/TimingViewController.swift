@@ -28,7 +28,6 @@ class TimingViewController: UIViewController {
     private var longPressGesture: UILongPressGestureRecognizer!
     private var timeWhenTimerStart: Int!
     private var session: Session = SessionManager.loadd().loadCurrentSession()
-    private var timerTheme = Theme.getTimerTheme()
     private let scrambler = ZScrambler()
     private var thisScramble: Scramble!
     private var nextScramble: Scramble!
@@ -108,12 +107,20 @@ class TimingViewController: UIViewController {
     }
 
     private func setTheme() {
-        self.timerTheme = Theme.getTimerTheme()
-        self.timerTheme.setNavigationControllerTheme()
-        self.view.backgroundColor = self.timerTheme.backgroundColor
-        self.tabBarController?.tabBar.barTintColor = self.timerTheme.tabBarColor
-        self.scrambleLabel.textColor = self.timerTheme.textColor
-        self.timeLabel.textColor = self.timerTheme.textColor
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.font: R.font.regular(size: 22),
+            NSAttributedString.Key.foregroundColor: UIColor.white as Any
+        ]
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().tintColor = .white
+        UIBarButtonItem.appearance().setTitleTextAttributes([
+            NSAttributedString.Key.font: R.font.regular(size: 17)
+        ], for: .normal)
+        UITabBar.appearance().barTintColor = .black
+        self.view.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 1)
+        self.tabBarController?.tabBar.barTintColor = .black
+        self.scrambleLabel.textColor = .white
+        self.timeLabel.textColor = .white
     }
 
     private func startCoreMotion() {
@@ -195,7 +202,7 @@ class TimingViewController: UIViewController {
 
         if self.timerStatus == .freeze {
             self.timerStatus = .idle
-            self.timeLabel.textColor = self.timerTheme.textColor
+            self.timeLabel.textColor = .white
         }
     }
 
@@ -204,7 +211,7 @@ class TimingViewController: UIViewController {
 
         if self.timerStatus == .freeze {
             self.timerStatus = .idle
-            self.timeLabel.textColor = self.timerTheme.textColor
+            self.timeLabel.textColor = .white
         }
     }
 
@@ -225,11 +232,11 @@ class TimingViewController: UIViewController {
                     self.timerStatus = .ready
                 }
             } else if sender.state == .cancelled {
-                self.timeLabel.textColor = self.timerTheme.textColor
+                self.timeLabel.textColor = .white
                 self.timerStatus = .idle
             } else if sender.state == .ended {
                 if self.timerStatus == .ready {
-                    self.timeLabel.textColor = self.timerTheme.textColor
+                    self.timeLabel.textColor = .white
                     self.timeLabel.text = "0.000"
                     self.timeWhenTimerStart = Int(mach_absolute_time())
                     self.time = 0
@@ -252,7 +259,7 @@ class TimingViewController: UIViewController {
                     self.timerStatus = .inspect
                 } else if sender.state == .ended {
                     if self.timerStatus == .ready {
-                        self.timeLabel.textColor = self.timerTheme.textColor
+                        self.timeLabel.textColor = .white
                         self.timeLabel.text = "0.000"
                         self.timeWhenTimerStart = Int(mach_absolute_time())
                         self.time = 0
@@ -272,11 +279,11 @@ class TimingViewController: UIViewController {
                 }
 
                 if sender.state == .cancelled {
-                    self.timeLabel.textColor = self.timerTheme.textColor
+                    self.timeLabel.textColor = .white
                     self.timerStatus = .idle
                 } else if sender.state == .ended {
                     if self.timerStatus == .ready {
-                        self.timeLabel.textColor = self.timerTheme.textColor
+                        self.timeLabel.textColor = .white
                         self.timeLabel.text = "15"
                         self.inspectionTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateInspectionTime), userInfo: nil, repeats: true)
                         self.timerStatus = .inspect
@@ -345,7 +352,7 @@ class TimingViewController: UIViewController {
 
     @objc private func resetTimerStatus() {
         if !wcaInspection && timerStatus != TimerStatus.timing {
-            self.timeLabel.textColor = timerTheme.textColor
+            self.timeLabel.textColor = .white
             self.timerStatus = .idle
         }
     }

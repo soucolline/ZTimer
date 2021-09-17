@@ -9,8 +9,6 @@
 import UIKit
 
 class HelpViewController: UITableViewController {
-    private var timerTheme: Theme?
-
     private let helps = [
         R.string.localizable.one_finger_long_press(),
         R.string.localizable.swipe_right(),
@@ -50,25 +48,6 @@ class HelpViewController: UITableViewController {
 
         self.navigationItem.title = R.string.localizable.gesture_help()
         self.tabBarController?.tabBar.items?[2].badgeValue = nil
-        self.timerTheme = Theme.getTimerTheme()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        self.becomeFirstResponder()
-        let myApp = UIApplication.shared
-
-        if self.timerTheme?.getMyTheme() == .white {
-            myApp.setStatusBarStyle(.default, animated: true)
-        } else {
-            myApp.setStatusBarStyle(.lightContent, animated: true)
-        }
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        self.resignFirstResponder()
-        super.viewWillDisappear(animated)
     }
 }
 

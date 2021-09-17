@@ -10,7 +10,6 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
     private var fTime = UILabel(frame: CGRect(x: 16, y: 25, width: 200, height: 15))
-    private var timerTheme = Theme.getTimerTheme()
     private var sensCell: UITableViewCell!
 
     override func viewDidLoad() {
@@ -75,7 +74,6 @@ extension SettingsViewController {
                 cell.textLabel?.text = R.string.localizable.sensitivity()
                 cell.detailTextLabel?.text = ""
                 let sensSlider = UISlider(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
-                sensSlider.tintColor = self.timerTheme.getTintColor()
                 sensSlider.minimumValue = 0
                 sensSlider.maximumValue = 110
                 sensSlider.addTarget(self, action: #selector(sensSliderChanged(sender:)), for: .valueChanged)
@@ -109,7 +107,6 @@ extension SettingsViewController {
                 cell.textLabel?.text = R.string.localizable.start_freeze()
                 cell.detailTextLabel?.text = " "
                 let freezeTime = UISlider(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
-                freezeTime.tintColor = self.timerTheme.getTintColor()
                 freezeTime.minimumValue = 10
                 freezeTime.maximumValue = 100
                 freezeTime.addTarget(self, action: #selector(freezeTimeSliderChanged(sender:)), for: .valueChanged)
@@ -133,7 +130,6 @@ extension SettingsViewController {
                 ]
 
                 let solveOrderSegment = UISegmentedControl(items: solveOrders)
-                solveOrderSegment.tintColor = self.timerTheme.getTintColor()
 
                 let order = Settings().int(forKey: "solveOrder")
                 solveOrderSegment.selectedSegmentIndex = order
@@ -151,7 +147,6 @@ extension SettingsViewController {
                 ]
 
                 let solveDetailSegment = UISegmentedControl(items: solveDetails)
-                solveDetailSegment.tintColor = self.timerTheme.getTintColor()
 
                 let detail = Settings().int(forKey: "solveDetailDisplay")
                 solveDetailSegment.selectedSegmentIndex = detail

@@ -9,7 +9,6 @@
 import UIKit
 
 class StatsViewController: UITableViewController {
-    private let timerTheme = Theme.getTimerTheme()
     private var stats: [OneStat] = []
 
     private var session: Session {
@@ -106,7 +105,6 @@ extension StatsViewController {
             cell.accessoryType = .disclosureIndicator
         }
 
-        cell.detailTextLabel?.textColor = self.timerTheme.getTintColor()
         cell.textLabel?.font = R.font.regular(size: 18)
         cell.detailTextLabel?.font = R.font.light(size: 18)
 

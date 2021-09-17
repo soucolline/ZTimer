@@ -11,7 +11,6 @@ import UIKit
 class StatDetailViewController: UITableViewController {
     private var best: Solve!
     private var worst: Solve!
-    private var timerTheme = Theme.getTimerTheme()
     @objc var session: Session!
     @objc var stat: OneStat!
     @objc var row: Int = 0
@@ -171,7 +170,6 @@ extension StatDetailViewController {
                 let solveOrders = ["↓", "↑"]
 
                 let solveOrderSegment = UISegmentedControl(items: solveOrders)
-                solveOrderSegment.tintColor = self.timerTheme.getTintColor()
                 let order = Settings().int(forKey: "solveOrder")
                 solveOrderSegment.selectedSegmentIndex = order
                 solveOrderSegment.addTarget(self, action: #selector(solveOrderSegmentChange(sender:)), for: .valueChanged)

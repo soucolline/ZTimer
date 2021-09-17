@@ -23,7 +23,6 @@
 		0CF7B4B3187E44D800B7500B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7B4B2187E44D800B7500B /* CFNetwork.framework */; };
 		7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */; };
 		7F7D43E426B168B10017B4C3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7D43E326B168B10017B4C3 /* WebKit.framework */; };
-		7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */; };
 		7F7D43EC26B3E8150017B4C3 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */; };
 		7F7D43F026B3EFB70017B4C3 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43EF26B3EFB70017B4C3 /* MoreViewController.swift */; };
 		7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D43F326B5A5720017B4C3 /* SettingsViewController.swift */; };
@@ -36,7 +35,7 @@
 		E9081EA026C90F5500619AE2 /* Scramble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9081E9F26C90F5500619AE2 /* Scramble.swift */; };
 		E90A57C326C91DF500424DCF /* Solve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A57C226C91DF500424DCF /* Solve.swift */; };
 		E97FF97226A6212C00546236 /* OneStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97126A6212C00546236 /* OneStat.swift */; };
-		E97FF97426A6249400546236 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* Theme.swift */; };
+		E97FF97426A6249400546236 /* R+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97FF97326A6249400546236 /* R+extensions.swift */; };
 		E982081226E4B96200DD7A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E982080D26E4B96200DD7A9E /* LaunchScreen.storyboard */; };
 		E982081326E4B96200DD7A9E /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = E982080E26E4B96200DD7A9E /* license.html */; };
 		E982081426E4B96200DD7A9E /* scrambleTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = E982080F26E4B96200DD7A9E /* scrambleTypes.plist */; };
@@ -70,7 +69,6 @@
 		2EFA162806CDFE1593448D78 /* Pods-ZTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTimer.release.xcconfig"; path = "Target Support Files/Pods-ZTimer/Pods-ZTimer.release.xcconfig"; sourceTree = "<group>"; };
 		7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		7F7D43E326B168B10017B4C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		7F7D43EF26B3EFB70017B4C3 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		7F7D43F326B5A5720017B4C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +80,7 @@
 		E9081E9F26C90F5500619AE2 /* Scramble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scramble.swift; sourceTree = "<group>"; };
 		E90A57C226C91DF500424DCF /* Solve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solve.swift; sourceTree = "<group>"; };
 		E97FF97126A6212C00546236 /* OneStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneStat.swift; sourceTree = "<group>"; };
-		E97FF97326A6249400546236 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E97FF97326A6249400546236 /* R+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+extensions.swift"; sourceTree = "<group>"; };
 		E982080D26E4B96200DD7A9E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E982080E26E4B96200DD7A9E /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
 		E982080F26E4B96200DD7A9E /* scrambleTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scrambleTypes.plist; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 				7F7D43F726B6DF340017B4C3 /* EditSessionViewController.swift */,
 				7F7D43EB26B3E8150017B4C3 /* HelpViewController.swift */,
 				7F7D43EF26B3EFB70017B4C3 /* MoreViewController.swift */,
-				7F7D43E726B16B3D0017B4C3 /* ThemeViewController.swift */,
 				7F7D43F326B5A5720017B4C3 /* SettingsViewController.swift */,
 				7F7D43DF26B166B30017B4C3 /* LicenseViewController.swift */,
 			);
@@ -214,7 +211,7 @@
 		0C2FA70F17B68BB900A006B5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				E97FF97326A6249400546236 /* Theme.swift */,
+				E97FF97326A6249400546236 /* R+extensions.swift */,
 				E97FF97126A6212C00546236 /* OneStat.swift */,
 				E99F0CD226A48311002A8081 /* Utils.swift */,
 				E99F0CD426A487AF002A8081 /* Settings.swift */,
@@ -398,8 +395,7 @@
 				E90A57C326C91DF500424DCF /* Solve.swift in Sources */,
 				7F7D43F426B5A5720017B4C3 /* SettingsViewController.swift in Sources */,
 				E99F0CD326A48311002A8081 /* Utils.swift in Sources */,
-				E97FF97426A6249400546236 /* Theme.swift in Sources */,
-				7F7D43E826B16B3D0017B4C3 /* ThemeViewController.swift in Sources */,
+				E97FF97426A6249400546236 /* R+extensions.swift in Sources */,
 				E9081E9E26C7FCF900619AE2 /* ScramblePickerViewController.swift in Sources */,
 				7F7D43FC26B6E6390017B4C3 /* SessionViewController.swift in Sources */,
 				7F7D43E026B166B30017B4C3 /* LicenseViewController.swift in Sources */,

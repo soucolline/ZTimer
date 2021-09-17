@@ -9,9 +9,6 @@
 import UIKit
 
 class MoreViewController: UITableViewController {
-
-    private let timerTheme = Theme.getTimerTheme()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,7 +52,6 @@ extension MoreViewController {
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = R.string.localizable.theme()
-                cell.detailTextLabel?.text = self.timerTheme.getMyThemeName()
                 cell.imageView?.image = R.image.theme()
 
             case 1:
@@ -76,7 +72,6 @@ extension MoreViewController {
         default:()
         }
 
-        cell.detailTextLabel?.textColor = self.timerTheme.getTintColor()
         cell.textLabel?.font = R.font.regular(size: 18)
         cell.detailTextLabel?.font = R.font.light(size: 18)
 

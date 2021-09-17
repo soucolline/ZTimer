@@ -409,47 +409,6 @@
             </objects>
             <point key="canvasLocation" x="2180" y="1725"/>
         </scene>
-        <!--Theme View Controller-->
-        <scene sceneID="rfv-lJ-Rqe">
-            <objects>
-                <tableViewController storyboardIdentifier="ThemeViewController" id="Uu1-XO-1WC" customClass="ThemeViewController" customModule="ZTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eL8-gu-bcA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="G5y-Yr-HHq" imageView="YiL-9N-PS0" style="IBUITableViewCellStyleDefault" id="drs-Tr-owa">
-                                <rect key="frame" x="0.0" y="49.5" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drs-Tr-owa" id="rFX-fL-PT6">
-                                    <rect key="frame" x="0.0" y="0.0" width="373.5" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G5y-Yr-HHq">
-                                            <rect key="frame" x="75" y="0.0" width="290.5" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" systemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="space.png" id="YiL-9N-PS0">
-                                            <rect key="frame" x="20" y="2" width="40" height="40"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Uu1-XO-1WC" id="gk8-OH-4yd"/>
-                            <outlet property="delegate" destination="Uu1-XO-1WC" id="UtM-w7-CaY"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qMp-hJ-vwe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3501" y="1725"/>
-        </scene>
         <!--Settings View Controller-->
         <scene sceneID="4Wx-hw-8Jy">
             <objects>
@@ -599,7 +558,6 @@
     <resources>
         <image name="help.png" width="30" height="30"/>
         <image name="more.png" width="30" height="30"/>
-        <image name="space.png" width="40" height="40"/>
         <image name="stats.png" width="30" height="30"/>
         <image name="timing.png" width="30" height="30"/>
         <systemColor name="darkTextColor">
