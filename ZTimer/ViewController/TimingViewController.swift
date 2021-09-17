@@ -61,10 +61,10 @@ class TimingViewController: UIViewController {
         self.setupGestures()
         self.timerStatus = .idle
 
-        self.tabBarController?.tabBar.items?[0].title = Utils.getLocalizedString(from: "Timing")
-        self.tabBarController?.tabBar.items?[1].title = Utils.getLocalizedString(from: "Stats")
-        self.tabBarController?.tabBar.items?[2].title = Utils.getLocalizedString(from: "Help")
-        self.tabBarController?.tabBar.items?[3].title = Utils.getLocalizedString(from: "More")
+        self.tabBarController?.tabBar.items?[0].title = R.string.localizable.timing()
+        self.tabBarController?.tabBar.items?[1].title = R.string.localizable.stats()
+        self.tabBarController?.tabBar.items?[2].title = R.string.localizable.help()
+        self.tabBarController?.tabBar.items?[3].title = R.string.localizable.more()
 
         scrType = Int(self.session.currentType)
         scrSubType = Int(self.session.currentSubType)
@@ -74,7 +74,7 @@ class TimingViewController: UIViewController {
         print("Current scramble type \(String(describing: scrType)) \(String(describing: scrSubType))")
         self.scrambler.initSq1()
         self.changeScramble()
-        self.scrambleLabel.font = Theme.font(style: .light, iphoneSize: 20.0, ipadSize: 40.0)
+        self.scrambleLabel.font = R.font.light(size: 20)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -356,14 +356,14 @@ class TimingViewController: UIViewController {
         if self.timerStatus != .timing && self.timerStatus != TimerStatus.inspect && self.session.numberOfSolves() > 0 {
             if swipGesture.direction == .left {
                 let deleteLastTimerAlert = UIAlertController(
-                    title: Utils.getLocalizedString(from: "delete last"),
-                    message: Utils.getLocalizedString(from: "sure?"),
+                    title: R.string.localizable.delete_last(),
+                    message: R.string.localizable.sure(),
                     preferredStyle: .alert
                 )
-                deleteLastTimerAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "no"), style: .cancel))
-                deleteLastTimerAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "yes"), style: .default, handler: { _ in
+                deleteLastTimerAlert.addAction(UIAlertAction(title: R.string.localizable.no(), style: .cancel))
+                deleteLastTimerAlert.addAction(UIAlertAction(title: R.string.localizable.yes(), style: .default, handler: { _ in
                     self.session.deleteLastSolve()
-                    self.timeLabel.text = "Ready"
+                    self.timeLabel.text = R.string.localizable.ready()
                     SessionManager.saveSession(session: self.session)
                     self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
                 }))
@@ -377,14 +377,14 @@ class TimingViewController: UIViewController {
 
         if self.timerStatus != .timing && self.timerStatus != TimerStatus.inspect && self.session.numberOfSolves() > 0 {
             let clearTimeAlert = UIAlertController(
-                title: Utils.getLocalizedString(from: "reset session"),
-                message: Utils.getLocalizedString(from: "sure?"),
+                title: R.string.localizable.reset_session(),
+                message: R.string.localizable.sure(),
                 preferredStyle: .alert
             )
-            clearTimeAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "no"), style: .cancel))
-            clearTimeAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "yes"), style: .default, handler: { _ in
+            clearTimeAlert.addAction(UIAlertAction(title: R.string.localizable.no(), style: .cancel))
+            clearTimeAlert.addAction(UIAlertAction(title: R.string.localizable.yes(), style: .default, handler: { _ in
                 self.session.clear()
-                self.timeLabel.text = "Ready"
+                self.timeLabel.text = R.string.localizable.ready()
                 SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             }))
@@ -395,26 +395,26 @@ class TimingViewController: UIViewController {
     @objc private func addPenalty(tapGesture: UITapGestureRecognizer) {
         print("add penalty")
 
-        if self.session.numberOfSolves() > 0 && !(self.timeLabel.text == "Ready") && self.timerStatus != TimerStatus.timing && self.timerStatus != TimerStatus.inspect && self.session.lastSolve().timeBeforePenalty != 2147483647 {
+        if self.session.numberOfSolves() > 0 && !(self.timeLabel.text == R.string.localizable.ready()) && self.timerStatus != TimerStatus.timing && self.timerStatus != TimerStatus.inspect && self.session.lastSolve().timeBeforePenalty != 2147483647 {
             let addPenaltyAlert = UIAlertController(
-                title: Utils.getLocalizedString(from: "penalty"),
-                message: Utils.getLocalizedString(from: "this time was"),
+                title: R.string.localizable.penalty(),
+                message: R.string.localizable.this_time_was(),
                 preferredStyle: .alert
             )
-            addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "cancel"), style: .cancel))
-            addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "+2"), style: .default, handler: { _ in
+            addPenaltyAlert.addAction(UIAlertAction(title: R.string.localizable.cancel(), style: .cancel))
+            addPenaltyAlert.addAction(UIAlertAction(title: R.string.localizable.plus2(), style: .default, handler: { _ in
                 self.session.addPenaltyToLastSolve(penalty: .plus2)
                 self.timeLabel.text = self.session.lastSolve().toString()
                 SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             }))
-            addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "+DNF"), style: .default, handler: { _ in
+            addPenaltyAlert.addAction(UIAlertAction(title: R.string.localizable.plus_dnf(), style: .default, handler: { _ in
                 self.session.addPenaltyToLastSolve(penalty: .dnf)
                 self.timeLabel.text = self.session.lastSolve().toString()
                 SessionManager.saveSession(session: self.session)
                 self.tabBarItem.badgeValue = String(format: "%d", self.session.numberOfSolves())
             }))
-            addPenaltyAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: Utils.getLocalizedString(from: "no penalty")), style: .default, handler: { _ in
+            addPenaltyAlert.addAction(UIAlertAction(title: R.string.localizable.no_penalty(), style: .default, handler: { _ in
                 self.session.addPenaltyToLastSolve(penalty: .noPenalty)
                 self.timeLabel.text = self.session.lastSolve().toString()
                 SessionManager.saveSession(session: self.session)
@@ -441,12 +441,12 @@ class TimingViewController: UIViewController {
 
         if self.timerStatus != .timing && self.timerStatus != TimerStatus.inspect {
             let manuallyAddAlert = UIAlertController(
-                title: Utils.getLocalizedString(from: "manuallyAdd"),
-                message: Utils.getLocalizedString(from: "originalTime"),
+                title: R.string.localizable.manually_add(),
+                message: R.string.localizable.original_time(),
                 preferredStyle: .alert
             )
-            manuallyAddAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "cancel"), style: .cancel))
-            manuallyAddAlert.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "done"), style: .default, handler: { _ in
+            manuallyAddAlert.addAction(UIAlertAction(title: R.string.localizable.cancel(), style: .cancel))
+            manuallyAddAlert.addAction(UIAlertAction(title: R.string.localizable.done(), style: .default, handler: { _ in
                 let textField = manuallyAddAlert.textFields?.first!
                 var text = textField!.text!
                 let nf = NumberFormatter()

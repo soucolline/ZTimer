@@ -82,13 +82,13 @@ import UIKit
         }
 
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedString.Key.font: Theme.font(style: .regular, iphoneSize: 22.0, ipadSize: 22.0),
+            NSAttributedString.Key.font: R.font.regular(size: 22),
             NSAttributedString.Key.foregroundColor: self.textColor as Any
         ]
         UINavigationBar.appearance().barTintColor = self.navigationColor
         UINavigationBar.appearance().tintColor = self.barItemColor
         UIBarButtonItem.appearance().setTitleTextAttributes([
-            NSAttributedString.Key.font: Theme.font(style: .regular, iphoneSize: 17.0, ipadSize: 17.0)
+            NSAttributedString.Key.font: R.font.regular(size: 17)
         ], for: .normal)
         UITabBar.appearance().barTintColor = self.tabBarColor
     }
@@ -105,7 +105,7 @@ import UIKit
         }
 
         controller.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: Theme.font(style: .regular, iphoneSize: 22.0, ipadSize: 22.0),
+            NSAttributedString.Key.font: R.font.regular(size: 22),
             NSAttributedString.Key.foregroundColor: self.textColor as Any
         ]
         controller.navigationBar.barTintColor = self.navigationColor
@@ -114,13 +114,13 @@ import UIKit
 
     static func getThemeName(theme: ThemeValue) -> String {
         switch theme {
-            case .blue: return Utils.getLocalizedString(from: "theme blue")
-            case .white: return Utils.getLocalizedString(from: "theme white")
-            case .red: return Utils.getLocalizedString(from: "theme red")
-            case .green: return Utils.getLocalizedString(from: "theme green")
-            case .yellow: return Utils.getLocalizedString(from: "theme yellow")
-            case .black: return Utils.getLocalizedString(from: "theme black")
-            case .pink: return Utils.getLocalizedString(from: "theme pink")
+            case .blue: return R.string.localizable.theme_blue()
+            case .white: return R.string.localizable.theme_white()
+            case .red: return R.string.localizable.theme_red()
+            case .green: return R.string.localizable.theme_green()
+            case .yellow: return R.string.localizable.theme_yellow()
+            case .black: return R.string.localizable.theme_black()
+            case .pink: return R.string.localizable.theme_pink()
         }
     }
 
@@ -178,20 +178,20 @@ import UIKit
             return Theme.getColorFromTheme(theme: myTheme)
         }
     }
+}
 
-    static func font(style: FontStyle, iphoneSize: CGFloat, ipadSize: CGFloat) -> UIFont {
-        if Utils.getDevice() == .phone {
-            switch style {
-                case .bold: return UIFont(name: "Avenir-Medium", size: iphoneSize)!
-                case .light: return UIFont(name: "Avenir-Light", size: iphoneSize)!
-                case .regular: return UIFont(name: "Avenir-Book", size: iphoneSize)!
-            }
-        } else {
-            switch style {
-                case .bold: return UIFont(name: "Avenir-Medium", size: ipadSize)!
-                case .light: return UIFont(name: "Avenir-Light", size: ipadSize)!
-                case .regular: return UIFont(name: "Avenir-Book", size: ipadSize)!
-            }
+extension R {
+    struct font {
+        static func bold(size: CGFloat) -> UIFont {
+            UIFont(name: "Avenir-Medium", size: size)!
+        }
+
+        static func light(size: CGFloat) -> UIFont {
+            UIFont(name: "Avenir-Light", size: size)!
+        }
+
+        static func regular(size: CGFloat) -> UIFont {
+            UIFont(name: "Avenir-Book", size: size)!
         }
     }
 }

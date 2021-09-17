@@ -1,8 +1,17 @@
 PODS:
+  - R.swift (5.4.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
   - ZScrambler (1.0.0)
 
 DEPENDENCIES:
+  - R.swift (= 5.4.0)
   - ZScrambler (from `https://github.com/soucolline/ZScrambler`)
+
+SPEC REPOS:
+  trunk:
+    - R.swift
+    - R.swift.Library
 
 EXTERNAL SOURCES:
   ZScrambler:
@@ -14,8 +23,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/soucolline/ZScrambler
 
 SPEC CHECKSUMS:
+  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   ZScrambler: 8172caa0519234232a8abf25965ec5d3bc978d2a
 
-PODFILE CHECKSUM: 7c449a2b1439f1edd3e06fa6da8edf4a5f04f111
+PODFILE CHECKSUM: 273951046dc0e013150f59804fb83877f202f204
 
 COCOAPODS: 1.11.0

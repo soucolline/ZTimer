@@ -354,35 +354,35 @@ class Session: NSObject, NSCoding {
     }
 
     func toString(containIndividualTime: Bool) -> String {
-        var str = Utils.getLocalizedString(from: "Number of solves: ").appendingFormat("%d\n", self.numberOfSolves())
+        var str = R.string.localizable.number_of_solves().appendingFormat("%d\n", self.numberOfSolves())
 
         if self.numberOfSolves() > 0 {
-            let bestTime = Utils.getLocalizedString(from: "Best Time: ").appending(self.bestSolve().toString()).appending("\n")
-            let worstTime = Utils.getLocalizedString(from: "Worst Time: ").appending(self.worstSolve().toString()).appending("\n")
+            let bestTime = R.string.localizable.best_time().appending(self.bestSolve().toString()).appending("\n")
+            let worstTime = R.string.localizable.worst_time().appending(self.worstSolve().toString()).appending("\n")
             str = str.appending(bestTime).appending(worstTime)
 
             if !containIndividualTime {
                 if self.numberOfSolves() >= 5 {
-                    let ca5 = Utils.getLocalizedString(from: "Current Avg5: ").appending(self.currentAvgOf(num: 5).toString().appending("\n"))
-                    let ba5 = Utils.getLocalizedString(from: "Best Avg5: ").appending(self.bestAvgOf(num: 5).toString().appending("\n"))
+                    let ca5 = R.string.localizable.current_avg5().appending(self.currentAvgOf(num: 5).toString().appending("\n"))
+                    let ba5 = R.string.localizable.best_avg5().appending(self.bestAvgOf(num: 5).toString().appending("\n"))
                     str = str.appending(ca5).appending(ba5)
                 }
 
                 if self.numberOfSolves() >= 12 {
-                    let ca12 = Utils.getLocalizedString(from: "Current Avg12: ").appending(self.currentAvgOf(num: 12).toString().appending("\n"))
-                    let ba12 = Utils.getLocalizedString(from: "Best Avg12: ").appending(self.bestAvgOf(num: 12).toString().appending("\n"))
+                    let ca12 = R.string.localizable.current_avg12().appending(self.currentAvgOf(num: 12).toString().appending("\n"))
+                    let ba12 = R.string.localizable.best_avg12().appending(self.bestAvgOf(num: 12).toString().appending("\n"))
                     str = str.appending(ca12).appending(ba12)
                 }
 
                 if self.numberOfSolves() >= 100 {
-                    let ca100 = Utils.getLocalizedString(from: "Current Avg100: ").appending(self.currentAvgOf(num: 100).toString().appending("\n"))
-                    let ba100 = Utils.getLocalizedString(from: "Best Avg100: ").appending(self.bestAvgOf(num: 100).toString().appending("\n"))
+                    let ca100 = R.string.localizable.current_avg100().appending(self.currentAvgOf(num: 100).toString().appending("\n"))
+                    let ba100 = R.string.localizable.best_avg100().appending(self.bestAvgOf(num: 100).toString().appending("\n"))
                     str = str.appending(ca100).appending(ba100)
                 }
             }
 
-            let sessionAvg = Utils.getLocalizedString(from: "Session Avg: ").appending(self.sessionAvg().toString().appending("\n"))
-            let sessionMean = Utils.getLocalizedString(from: "Session Mean: ").appending(self.sessionMean().toString()).appending("\n")
+            let sessionAvg = R.string.localizable.session_avg().appending(self.sessionAvg().toString().appending("\n"))
+            let sessionMean = R.string.localizable.session_mean().appending(self.sessionMean().toString()).appending("\n")
             str = str.appending(sessionAvg).appending(sessionMean)
 
             if containIndividualTime {
@@ -417,13 +417,13 @@ class Session: NSObject, NSCoding {
                 }
 
                 timesList = timesList.substring(to: timesList.length - 2) as NSString
-                let individualTimes = Utils.getLocalizedString(from: "Individual Times: ").appending("\n").appending(timesList as String)
+                let individualTimes = R.string.localizable.individual_times().appending("\n").appending(timesList as String)
                 str = str.appending(individualTimes).appending("\n")
             }
         }
 
         if self.sessionName == "main session" {
-            str = Utils.getLocalizedString(from: self.sessionName).appending("\n\n").appending(str)
+            str = R.string.localizable.main_session().appending("\n\n").appending(str)
         } else {
             str = self.sessionName.appending("\n\n").appending(str)
         }

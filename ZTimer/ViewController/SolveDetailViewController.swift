@@ -15,7 +15,7 @@ class SolveDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = Utils.getLocalizedString(from: "scramble")
+        self.navigationItem.title = R.string.localizable.scramble()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .action,
             target: self,
@@ -30,11 +30,11 @@ class SolveDetailViewController: UITableViewController {
             preferredStyle: .actionSheet
         )
 
-        self.shareSheet.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "copy scramble"), style: .default, handler: { _ in
+        self.shareSheet.addAction(UIAlertAction(title: R.string.localizable.copy_scramble(), style: .default, handler: { _ in
             self.copyToPaste()
         }))
 
-        self.shareSheet.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "cancel"), style: .cancel))
+        self.shareSheet.addAction(UIAlertAction(title: R.string.localizable.cancel(), style: .cancel))
 
         self.present(self.shareSheet, animated: true)
     }
@@ -46,11 +46,11 @@ class SolveDetailViewController: UITableViewController {
 
         let alertController = UIAlertController(
             title: nil,
-            message: Utils.getLocalizedString(from: "copy scramble success"),
+            message: R.string.localizable.copy_scramble_success(),
             preferredStyle: .alert
         )
 
-        alertController.addAction(UIAlertAction(title: Utils.getLocalizedString(from: "OK"), style: .cancel))
+        alertController.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .cancel))
         self.present(alertController, animated: true)
     }
 }
@@ -70,8 +70,8 @@ extension SolveDetailViewController {
 
         switch indexPath.row {
         case 0:
-            cell.textLabel?.font = Theme.font(style: .bold, iphoneSize: 35.0, ipadSize: 35.0)
-            cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 17.0, ipadSize: 17.0)
+            cell.textLabel?.font = R.font.bold(size: 35)
+            cell.detailTextLabel?.font = R.font.light(size: 17)
             cell.textLabel?.text = self.solve.toString()
 
             if self.solve.penalty != .noPenalty {
@@ -81,19 +81,19 @@ extension SolveDetailViewController {
             }
 
         case 1:
-            cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 20.0, ipadSize: 20.0)
-            cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 17.0, ipadSize: 17.0)
+            cell.textLabel?.font = R.font.regular(size: 20)
+            cell.detailTextLabel?.font = R.font.light(size: 17)
             cell.textLabel?.text = self.solve.scramble.scrType
             cell.detailTextLabel?.text = self.solve.scramble.scrSubType
 
         case 2:
-            cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 17.0, ipadSize: 17.0)
-            cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 17.0, ipadSize: 17.0)
+            cell.textLabel?.font = R.font.regular(size: 17)
+            cell.detailTextLabel?.font = R.font.light(size: 17)
             cell.textLabel?.text = self.solve.getTimeStampString()
             cell.detailTextLabel?.text = ""
 
         case 3:
-            cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 13.0, ipadSize: 13.0 + 4.0)
+            cell.textLabel?.font = R.font.regular(size: 13)
             cell.textLabel?.numberOfLines = 0
             cell.detailTextLabel?.text = ""
             cell.textLabel?.text = self.solve.scramble.scramble
@@ -112,7 +112,7 @@ extension SolveDetailViewController {
         case 1, 2: return 44.0
         case 3:
             text = self.solve.scramble.scramble
-            return Utils().heightOfContent(content: text, font: Theme.font(style: .regular, iphoneSize: 13.0, ipadSize: 13.0 + 4))
+            return Utils().heightOfContent(content: text, font: R.font.regular(size: 13))
         default: return 44.0
         }
     }

@@ -16,16 +16,16 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = Utils.getLocalizedString(from: "setting")
+        self.navigationItem.title = R.string.localizable.setting()
 
-        fTime.font = Theme.font(style: .light, iphoneSize: 13.0, ipadSize: 13.0)
+        fTime.font = R.font.light(size: 13)
         fTime.backgroundColor = UIColor.clear
         fTime.textColor = UIColor.darkGray
         let time = Settings().int(forKey: "freezeTime")
         fTime.text = String(format: "%0.1f s", Double(time) * 0.01)
 
         if fTime.text == "0.0 s" {
-            fTime.text = fTime.text?.appending(Utils.getLocalizedString(from: "no other gesture"))
+            fTime.text = fTime.text?.appending(R.string.localizable.no_other_gesture())
         }
     }
 }
@@ -52,8 +52,8 @@ extension SettingsViewController {
         case 0:
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = Utils.getLocalizedString(from: "wca inspection")
-                cell.detailTextLabel?.text = Utils.getLocalizedString(from: "15 sec")
+                cell.textLabel?.text = R.string.localizable.wca_inspection()
+                cell.detailTextLabel?.text = R.string.localizable.fifteen_sec()
                 let wcaInsSwitch = UISwitch()
                 wcaInsSwitch.addTarget(self, action: #selector(wcaSwitchAction), for: .valueChanged)
 
@@ -62,8 +62,8 @@ extension SettingsViewController {
                 cell.selectionStyle = .none
 
             case 1:
-                cell.textLabel?.text = Utils.getLocalizedString(from: "knockToStop")
-                cell.detailTextLabel?.text = Utils.getLocalizedString(from: "knockToStopDetail")
+                cell.textLabel?.text = R.string.localizable.knock_to_stop()
+                cell.detailTextLabel?.text = R.string.localizable.knock_to_stop_detail()
                 let knockSwitch = UISwitch()
                 knockSwitch.addTarget(self, action: #selector(knockSwitchAction), for: .valueChanged)
 
@@ -72,7 +72,7 @@ extension SettingsViewController {
                 cell.selectionStyle = .none
 
             case 2:
-                cell.textLabel?.text = Utils.getLocalizedString(from: "sensitivity")
+                cell.textLabel?.text = R.string.localizable.sensitivity()
                 cell.detailTextLabel?.text = ""
                 let sensSlider = UISlider(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
                 sensSlider.tintColor = self.timerTheme.getTintColor()
@@ -106,7 +106,7 @@ extension SettingsViewController {
                 self.sensCell = cell
 
             case 3:
-                cell.textLabel?.text = Utils.getLocalizedString(from: "start freeze")
+                cell.textLabel?.text = R.string.localizable.start_freeze()
                 cell.detailTextLabel?.text = " "
                 let freezeTime = UISlider(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
                 freezeTime.tintColor = self.timerTheme.getTintColor()
@@ -126,10 +126,10 @@ extension SettingsViewController {
         case 1:
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = Utils.getLocalizedString(from: "newest time on")
+                cell.textLabel?.text = R.string.localizable.newest_time_on()
                 let solveOrders = [
-                    Utils.getLocalizedString(from: "bottom"),
-                    Utils.getLocalizedString(from: "top")
+                    R.string.localizable.bottom(),
+                    R.string.localizable.top()
                 ]
 
                 let solveOrderSegment = UISegmentedControl(items: solveOrders)
@@ -143,11 +143,11 @@ extension SettingsViewController {
                 cell.detailTextLabel?.text = ""
 
             case 1:
-                cell.textLabel?.text = Utils.getLocalizedString(from: "solve subtitle")
+                cell.textLabel?.text = R.string.localizable.solve_subtitle()
                 let solveDetails = [
-                    Utils.getLocalizedString(from: "time"),
-                    Utils.getLocalizedString(from: "scrStr"),
-                    Utils.getLocalizedString(from: "type")
+                    R.string.localizable.time(),
+                    R.string.localizable.scr_str(),
+                    R.string.localizable.type()
                 ]
 
                 let solveDetailSegment = UISegmentedControl(items: solveDetails)
@@ -165,24 +165,24 @@ extension SettingsViewController {
         default: ()
         }
 
-        cell.textLabel?.font = Theme.font(style: .regular, iphoneSize: 18.0, ipadSize: 18.0)
-        cell.detailTextLabel?.font = Theme.font(style: .light, iphoneSize: 13.0, ipadSize: 13.0)
+        cell.textLabel?.font = R.font.regular(size: 18)
+        cell.detailTextLabel?.font = R.font.light(size: 13)
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 0: return Utils.getLocalizedString(from: "Timing")
-        case 1: return Utils.getLocalizedString(from: "Stats")
+            case 0: return R.string.localizable.timing()
+            case 1: return R.string.localizable.stats()
         default: return ""
         }
     }
 
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         switch section {
-        case 0: return Utils.getLocalizedString(from: "TimingFooter")
-        case 1: return Utils.getLocalizedString(from: "StatsFooter")
+            case 0: return R.string.localizable.timing_footer()
+            case 1: return R.string.localizable.stats_footer()
         default: return ""
         }
     }
@@ -227,7 +227,7 @@ extension SettingsViewController {
         fTime.text = String(format: "%0.1f s", Double(progressAsInt) * 0.01)
 
         if fTime.text == "0.0 s" {
-            fTime.text = fTime.text?.appending(Utils.getLocalizedString(from: "no other gesture"))
+            fTime.text = fTime.text?.appending(R.string.localizable.no_other_gesture())
         }
 
         Settings().save(int: progressAsInt, forKey: "freezeTime")

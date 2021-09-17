@@ -15,7 +15,7 @@ class LicenseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = Utils.getLocalizedString(from: "license")
+        self.navigationItem.title = R.string.localizable.license()
 
         self.webView.load(URLRequest(url: URL(fileURLWithPath: Bundle.main.path(forResource: "license", ofType: "html")!, isDirectory: false)))
     }
